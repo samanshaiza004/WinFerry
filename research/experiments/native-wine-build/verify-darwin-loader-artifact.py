@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Inspect the loader Mach-O layout and local signature without launching it."""
 
 from __future__ import annotations

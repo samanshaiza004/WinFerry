@@ -1,0 +1,1 @@
+/private/tmp/winferry-native-wine-build/darwin-configure-patch-verify/build/loader/wine: Mach-O 64-bit executable arm64

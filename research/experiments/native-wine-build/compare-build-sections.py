@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Compare pinned Wine build artifacts without treating debug data as code.
 
 Raw SHA-256 values are always reported. Section hashes provide a second,

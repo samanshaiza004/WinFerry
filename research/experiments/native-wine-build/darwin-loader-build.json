@@ -1,6 +1,6 @@
 {
   "date": "2026-10-10",
-  "status": "build_pass_runtime_not_run",
+  "status": "configure_patch_build_pass_runtime_not_run",
   "scope": "native ARM64 Wine loader source patch and experimental Mach-O link layout only",
   "host": {
     "model": "MacBookAir10,1",
@@ -14,7 +14,7 @@
     "repository": "https://github.com/wine-mirror/wine",
     "revision": "a15ee2ccf20e2fc9f470badd916855801933d31f",
     "archive_sha256": "f87b071f5f19f4cc5b6a51d3000ae03ee791325d5873ba221da191fd5b933a41",
-    "modified_input": "disposable source copy only; repository contains the patch and build recipe"
+    "modified_input": "disposable source copy only; repository contains the patch series and build recipe"
   },
   "toolchain": {
     "llvm_mingw_release": "20261006",
@@ -23,10 +23,22 @@
     "bison": "3.8.2",
     "pkg_config": "Homebrew pkgconf 3.0.8"
   },
-  "patch": {
-    "path": "patches/darwin-build-only/0001-loader-request-4k-process-pages.patch",
-    "sha256": "ef95234b25c534153709eba796117762671e27aeba755af80081be161c8dd670",
-    "static_contract_test": "pass"
+  "patches": [
+    {
+      "path": "patches/darwin-build-only/0001-loader-request-4k-process-pages.patch",
+      "sha256": "6c4e77eae77301158d9d678a53f2b0a3753d0f5265943dd4a8cbd1dbf83e6ea0",
+      "scope": "4 KB page-size re-exec and consumed-marker cleanup"
+    },
+    {
+      "path": "patches/darwin-build-only/0002-darwin-arm64-low-address-layout.patch",
+      "sha256": "71c20cce2c3fe2d09d138c0d4e71642204b7e17e1ec328392509753e1d600129",
+      "scope": "Darwin ARM64 loader layout in configure.ac and generated configure"
+    }
+  ],
+  "static_contract_test": {
+    "result": "pass",
+    "classification": "structural checks only; not a behavior test",
+    "command": "python3 research/experiments/native-wine-build/test-darwin-loader-contract.py"
   },
   "build": {
     "configure": "pass",
@@ -34,9 +46,9 @@
     "result": "pass",
     "layout_flags": "-Wl,-x86_64_layout_emulation,-no_fixup_chains,-no_huge,-image_base,0x170000000,-pagezero_size,0x170000000,-segalign,0x1000,-sectcreate,__TEXT,__info_plist,loader/wine_info.plist",
     "artifact": {
-      "path": "/private/tmp/winferry-native-wine-build/darwin-loader-only-finalverify/build/loader/wine",
+      "path": "/private/tmp/winferry-native-wine-build/darwin-configure-patch-verify/build/loader/wine",
       "format": "Mach-O 64-bit executable arm64",
-      "sha256": "4fdf9964898a091b13a1788fd55eeeb6bc0f68d483cff1bb3d26773d5e8dde8a",
+      "sha256": "4ece59baff7baecdc07580b60d8b40e135669242b87e93190c32af545411ef36",
       "pagezero_vmaddr": "0x0000000000000000",
       "pagezero_vmsize": "0x0000000170000000",
       "text_vmaddr": "0x0000000170000000",
@@ -44,8 +56,10 @@
       "signature": "adhoc, linker-signed; TeamIdentifier not set",
       "codesign_verify": "pass"
     },
-    "logs": "logs-darwin-loader/final-success/",
-    "artifact_verifier": "verify-darwin-loader-artifact.py"
+    "logs": "logs-darwin-loader/configure-patch-success/",
+    "artifact_verifier": "verify-darwin-loader-artifact.py",
+    "configured_flags_verification": "pass; exact WINELOADER_LDFLAGS assignment recorded in linker-flags.txt",
+    "generated_makefile_modified_after_configure": false
   },
   "runtime": {
     "loader_launched": false,
@@ -61,6 +75,7 @@
     "First configure stopped at missing FreeType development files; loader-only recipe now disables FreeType.",
     "Second attempt compiled the patched loader but inspection found the generated Makefile retained upstream layout flags; that output is not counted as a layout pass.",
     "An intermediate configure-only run ended before linking during a build-script update; it is not counted as a build result.",
-    "Final clean build passed after replacing the unique generated loader link rule and checking Mach-O load commands and signature."
+    "The first accepted loader build used an exact generated-Makefile override; it is retained as historical evidence in logs-darwin-loader/final-success/.",
+    "A fresh configure-patch build applied both patches, verified the configure-generated linker flags without modifying the Makefile, linked the ARM64 loader, and passed Mach-O and ad-hoc signature verification. Runtime remains untested."
   ]
 }

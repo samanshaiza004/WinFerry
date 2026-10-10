@@ -6,7 +6,7 @@ Cutoff: 2026-10-10. License names and inspected policies below are **VERIFIED** 
 
 ## WinFerry repository licensing status
 
-**VERIFIED:** This research repository currently has no top-level `LICENSE` file. The new loader patch modifies Wine's `loader/main.c`, whose source header is LGPL-2.1-or-later; distributing a patched runtime must preserve Wine notices and make the corresponding modified source available under the applicable Wine terms. The build scripts and original research text are not automatically licensed by Wine's file-level grant. Before treating this repository as a distributable FOSS product, select and publish a license for WinFerry-authored material and review how the source patch and generated runtime are packaged. This is a project-status finding, not a legal opinion.
+**VERIFIED (updated 2026-10-10):** WinFerry-authored code and research are MIT-licensed through the top-level [`LICENSE`](../LICENSE), with the scope and exclusions documented in [`THIRD_PARTY.md`](../THIRD_PARTY.md). Wine-derived patches retain LGPL-2.1-or-later terms and the corresponding text is included under `LICENSES/`. A distributed patched runtime would still require preserving Wine notices and providing corresponding modified source under applicable Wine terms. This is a project-status finding, not a legal opinion.
 
 | Component | Inspected license / distribution implication | Primary source |
 |---|---|---|

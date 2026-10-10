@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Create a machine-readable manifest for the locally captured probe variants."""
 import hashlib
 import json

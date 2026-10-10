@@ -27,3 +27,9 @@ The next gates are independent: first prove authorized native execution on a dev
 ## Contributing
 
 At this stage, useful contributions include reproducible source/build evidence, carefully scoped experiments, and compatibility fixtures. Read the contribution policies for each upstream project before proposing code. In particular, FEX and DXMT restrict AI-generated code contributions; WinFerry research must not be misrepresented as human-authored upstream implementation.
+
+## License
+
+WinFerry-authored code and research are MIT-licensed. The Wine-derived patches
+retain LGPL-2.1-or-later terms. See [`THIRD_PARTY.md`](THIRD_PARTY.md) for the
+license boundary and attribution details.

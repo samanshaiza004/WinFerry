@@ -1,0 +1,11 @@
+/usr/bin/clang -std=gnu23 -c -o loader/main.o /private/tmp/winferry-native-wine-build/darwin-configure-patch-verify/source/loader/main.c \
+  -Iloader -I/private/tmp/winferry-native-wine-build/darwin-configure-patch-verify/source/loader \
+  -Iinclude -I/private/tmp/winferry-native-wine-build/darwin-configure-patch-verify/source/include \
+  -D__WINESRC__ -DWINE_UNIX_LIB -fPIE -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+  -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+  -Wignored-qualifiers -Winit-self -Wpointer-arith -Wstrict-prototypes -Wtype-limits \
+  -Wunused-but-set-parameter -Wvla -Wwrite-strings -gdwarf-4 -O2 -g -arch arm64 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+LC_ALL=C sed -e 's,@bindir@,/private/tmp/winferry-native-wine-build/darwin-configure-patch-verify/build/install/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.19,g' -e 's,@PACKAGE_VERSION@,11.19,g' /private/tmp/winferry-native-wine-build/darwin-configure-patch-verify/source/loader/wine_info.plist.in >loader/wine_info.plist || (rm -f loader/wine_info.plist && false)
+/usr/bin/clang -std=gnu23 -o loader/wine loader/main.o \
+  -Wl,-x86_64_layout_emulation,-no_fixup_chains,-no_huge,-image_base,0x170000000,-pagezero_size,0x170000000,-segalign,0x1000,-sectcreate,__TEXT,__info_plist,loader/wine_info.plist \
+  -arch arm64

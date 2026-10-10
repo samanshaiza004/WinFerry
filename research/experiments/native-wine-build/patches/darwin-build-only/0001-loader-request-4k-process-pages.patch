@@ -11,7 +11,7 @@
  
  #include "main.h"
  
-@@ -143,6 +147,66 @@
+@@ -143,6 +147,70 @@
      return NULL;
  }
  
@@ -25,7 +25,11 @@
 +    posix_spawnattr_t attr;
 +    int error;
 +
-+    if (getpagesize() == 4096) return;
++    if (getpagesize() == 4096)
++    {
++        if (getenv( marker )) unsetenv( marker );
++        return;
++    }
 +
 +    if (!__builtin_available(macOS 26.0, *))
 +    {
@@ -78,7 +82,7 @@
  static void *try_dlopen( const char *argv0 )
  {
      char *dir, *path, *p;
-@@ -171,6 +235,10 @@
+@@ -171,6 +239,10 @@
  {
      void *handle;
  

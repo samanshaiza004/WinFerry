@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Record Mach-O signature load commands and codesign metadata on macOS."""
 
 from __future__ import annotations

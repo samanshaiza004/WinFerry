@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Compare Mach-O instruction disassembly while accounting for literal offsets.
 
 This macOS-only companion to compare-build-sections.py uses Apple's `otool`.

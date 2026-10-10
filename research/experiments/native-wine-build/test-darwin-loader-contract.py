@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Static contract checks for the experimental Darwin loader patch and recipe."""
 
 from __future__ import annotations
@@ -12,6 +13,7 @@ sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).resolve().parent
 PATCH = ROOT / "patches/darwin-build-only/0001-loader-request-4k-process-pages.patch"
+LAYOUT_PATCH = ROOT / "patches/darwin-build-only/0002-darwin-arm64-low-address-layout.patch"
 BUILD = ROOT / "build-darwin-loader-only.sh"
 VERIFY = ROOT / "verify-darwin-loader-artifact.py"
 DISASSEMBLY = ROOT / "compare-macho-disassembly.py"
@@ -24,6 +26,7 @@ def require(condition: bool, message: str) -> None:
 
 def main() -> int:
     patch = PATCH.read_text()
+    layout_patch = LAYOUT_PATCH.read_text()
     build = BUILD.read_text()
     verify = VERIFY.read_text()
     spec = importlib.util.spec_from_file_location("macho_disassembly", DISASSEMBLY)
@@ -33,7 +36,8 @@ def main() -> int:
     spec.loader.exec_module(disassembly)
     body = patch.split("static void ensure_4k_pages", 1)[1].split("#endif", 1)[0]
     require("defined(__APPLE__) && defined(__aarch64__)" in patch, "patch must be Apple ARM64-only")
-    require("if (getpagesize() == 4096) return;" in body, "already-correct page size must bypass re-exec")
+    require("if (getpagesize() == 4096)" in body and "unsetenv( marker )" in body, "4 KB startup must clear the consumed re-exec marker")
+    require("return;" in body, "already-correct page size must bypass re-exec")
     require("__builtin_available(macOS 26.0, *)" in body, "4 KB spawn API must be OS-version guarded")
     require("posix_spawnattr_set_4k_page_size_np( &attr )" in body, "must request the 4 KB process attribute")
     require("POSIX_SPAWN_SETEXEC" in body, "re-exec must replace the loader process")
@@ -42,8 +46,10 @@ def main() -> int:
     require("posix_spawn( NULL, self, NULL, &attr, argv, environ )" in body, "must preserve argv and inherited environment")
     require(patch.index("ensure_4k_pages( argv )") < patch.index("init_reserved_areas()"), "page switch must precede Wine address reservations")
     require(patch.index("ensure_4k_pages( argv )") < patch.index("if ((handle = try_dlopen"), "page switch must precede Wine runtime loading")
-    require("x86_64_layout_emulation" in build and "pagezero_size,0x170000000" in build, "build recipe must set the experimental loader layout")
-    require("line.startswith(\"  \" + upstream)" in build and "len(rules) != 1" in build, "build recipe must narrowly patch one generated loader link rule")
+    expected_flags = "-Wl,-x86_64_layout_emulation,-no_fixup_chains,-no_huge,-image_base,0x170000000,-pagezero_size,0x170000000,-segalign,0x1000,-sectcreate,__TEXT,__info_plist,loader/wine_info.plist"
+    require("configure.ac" in layout_patch and "configure" in layout_patch and expected_flags in layout_patch, "layout patch must configure the exact Darwin ARM64 loader flags")
+    require('patch -p1 < "$loader_patch"' in build and 'patch -p1 < "$layout_patch"' in build, "build recipe must apply both source patches")
+    require("WINELOADER_LDFLAGS = " in build and "makefile.write_text" not in build, "build recipe must verify, not rewrite, generated linker configuration")
     require("--without-freetype" in build, "loader-only configure must avoid unrelated font-library discovery")
     require("loader/wine" in build and "RUNTIME=NOT_RUN" in build, "recipe must build and inspect only the loader")
     require("verify-darwin-loader-artifact.py" in build and "EXPECTED_LAYOUT = 0x170000000" in verify, "artifact validation must inspect exact segment records without launch")
@@ -53,7 +59,7 @@ def main() -> int:
     require(normalize('"/tmp/build/install/lib"', "/tmp/build/install") == '"<WINFERRY_INSTALL_PREFIX>/lib"', "expected install-root literals may normalize")
     require(normalize('"/tmp/build/installable/lib"', "/tmp/build/install") == '"/tmp/build/installable/lib"', "similar path prefixes must not normalize")
     require(normalize('"text /tmp/build/install/lib"', "/tmp/build/install") == '"text /tmp/build/install/lib"', "interior path text must not normalize")
-    print("PASS: loader re-exec and build-only scope contract")
+    print("PASS: structural loader, configure, and build-only scope contract (not a behavior test)")
     return 0
 
 

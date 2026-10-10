@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """CI gate: require a real 4 KB child, not merely successful harness completion."""
 import json
 import sys

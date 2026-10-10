@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: MIT
 set -eu
 
 if [ "$#" -ne 4 ]; then
@@ -11,7 +12,9 @@ toolchain=$(CDPATH= cd -- "$2" && pwd -P)
 bison_bin=$(CDPATH= cd -- "$3" && pwd -P)
 output_dir=$4
 repo_dir=$(CDPATH= cd -- "$(dirname -- "$0")/../../.." && pwd -P)
-patch_file=$repo_dir/research/experiments/native-wine-build/patches/darwin-build-only/0001-loader-request-4k-process-pages.patch
+patch_dir=$repo_dir/research/experiments/native-wine-build/patches/darwin-build-only
+loader_patch=$patch_dir/0001-loader-request-4k-process-pages.patch
+layout_patch=$patch_dir/0002-darwin-arm64-low-address-layout.patch
 jobs=${JOBS:-2}
 
 case "$(basename -- "$source_dir")" in
@@ -55,7 +58,11 @@ mkdir -p "$logs"
     "$toolchain/bin/aarch64-w64-mingw32-clang" --version | sed -n '1p'
 } > "$logs/host-environment.txt" 2>&1
 cp -R "$source_dir" "$source_copy"
-if ! (cd "$source_copy" && patch -p1 < "$patch_file") > "$logs/patch.log" 2>&1; then
+if ! (
+    cd "$source_copy"
+    patch -p1 < "$loader_patch"
+    patch -p1 < "$layout_patch"
+) > "$logs/patch.log" 2>&1; then
     cat "$logs/patch.log" >&2
     exit 1
 fi
@@ -82,9 +89,6 @@ if ! "$source_copy/configure" \
     exit 1
 fi
 
-# Wine expands these flags into its generated top-level Makefile at configure
-# time, so a make command-line override is ignored. Replace the one exact
-# loader-rule value and abort if the generated layout differs from expectation.
 wine_loader_ldflags='-Wl,-x86_64_layout_emulation,-no_fixup_chains,-no_huge,-image_base,0x170000000,-pagezero_size,0x170000000,-segalign,0x1000,-sectcreate,__TEXT,__info_plist,loader/wine_info.plist'
 python3 - "$build_dir/Makefile" "$wine_loader_ldflags" > "$logs/linker-flags.txt" <<'PY'
 from pathlib import Path
@@ -92,16 +96,12 @@ import sys
 
 makefile = Path(sys.argv[1])
 flags = sys.argv[2]
-text = makefile.read_text()
-upstream = "-Wl,-segalign,0x1000,-pagezero_size,0x1000,-sectcreate,__TEXT,__info_plist,loader/wine_info.plist"
-lines = text.splitlines(keepends=True)
-rules = [index for index, line in enumerate(lines)
-         if line.startswith("  " + upstream) and line.rstrip().endswith("\\")]
-if len(rules) != 1:
-    raise SystemExit(f"expected one inline upstream loader link rule, found {len(rules)}")
-index = rules[0]
-lines[index] = lines[index].replace(upstream, flags, 1)
-makefile.write_text("".join(lines))
+matches = [line.partition(" = ")[2] for line in makefile.read_text().splitlines()
+           if line.startswith("WINELOADER_LDFLAGS = ")]
+if len(matches) != 1:
+    raise SystemExit(f"expected one configured WINELOADER_LDFLAGS assignment, found {len(matches)}")
+if matches[0] != flags:
+    raise SystemExit(f"configured loader flags differ from expectation: {matches[0]}")
 print(flags)
 PY
 if ! /usr/bin/make -j"$jobs" loader/wine > "$logs/build-loader.log" 2>&1; then

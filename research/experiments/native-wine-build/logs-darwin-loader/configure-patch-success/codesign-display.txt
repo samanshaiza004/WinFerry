@@ -1,0 +1,23 @@
+Executable=/private/tmp/winferry-native-wine-build/darwin-configure-patch-verify/build/loader/wine
+Identifier=wine
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=253 flags=0x20002(adhoc,linker-signed) hashes=5+0 location=embedded
+VersionPlatform=1
+VersionMin=1769472
+VersionSDK=1769472
+Hash type=sha256 size=32
+CandidateCDHash sha256=7832abe2ed09cba331e8dd3818e9ac19b21efc8a
+CandidateCDHashFull sha256=7832abe2ed09cba331e8dd3818e9ac19b21efc8a610b2a0bb6f0d878f01398a7
+Hash choices=sha256
+CMSDigest=7832abe2ed09cba331e8dd3818e9ac19b21efc8a610b2a0bb6f0d878f01398a7
+CMSDigestType=2
+Executable Segment base=0
+Executable Segment limit=1120
+Executable Segment flags=0x1
+Page size=4096
+CDHash=7832abe2ed09cba331e8dd3818e9ac19b21efc8a
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements=none
