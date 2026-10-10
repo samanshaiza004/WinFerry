@@ -1,0 +1,84 @@
+{
+  "status": "build_pass_runtime_not_run",
+  "runtime_executed": false,
+  "host": {
+    "model": "MacBookAir10,1",
+    "processor": "Apple M1",
+    "macos": "27.0 (26A428)",
+    "xcode": "27.0 (27A266a)",
+    "host_arch": "arm64",
+    "host_compiler": "Apple clang 21.0.0 (clang-2100.3.34.2)",
+    "sip": "enabled"
+  },
+  "source": {
+    "repository": "https://github.com/wine-mirror/wine",
+    "revision": "a15ee2ccf20e2fc9f470badd916855801933d31f",
+    "archive_sha256": "f87b071f5f19f4cc5b6a51d3000ae03ee791325d5873ba221da191fd5b933a41"
+  },
+  "toolchain": {
+    "name": "llvm-mingw",
+    "release": "20261006",
+    "llvm": "23.1.3",
+    "archive_sha256": "a7a19b11048e89372637d26279cdb7c430ed3cf8c1e224310421312bf986ebf6",
+    "targets_verified": [
+      "aarch64-w64-windows-gnu",
+      "arm64ec-w64-windows-gnu"
+    ]
+  },
+  "build_dependencies": {
+    "bison": "3.8.2 source-built in temporary prefix; source archive sha256 9bba0214ccf7f1079c5d59210045227bcf619519840ebfa80cd3849cff5a5bf2",
+    "system_bison": "2.3; rejected by Wine configure",
+    "pkg_config": "/opt/homebrew/bin/pkg-config 3.0.5",
+    "freetype_pkg_config_version": "26.6.20"
+  },
+  "configure": {
+    "requested_archs": ["aarch64", "arm64ec"],
+    "disabled": ["x", "cups", "pulse", "alsa", "gstreamer", "vulkan", "tests"],
+    "host_cc": "/usr/bin/clang",
+    "host_cxx": "/usr/bin/clang++",
+    "host_arch_flags": "-arch arm64",
+    "result": "pass",
+    "build_command": "make -j2",
+    "build_result": "pass",
+    "make_install": false,
+    "clean_second_build_comparison": "not performed"
+  },
+  "build_directory": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c",
+  "verified_artifacts": [
+    {
+      "path": "loader/wine",
+      "format": "Mach-O 64-bit executable arm64",
+      "sha256": "cc3f6f18652c597eb69cf169211810f7b660d4b5b4af5f8a2e1dd394673da411"
+    },
+    {
+      "path": "tools/wine/wine",
+      "format": "Mach-O 64-bit executable arm64",
+      "sha256": "33877fbc4095444a75d93cd2c09878d237cf5f3c8676410b9d760222a321d0c5"
+    },
+    {
+      "path": "server/wineserver",
+      "format": "Mach-O 64-bit executable arm64",
+      "sha256": "b1f268ca92dfbf7bda2830637b6848a9463da5584c1fc7254a4ff099a148998e"
+    },
+    {
+      "path": "dlls/ntdll/aarch64-windows/ntdll.dll",
+      "format": "COFF-ARM64X; IMAGE_FILE_MACHINE_ARM64X (0xA64E)",
+      "sha256": "3a8b85d1f8991a3b51460bba3ba5ce88cfeb95c15f1cc2a616b87ccd396c2ded"
+    },
+    {
+      "path": "dlls/kernel32/aarch64-windows/kernel32.dll",
+      "format": "COFF-ARM64X; IMAGE_FILE_MACHINE_ARM64X (0xA64E)",
+      "sha256": "1d877dfd5e0c957dfbf1c755bdc8fd67f3deaddcffaa72e89ccbef6907699915"
+    }
+  ],
+  "artifacts": {
+    "failed_stock_bison_configure_log": "logs/configure-stock-bison.log",
+    "bison_configure_log": "logs/bison-configure.log",
+    "bison_build_log": "logs/bison-build.log",
+    "bison_install_log": "logs/bison-install.log",
+    "configure_log": "logs/configure.log",
+    "build_log": "logs/build.log",
+    "build_result": "logs/build-result.txt"
+  },
+  "interpretation": "Full configured source/toolchain build succeeded. The native Mach-O and ARM64X PE file formats were inspected. No Wine runtime, Windows process, 4 KB child, or FEX path was executed; the source audit confirms that this upstream revision lacks the new Darwin execution changes."
+}

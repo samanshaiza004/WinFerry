@@ -4,7 +4,7 @@ WinFerry is investigating a free, open-source way to run Windows applications on
 
 ## Status
 
-**Research and capability-probing stage. No Windows application has been executed by WinFerry.** The current feasibility decision is **CONDITIONAL GO**: native ARM64 Wine with Wine's ARM64EC support and FEX is a credible foundation, but the team has not reproduced an end-to-end Windows runtime or established Apple's development and distribution authorization for independent publishers.
+**Research, capability-probing, and build-only stage. No Windows application has been executed by WinFerry.** A pinned public upstream native Wine component build completed successfully, but it is not runtime evidence. The current feasibility decision is **CONDITIONAL GO**: native ARM64 Wine with Wine's ARM64EC support and FEX is a credible foundation, but the team has not reproduced an end-to-end Windows runtime or established Apple's development and distribution authorization for independent publishers.
 
 A local M1 probe confirmed that macOS exposes the relevant cross-architecture APIs. Its attempt to launch a 4 KB child process returned `EBADMACHO` (error 88). That result does not identify the cause or establish whether a properly provisioned process will work. SIP remained enabled. See the [experiment record](research/experiments/README.md).
 
@@ -22,7 +22,7 @@ WinFerry is not promising universal Windows compatibility. It has no consumer la
 
 Start with the [feasibility decision](research/07-feasibility.md), [architecture decision](research/08-architecture-decision.md), and [roadmap](research/09-roadmap.md). The [research index](research/README.md) links the comparative analysis, source evidence, licensing review, and experiment procedure.
 
-The next gates are independent: first prove authorized native execution on a development machine; separately establish that an appropriately signed build can run on an unrelated stock Mac without recipient enrollment, machine registration, or weakened system security. A pinned native Wine component build can proceed in parallel, but it does not prove runtime execution.
+The next gates are independent: first prove authorized native execution on a development machine; separately establish that an appropriately signed build can run on an unrelated stock Mac without recipient enrollment, machine registration, or weakened system security. The pinned native Wine component build completed in parallel and does not prove runtime execution.
 
 ## Contributing
 

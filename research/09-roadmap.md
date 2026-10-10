@@ -4,11 +4,11 @@ Date: 2026-10-10. Everything below is **PROPOSED / INFERRED**, not delivered run
 
 ## Five highest-priority tasks
 
-1. Separate developer authorization from authorization to distribute to unrelated stock Macs; establish both independently.
-2. Publish a pinned native ARM64 Wine component build while the authorization work proceeds; defer authorized runtime launch until Gate 0A passes.
-3. Implement/reproduce the narrow FEX PE UnixLib Darwin integration with correct per-thread configuration and observable execution provenance.
-4. Qualify JIT/code protection, SMC, atomics, threads, callbacks and mixed exceptions against reference behavior.
-5. Establish a desktop workflow corpus and a deterministic, reversible compatibility manifest/recipe subsystem.
+1. Resolve Gate 0A through Apple's documented developer capability/provisioning process. Keep the already characterized unprovisioned baseline closed; do not guess entitlement strings or relax system protections.
+2. Build pinned public native ARM64 Wine components in parallel with authorization work. The source/toolchain are now pinned and acquired; the build result is recorded separately from runtime feasibility.
+3. Resolve Gate 0B as a separate publisher/distribution question: can an independently signed runtime install on an unrelated stock Mac without recipient enrollment or security changes?
+4. Start FEX/ARM64EC runtime integration only after a properly authorized 4 KB process can launch; then prove thread setup and execution provenance before adding application support.
+5. Qualify ABI, memory, synchronization and then a small desktop workflow corpus. Graphics, broad compatibility recipes and consumer UI follow a working runtime.
 
 These are dependencies: product UI and accelerated graphics cannot unblock missing execution authority or correctness.
 
@@ -17,8 +17,8 @@ These are dependencies: product UI and accelerated graphics cannot unblock missi
 | Gate / milestone | Deliverable | Measurable acceptance | Stop or revise condition |
 |---|---|---|---|
 | 0A: Development authorization | Tiny native capability harness using Apple's documented APIs | On a development Mac with an Apple-issued entitlement/profile: authorized 4 KB child runs and reports 4096-byte pages; valid low-address layout is mapped; x18 entry/exit behavior and per-thread TSO semantics are recorded; SIP/AMFI remain enabled | Required features fail under the granted profile or require system-protection changes |
-| 0B: Redistribution authorization | Release-signed runtime and independent install procedure | On an unrelated stock Mac: recipient has no developer enrollment or registered UDID, installs and runs the signed environment; SIP/AMFI remain enabled; profile/signature renewal and update path are documented | Independent publisher cannot obtain the needed capability or release installs require recipient enrollment/machine registration |
 | 1: Native Wine build (parallel with 0A/0B) | Pinned public source/toolchain/build manifest and minimal patch queue | Clean checkout builds components twice with native ARM64 host binaries and matching Windows PE targets; hashes and commands match; build-only work makes no claim that Wine runs | Missing build inputs or unmaintainable private changes; record this separately from an authorization denial |
+| 0B: Redistribution authorization (parallel with the component build) | Release-signed runtime and independent install procedure | On an unrelated stock Mac: recipient has no developer enrollment or registered UDID, installs and runs the signed environment; SIP/AMFI remain enabled; profile/signature renewal and update path are documented | Independent publisher cannot obtain the needed capability or release installs require recipient enrollment/machine registration |
 | 2: Native Wine A runtime | Authorized signed bundle, isolated prefix and API fixture | After 0A, clean build runs ARM64 `cmd`/Notepad and API smoke on M1 and newer Apple Silicon; architecture trace rules out Intel host fallback; 100 fresh-prefix smoke runs pass | Repeated ABI faults, or a legacy SDK workaround is the sole runtime path |
 | 3: FEX B | PE emulator DLL and native adapter builds, registration manifest, guest smoke source and trace | Self-built x64 PE runs and exits 0 on both machines; trace identifies FEX code and native API transitions; 100 repeated runs, a child process, and an 8-thread TLS/atomic fixture pass; Linux rootfs/standalone FEX not required | Port requires broad Linux frontend transplantation or unavailable external patches |
 | 4: Correctness and C | Reproducible fault/unwind/JIT corpus and Win32 GUI fixture | 4 KB protect/guard/fixed mappings, callback/SEH/longjmp, thread suspension and creation, cross-thread JIT publish, VirtualProtect/SMC, sync and async I/O-to-code invalidation tests pass; UI input/resize/DPI/clipboard/file dialogs verified; no security-mode relaxation | Unresolved data races/deadlocks or only screenshot-level success. Do not infer correctness from 100 runs alone |

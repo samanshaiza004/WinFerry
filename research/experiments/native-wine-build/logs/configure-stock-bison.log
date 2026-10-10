@@ -1,0 +1,21 @@
+checking build system type... aarch64-apple-darwin27.0.0
+checking host system type... aarch64-apple-darwin27.0.0
+checking for gcc... /usr/bin/clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether /usr/bin/clang accepts -g... yes
+checking for /usr/bin/clang option to enable C23 features... -std=gnu23
+checking whether the compiler supports GNU C++... yes
+checking whether /usr/bin/clang++ accepts -g... yes
+checking for cpp... cpp
+checking for ld... ld
+checking for the directory containing the Wine tools... none needed
+checking for flex... flex
+checking whether flex is recent enough... yes
+checking for bison... bison
+checking whether bison is recent enough... no
+configure: error: Your bison version is too old. Please install bison version 3.0 or newer.

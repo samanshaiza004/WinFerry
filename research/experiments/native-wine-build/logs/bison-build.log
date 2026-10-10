@@ -1,0 +1,364 @@
+  GEN      lib/alloca.h
+  LEX      examples/c/reccalc/scan.stamp
+  GEN      lib/configmake.h
+  GEN      lib/fcntl.h
+  GEN      lib/getopt.h
+  GEN      lib/getopt-cdefs.h
+  GEN      lib/iconv.h
+  GEN      lib/inttypes.h
+  GEN      lib/textstyle.h
+  GEN      lib/limits.h
+  GEN      lib/math.h
+  GEN      lib/sched.h
+  GEN      lib/malloc/scratch_buffer.gl.h
+  GEN      lib/signal.h
+  GEN      lib/spawn.h
+  GEN      lib/stdint.h
+  GEN      lib/stdio.h
+  GEN      lib/stdlib.h
+  GEN      lib/string.h
+  GEN      lib/sys/ioctl.h
+  GEN      lib/sys/stat.h
+  GEN      lib/sys/resource.h
+  GEN      lib/sys/time.h
+  GEN      lib/sys/times.h
+  GEN      lib/sys/types.h
+  GEN      lib/sys/wait.h
+  GEN      lib/termios.h
+  GEN      lib/time.h
+  GEN      lib/unistd.h
+  GEN      lib/unistr.h
+  GEN      lib/unitypes.h
+  GEN      lib/uniwidth.h
+  GEN      lib/wchar.h
+  GEN      lib/wctype.h
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  all-recursive
+Making all in po
+make[2]: Nothing to be done for `all'.
+Making all in runtime-po
+make[2]: Nothing to be done for `all'.
+Making all in gnulib-po
+make[2]: Nothing to be done for `all'.
+Making all in .
+  CC       lib/libbison_a-bitsetv.o
+  CC       lib/libbison_a-c-ctype.o
+  CC       lib/libbison_a-c-strcasecmp.o
+  CC       lib/libbison_a-c-strncasecmp.o
+  CC       lib/libbison_a-canonicalize.o
+  CC       lib/libbison_a-careadlinkat.o
+  CC       lib/libbison_a-cloexec.o
+  CC       lib/libbison_a-close-stream.o
+  CC       lib/libbison_a-closeout.o
+  CC       lib/libbison_a-concat-filename.o
+  CC       lib/libbison_a-dirname.o
+  CC       lib/libbison_a-basename.o
+  CC       lib/libbison_a-dirname-lgpl.o
+  CC       lib/libbison_a-stripslash.o
+  CC       lib/libbison_a-execute.o
+  CC       lib/libbison_a-exitfail.o
+  CC       lib/libbison_a-fatal-signal.o
+  CC       lib/libbison_a-fd-safer-flag.o
+  CC       lib/libbison_a-dup-safer-flag.o
+  CC       lib/libbison_a-file-set.o
+  CC       lib/libbison_a-findprog-in.o
+  CC       lib/libbison_a-fopen-safer.o
+  CC       lib/libbison_a-fstrcmp.o
+  CC       lib/libbison_a-gethrxtime.o
+  CC       lib/libbison_a-xtime.o
+  CC       lib/libbison_a-getprogname.o
+  CC       lib/libbison_a-gettime.o
+  CC       lib/libbison_a-hash.o
+  CC       lib/libbison_a-gl_hash_map.o
+  CC       lib/libbison_a-hash-pjw.o
+  CC       lib/libbison_a-hash-triple-simple.o
+  CC       lib/libbison_a-ialloc.o
+  CC       lib/libbison_a-integer_length.o
+  CC       lib/libbison_a-integer_length_l.o
+  CC       lib/libbison_a-gl_linked_list.o
+  CC       lib/libbison_a-gl_list.o
+  CC       lib/libbison_a-localcharset.o
+  CC       lib/libbison_a-gl_map.o
+  CC       lib/libbison_a-math.o
+  CC       lib/libbison_a-mbchar.o
+  CC       lib/libbison_a-mbfile.o
+  CC       lib/libbison_a-mbswidth.o
+  CC       lib/libbison_a-gl_oset.o
+  CC       lib/libbison_a-pipe2.o
+  CC       lib/libbison_a-pipe2-safer.o
+  CC       lib/libbison_a-printf-frexp.o
+  CC       lib/libbison_a-printf-frexpl.o
+  CC       lib/libbison_a-progname.o
+  CC       lib/libbison_a-quotearg.o
+  CC       lib/libbison_a-gl_rbtree_oset.o
+  CC       lib/libbison_a-gl_rbtreehash_list.o
+  CC       lib/libbison_a-sig-handler.o
+  CC       lib/libbison_a-spawn-pipe.o
+  CC       lib/glthread/libbison_a-threadlib.o
+  CC       lib/libbison_a-timespec.o
+  CC       lib/libbison_a-timevar.o
+  CC       lib/glthread/libbison_a-tls.o
+  CC       lib/libbison_a-unicodeio.o
+  CC       lib/libbison_a-unistd.o
+  CC       lib/libbison_a-dup-safer.o
+  CC       lib/libbison_a-fd-safer.o
+  CC       lib/libbison_a-pipe-safer.o
+  CC       lib/libbison_a-wait-process.o
+  CC       lib/libbison_a-wctype-h.o
+  CC       lib/libbison_a-xmalloc.o
+  CC       lib/libbison_a-xalloc-die.o
+  CC       lib/libbison_a-xconcat-filename.o
+  CC       lib/libbison_a-xhash.o
+  CC       lib/libbison_a-gl_xlist.o
+  CC       lib/libbison_a-gl_xmap.o
+  CC       lib/libbison_a-xmemdup0.o
+  CC       lib/libbison_a-xreadlink.o
+  CC       lib/libbison_a-xsize.o
+  CC       lib/libbison_a-xstrndup.o
+  CC       lib/libbison_a-get-errno.o
+  CC       lib/libbison_a-path-join.o
+  CC       lib/libbison_a-asnprintf.o
+  CC       lib/libbison_a-asprintf.o
+  CC       lib/libbison_a-canonicalize-lgpl.o
+  CC       lib/libbison_a-error.o
+  CC       lib/libbison_a-fopen.o
+  CC       lib/libbison_a-fpending.o
+  CC       lib/libbison_a-fprintf.o
+  CC       lib/libbison_a-free.o
+  CC       lib/libbison_a-fseterr.o
+  CC       lib/libbison_a-getopt.o
+  CC       lib/libbison_a-getopt1.o
+  CC       lib/libbison_a-mempcpy.o
+  CC       lib/libbison_a-obstack.o
+  CC       lib/libbison_a-obstack_printf.o
+  CC       lib/libbison_a-perror.o
+  CC       lib/libbison_a-printf.o
+  CC       lib/libbison_a-printf-args.o
+  CC       lib/libbison_a-printf-parse.o
+  CC       lib/libbison_a-rawmemchr.o
+  CC       lib/libbison_a-reallocarray.o
+  CC       lib/libbison_a-snprintf.o
+  CC       lib/libbison_a-spawn.o
+  CC       lib/libbison_a-spawn_faction_addchdir.o
+  CC       lib/libbison_a-spawn_faction_addclose.o
+  CC       lib/libbison_a-spawn_faction_adddup2.o
+  CC       lib/libbison_a-spawn_faction_addopen.o
+  CC       lib/libbison_a-spawn_faction_destroy.o
+  CC       lib/libbison_a-spawn_faction_init.o
+  CC       lib/libbison_a-spawnattr_destroy.o
+  CC       lib/libbison_a-spawnattr_init.o
+  CC       lib/libbison_a-spawnattr_setflags.o
+  CC       lib/libbison_a-spawnattr_setpgroup.o
+  CC       lib/libbison_a-spawnattr_setsigmask.o
+  CC       lib/libbison_a-spawni.o
+  CC       lib/libbison_a-spawnp.o
+lib/spawni.c:752:15: warning: 'vfork' is deprecated: Use posix_spawn or fork [-Wdeprecated-declarations]
+  752 |     new_pid = vfork ();
+      |               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h:618:1: note: 'vfork' has been explicitly marked deprecated here
+  618 | __deprecated_msg("Use posix_spawn or fork")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+  CC       lib/libbison_a-sprintf.o
+1 warning generated.
+  CC       lib/libbison_a-strerror.o
+  CC       lib/libbison_a-strerror-override.o
+lib/strerror.c:59:7: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+   59 |       sprintf (buf, fmt, n);
+      |       ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+  CC       lib/libbison_a-strerror_r.o
+  CC       lib/libbison_a-strverscmp.o
+  CC       lib/libbison_a-vasnprintf.o
+  CC       lib/libbison_a-vasprintf.o
+lib/vasnprintf.c:3437:35: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 3437 |                                   sprintf ((char *) p, "%+d", exponent);
+      |                                   ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+lib/vasnprintf.c:3445:35: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 3445 |                                   sprintf (expbuf, "%+d", exponent);
+      |                                   ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+lib/vasnprintf.c:3588:35: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 3588 |                                   sprintf ((char *) p, "%+d", exponent);
+      |                                   ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+lib/vasnprintf.c:3596:35: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 3596 |                                   sprintf (expbuf, "%+d", exponent);
+      |                                   ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+lib/vasnprintf.c:4048:37: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 4048 |                                     sprintf ((char *) p, "%+.2d", exponent);
+      |                                     ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+lib/vasnprintf.c:4056:37: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 4056 |                                     sprintf (expbuf, "%+.2d", exponent);
+      |                                     ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+lib/vasnprintf.c:4229:45: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 4229 |                                             sprintf ((char *) p, "%+.2d", exponent);
+      |                                             ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+lib/vasnprintf.c:4237:45: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 4237 |                                             sprintf (expbuf, "%+.2d", exponent);
+      |                                             ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+lib/vasnprintf.c:4521:39: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 4521 |                                       sprintf ((char *) p, decimal_format, exponent);
+      |                                       ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+lib/vasnprintf.c:4529:39: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 4529 |                                       sprintf (expbuf, decimal_format, exponent);
+      |                                       ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+  CC       lib/libbison_a-vfprintf.o
+lib/vasnprintf.c:4714:47: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 4714 |                                               sprintf ((char *) p, decimal_format, exponent);
+      |                                               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+lib/vasnprintf.c:4722:47: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 4722 |                                               sprintf (expbuf, decimal_format, exponent);
+      |                                               ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+  CC       lib/libbison_a-vsnprintf.o
+  CC       lib/libbison_a-vsprintf.o
+  CC       lib/main.o
+  CC       lib/yyerror.o
+  CC       src/bison-AnnotationList.o
+12 warnings generated.
+  CC       src/bison-InadequacyList.o
+  CC       src/bison-Sbitset.o
+  CC       src/bison-assoc.o
+  CC       src/bison-closure.o
+  CC       src/bison-complain.o
+  CC       src/bison-conflicts.o
+  CC       src/bison-counterexample.o
+  CC       src/bison-derivation.o
+  CC       src/bison-derives.o
+  CC       src/bison-files.o
+  CC       src/bison-fixits.o
+  CC       src/bison-getargs.o
+  CC       src/bison-glyphs.o
+  CC       src/bison-gram.o
+  CC       src/bison-graphviz.o
+  CC       src/bison-ielr.o
+  CC       src/bison-lalr.o
+  CC       src/bison-location.o
+  CC       src/bison-lr0.o
+  CC       src/bison-lssi.o
+  CC       src/bison-main.o
+  CC       src/bison-muscle-tab.o
+  CC       src/bison-named-ref.o
+  CC       src/bison-nullable.o
+  CC       src/bison-output.o
+  CC       src/bison-parse-gram.o
+  CC       src/bison-parse-simulation.o
+  CC       src/bison-print-graph.o
+  CC       src/bison-print-xml.o
+  CC       src/bison-print.o
+  CC       src/bison-reader.o
+  CC       src/bison-reduce.o
+  CC       src/bison-relation.o
+  CC       src/bison-scan-code-c.o
+  CC       src/bison-scan-gram-c.o
+  CC       src/bison-scan-skel-c.o
+  CC       src/bison-state.o
+  CC       src/bison-state-item.o
+  CC       src/bison-strversion.o
+  CC       src/bison-symlist.o
+  CC       src/bison-symtab.o
+  CC       src/bison-tables.o
+  CC       src/bison-uniqstr.o
+  CC       lib/libbison_a-allocator.o
+  CC       lib/libbison_a-areadlink.o
+  CC       lib/libbison_a-argmatch.o
+  CC       lib/libbison_a-gl_array_list.o
+  CC       lib/libbison_a-basename-lgpl.o
+  CC       lib/libbison_a-binary-io.o
+  CC       lib/libbison_a-bitrotate.o
+  CC       lib/libbison_a-bitset.o
+  CC       lib/bitset/libbison_a-array.o
+  CC       lib/bitset/libbison_a-stats.o
+  CC       lib/bitset/libbison_a-table.o
+  CC       lib/bitset/libbison_a-list.o
+  CC       lib/bitset/libbison_a-vector.o
+  CC       lib/glthread/libbison_a-lock.o
+  CC       lib/malloc/libbison_a-scratch_buffer_dupfree.o
+  CC       lib/malloc/libbison_a-scratch_buffer_grow.o
+  CC       lib/malloc/libbison_a-scratch_buffer_grow_preserve.o
+  CC       lib/malloc/libbison_a-scratch_buffer_set_array_size.o
+  CC       lib/unistr/libbison_a-u8-mbtoucr.o
+  CC       lib/unistr/libbison_a-u8-uctomb.o
+  CC       lib/unistr/libbison_a-u8-uctomb-aux.o
+  CC       lib/uniwidth/libbison_a-width.o
+  AR       lib/liby.a
+  AR       lib/libbison.a
+  CCLD     src/bison
+  GEN      doc/bison.help

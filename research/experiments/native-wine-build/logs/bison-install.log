@@ -1,0 +1,111 @@
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  install-recursive
+Making install in po
+if test "bison" = "gettext-tools"; then \
+	  .././build-aux/install-sh -c -d /private/tmp/winferry-native-wine-build/tools/bison/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ./$file \
+			    /private/tmp/winferry-native-wine-build/tools/bison/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /private/tmp/winferry-native-wine-build/tools/bison/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+Making install in runtime-po
+if test "bison" = "gettext-tools"; then \
+	  .././build-aux/install-sh -c -d /private/tmp/winferry-native-wine-build/tools/bison/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ./$file \
+			    /private/tmp/winferry-native-wine-build/tools/bison/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /private/tmp/winferry-native-wine-build/tools/bison/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+Making install in gnulib-po
+if test "bison" = "gettext-tools"; then \
+	  .././build-aux/install-sh -c -d /private/tmp/winferry-native-wine-build/tools/bison/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ./$file \
+			    /private/tmp/winferry-native-wine-build/tools/bison/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /private/tmp/winferry-native-wine-build/tools/bison/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+Making install in .
+  GEN      doc/bison.help
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/bin'
+  /usr/bin/install -c src/bison '/private/tmp/winferry-native-wine-build/tools/bison/bin'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/lib'
+ /usr/bin/install -c -m 644  lib/liby.a '/private/tmp/winferry-native-wine-build/tools/bison/lib'
+ ( cd '/private/tmp/winferry-native-wine-build/tools/bison/lib' && ranlib liby.a )
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/bin'
+ /usr/bin/install -c src/yacc '/private/tmp/winferry-native-wine-build/tools/bison/bin'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/aclocal'
+ /usr/bin/install -c -m 644 m4/bison-i18n.m4 '/private/tmp/winferry-native-wine-build/tools/bison/share/aclocal'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c++/calc++'
+ /usr/bin/install -c -m 644 examples/c++/calc++/driver.cc examples/c++/calc++/driver.hh examples/c++/calc++/scanner.ll examples/c++/calc++/calc++.cc examples/c++/calc++/parser.yy '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c++/calc++'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c++'
+ /usr/bin/install -c -m 644 examples/c++/simple.yy '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c++'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/bistromathic'
+ /usr/bin/install -c -m 644 examples/c/bistromathic/parse.y examples/c/bistromathic/Makefile examples/c/bistromathic/README.md '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/bistromathic'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c'
+ /usr/bin/install -c -m 644 examples/c/README.md '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/calc'
+ /usr/bin/install -c -m 644 examples/c/calc/calc.y examples/c/calc/Makefile examples/c/calc/README.md '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/calc'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/d/calc'
+ /usr/bin/install -c -m 644 examples/d/calc/calc.y examples/d/calc/Makefile '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/d/calc'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c++/calc++'
+ /usr/bin/install -c -m 644 examples/c++/calc++/README.md examples/c++/calc++/Makefile '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c++/calc++'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c++'
+ /usr/bin/install -c -m 644 examples/c++/README.md examples/c++/Makefile examples/c++/variant.yy examples/c++/variant-11.yy '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c++'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/d'
+ /usr/bin/install -c -m 644 examples/d/README.md '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/d'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison'
+ /usr/bin/install -c -m 644 AUTHORS COPYING NEWS README THANKS TODO '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples'
+ /usr/bin/install -c -m 644 examples/README.md '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/glr'
+ /usr/bin/install -c -m 644 examples/c/glr/c++-types.y examples/c/glr/Makefile examples/c/glr/README.md '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/glr'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/java'
+ /usr/bin/install -c -m 644 examples/java/README.md '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/java'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/java/calc'
+ /usr/bin/install -c -m 644 examples/java/calc/Calc.y examples/java/calc/Makefile '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/java/calc'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/java/simple'
+ /usr/bin/install -c -m 644 examples/java/simple/Calc.y examples/java/simple/Makefile '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/java/simple'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/lexcalc'
+ /usr/bin/install -c -m 644 examples/c/lexcalc/parse.y examples/c/lexcalc/scan.l examples/c/lexcalc/Makefile examples/c/lexcalc/README.md '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/lexcalc'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/bison/m4sugar'
+ /usr/bin/install -c -m 644 data/m4sugar/foreach.m4 data/m4sugar/m4sugar.m4 '/private/tmp/winferry-native-wine-build/tools/bison/share/bison/m4sugar'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/mfcalc'
+ /usr/bin/install -c -m 644 examples/c/mfcalc/Makefile '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/mfcalc'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/bison'
+ /usr/bin/install -c -m 644 data/README.md data/bison-default.css '/private/tmp/winferry-native-wine-build/tools/bison/share/bison'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/pushcalc'
+ /usr/bin/install -c -m 644 examples/c/pushcalc/calc.y examples/c/pushcalc/Makefile examples/c/pushcalc/README.md '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/pushcalc'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/reccalc'
+ /usr/bin/install -c -m 644 examples/c/reccalc/parse.y examples/c/reccalc/scan.l examples/c/reccalc/Makefile examples/c/reccalc/README.md '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/reccalc'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/rpcalc'
+ /usr/bin/install -c -m 644 examples/c/rpcalc/Makefile '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/rpcalc'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/d/simple'
+ /usr/bin/install -c -m 644 examples/d/simple/calc.y examples/d/simple/Makefile '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/d/simple'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/bison/skeletons'
+ /usr/bin/install -c -m 644 data/skeletons/bison.m4 data/skeletons/c++-skel.m4 data/skeletons/c++.m4 data/skeletons/c-like.m4 data/skeletons/c-skel.m4 data/skeletons/c.m4 data/skeletons/glr.c data/skeletons/glr.cc data/skeletons/glr2.cc data/skeletons/java-skel.m4 data/skeletons/java.m4 data/skeletons/lalr1.cc data/skeletons/lalr1.java data/skeletons/location.cc data/skeletons/stack.hh data/skeletons/traceon.m4 data/skeletons/variant.hh data/skeletons/yacc.c data/skeletons/d-skel.m4 data/skeletons/d.m4 data/skeletons/lalr1.d '/private/tmp/winferry-native-wine-build/tools/bison/share/bison/skeletons'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/bison/xslt'
+ /usr/bin/install -c -m 644 data/xslt/bison.xsl data/xslt/xml2dot.xsl data/xslt/xml2text.xsl data/xslt/xml2xhtml.xsl '/private/tmp/winferry-native-wine-build/tools/bison/share/bison/xslt'
+  GEN      doc/bison.help
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/info'
+ /usr/bin/install -c -m 644 ./doc/bison.info '/private/tmp/winferry-native-wine-build/tools/bison/share/info'
+ install-info --info-dir='/private/tmp/winferry-native-wine-build/tools/bison/share/info' '/private/tmp/winferry-native-wine-build/tools/bison/share/info/bison.info'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/man/man1'
+ /usr/bin/install -c -m 644 ./doc/bison.1 doc/yacc.1 '/private/tmp/winferry-native-wine-build/tools/bison/share/man/man1'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/mfcalc'
+ /usr/bin/install -c -m 644 examples/c/mfcalc/calc.h examples/c/mfcalc/mfcalc.y '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/mfcalc'
+ ./build-aux/install-sh -c -d '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/rpcalc'
+ /usr/bin/install -c -m 644 examples/c/rpcalc/rpcalc.y '/private/tmp/winferry-native-wine-build/tools/bison/share/doc/bison/examples/c/rpcalc'

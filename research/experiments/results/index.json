@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "date": "2026-10-10",
   "source_sha256": "545cd3ec947def4c401616110cf490ed64cda3ebbbb4b9b3a5d2d44faef9f373",
   "minimum_macos_target": "26.6",
@@ -36,6 +36,7 @@
         "child_exit": -1,
         "child_signal": -1
       },
+      "child_probe": null,
       "additional_probe_results": [],
       "artifacts": {
         "signature": "plain-linker-signed.signature.txt",
@@ -74,6 +75,7 @@
         "child_exit": -1,
         "child_signal": -1
       },
+      "child_probe": null,
       "additional_probe_results": [],
       "artifacts": {
         "signature": "plain-codesign-adhoc.signature.txt",
@@ -112,6 +114,7 @@
         "child_exit": -1,
         "child_signal": -1
       },
+      "child_probe": null,
       "additional_probe_results": [],
       "artifacts": {
         "signature": "layout-linker-signed.signature.txt",
@@ -150,6 +153,7 @@
         "child_exit": -1,
         "child_signal": -1
       },
+      "child_probe": null,
       "additional_probe_results": [],
       "artifacts": {
         "signature": "layout-codesign-adhoc.signature.txt",

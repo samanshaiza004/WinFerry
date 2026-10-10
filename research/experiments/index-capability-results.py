@@ -45,6 +45,25 @@ for label, layout, signing in variants:
 
     probe_lines = [line for line in read(f"{label}.result.jsonl").splitlines() if line.strip()]
     probe_records = [json.loads(line) for line in probe_lines]
+    parent_probe = next((item for item in probe_records if item.get("mode") == "parent"), None)
+    child_probe = next((item for item in probe_records if item.get("mode") == "4k_child"), None)
+    other_probe_records = [
+        item for item in probe_records
+        if item.get("mode") not in ("parent", "4k_child")
+    ]
+    artifacts = {
+        "signature": f"{label}.signature.txt",
+        "verification": f"{label}.verify.txt",
+        "load_commands": f"{label}.load-commands.txt",
+        "unified_log": f"{label}.unified-log.json",
+        "stderr": f"{label}.stderr.txt",
+    }
+    for key, suffix in (
+        ("unified_log_window", ".unified-log-window.txt"),
+        ("unified_log_diagnostics", ".unified-log-diagnostics.json"),
+    ):
+        if (output / f"{label}{suffix}").exists():
+            artifacts[key] = f"{label}{suffix}"
     digest = hashlib.sha256(binary_path.read_bytes()).hexdigest() if binary_path.exists() else None
     records.append({
         "id": label,
@@ -61,19 +80,16 @@ for label, layout, signing in variants:
         "signature_hash_page_size": int(page_size.group(1)) if page_size else None,
         "team_identifier": team.group(1) if team else None,
         "signature_verification_exit": int(verify_exit.group(1)) if verify_exit else None,
-        "probe": probe_records[0] if probe_records else None,
-        "additional_probe_results": probe_records[1:],
-        "artifacts": {
-            "signature": f"{label}.signature.txt",
-            "verification": f"{label}.verify.txt",
-            "load_commands": f"{label}.load-commands.txt",
-            "unified_log": f"{label}.unified-log.json",
-            "stderr": f"{label}.stderr.txt",
-        },
+        # A successful child writes before the parent, so JSONL ordering is not
+        # a reliable way to identify the parent result.
+        "probe": parent_probe,
+        "child_probe": child_probe,
+        "additional_probe_results": other_probe_records,
+        "artifacts": artifacts,
     })
 
 manifest = {
-    "schema_version": 1,
+    "schema_version": 2,
     "date": "2026-10-10",
     "source_sha256": hashlib.sha256((Path(__file__).parent / "capability-probe.c").read_bytes()).hexdigest(),
     "minimum_macos_target": "26.6",

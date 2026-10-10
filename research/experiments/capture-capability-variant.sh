@@ -44,14 +44,17 @@ else
     echo "verify_exit=$code" >> "$stem.verify.txt"
 fi
 
+started_at=$(date '+%Y-%m-%d %H:%M:%S%z')
 set +e
 "$binary" "$@" > "$stem.result.jsonl" 2> "$stem.stderr.txt"
 run_code=$?
+ended_at=$(date '+%Y-%m-%d %H:%M:%S%z')
 set -e
 echo "process_exit=$run_code" >> "$stem.stderr.txt"
+printf 'start=%s\nend=%s\n' "$started_at" "$ended_at" > "$stem.unified-log-window.txt"
 
 set +e
-/usr/bin/log show --last 5m --style json \
+/usr/bin/log show --start "$started_at" --end "$ended_at" --style json \
     --predicate "process == \"$(basename -- "$binary")\"" \
     > "$stem.unified-log.json" 2> "$stem.unified-log.stderr.txt"
 log_code=$?
@@ -62,6 +65,21 @@ if [ ! -s "$stem.unified-log.json" ]; then
         > "$stem.unified-log.json"
 fi
 
+# A failed posix_spawn may leave no event under the target executable's name.
+# Keep this query in the same short launch window and look for process launch,
+# code-signing, and cross-architecture diagnostics from the relevant services.
+set +e
+/usr/bin/log show --start "$started_at" --end "$ended_at" --style json \
+    --predicate "(process == \"$(basename -- "$binary")\" OR process == \"amfid\" OR process == \"taskgated\" OR process == \"launchd\") OR (subsystem CONTAINS[c] \"codesign\" OR eventMessage CONTAINS[c] \"posix_spawn\" OR eventMessage CONTAINS[c] \"EBADMACHO\" OR eventMessage CONTAINS[c] \"malformed Mach-O\" OR eventMessage CONTAINS[c] \"cross-architecture\")" \
+    > "$stem.unified-log-diagnostics.json" 2> "$stem.unified-log-diagnostics.stderr.txt"
+diagnostics_code=$?
+set -e
+if [ ! -s "$stem.unified-log-diagnostics.json" ]; then
+    printf '{"status":"unavailable","command_exit":%s,"reason":"%s"}\n' \
+        "$diagnostics_code" "$(cat "$stem.unified-log-diagnostics.stderr.txt" | tr '\n' ' ' | sed 's/"/\\"/g')" \
+        > "$stem.unified-log-diagnostics.json"
+fi
+
 repo_dir=$(CDPATH= cd -- "$script_dir/../.." && pwd -P)
 python3 - "$repo_dir" "$stem" <<'PY'
 from pathlib import Path
@@ -70,7 +88,8 @@ import sys
 repo_dir, stem = sys.argv[1:]
 for suffix in (".sha256.txt", ".file.txt", ".load-commands.txt", ".signature.txt",
                ".verify.txt", ".result.jsonl", ".stderr.txt",
-               ".unified-log.json", ".unified-log.stderr.txt"):
+               ".unified-log-window.txt", ".unified-log.json", ".unified-log.stderr.txt",
+               ".unified-log-diagnostics.json", ".unified-log-diagnostics.stderr.txt"):
     path = Path(stem + suffix)
     if path.exists():
         content = path.read_text(errors="replace")

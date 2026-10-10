@@ -1,0 +1,20 @@
+Date: 2026-10-10
+Pinned upstream Wine component build
+
+Configure: PASS
+Command: research/experiments/native-wine-build/build.sh <pinned Wine source> <llvm-mingw 20261006> <Bison 3.8.2 bin> <out-of-tree build>
+Build: PASS
+Command: make -j2
+Make install: NOT RUN
+Wine process / Windows application: NOT RUN
+Apple cross-architecture authorization: NOT TESTED
+Clean second build / byte-for-byte reproducibility: NOT PERFORMED
+
+file(1) results:
+loader/wine: Mach-O 64-bit executable arm64
+tools/wine/wine: Mach-O 64-bit executable arm64
+server/wineserver: Mach-O 64-bit executable arm64
+dlls/ntdll/aarch64-windows/ntdll.dll: PE32+ DLL; LLVM format COFF-ARM64X; IMAGE_FILE_MACHINE_ARM64X (0xA64E)
+dlls/kernel32/aarch64-windows/kernel32.dll: PE32+ DLL; LLVM format COFF-ARM64X; IMAGE_FILE_MACHINE_ARM64X (0xA64E)
+
+All output binaries remain in /private/tmp/winferry-native-wine-build/build-upstream-a15ee2c and are not included in the repository. SHA-256 values are in manifest.json.
