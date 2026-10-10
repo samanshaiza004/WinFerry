@@ -37,6 +37,8 @@ Under LGPL 2.1 section 6, dynamically linking can satisfy the requirement to all
 
 **UNKNOWN, release-blocking:** independent access to the required cross-architecture support capability, provisioning profile policy, ad-hoc development support and notarized distribution must be established. A free Apple Account cannot be assumed sufficient. CodeWeavers' granted capability cannot be assumed available to all accounts, or borrowed by replacing signed binaries. The local unsigned/ad-hoc process probe did not successfully spawn with 4 KB pages; see experiment evidence and [02](02-native-arm64-wine.md). It does not prove the exact cause or that authorized distribution is impossible.
 
+Apple's general managed-capability and Developer ID flows are documented, but the current public macOS capability table does not list this exact entitlement. The specific account request path and Developer ID profile eligibility are tracked as independent unknowns in [the Apple authorization evidence](evidence/apple-authorization-process.md); passing development authorization alone will not pass distribution Gate 0B.
+
 **VERIFIED general JIT rules:** Apple documents `MAP_JIT`, hardened-runtime `com.apple.security.cs.allow-jit`, a single JIT region for that configuration, and thread write/execute protection. **INFERRED:** Wine/FEX executable guest mappings and self-modification need separate validation, not just generic browser JIT entitlement advice. Audit which hardened-runtime exceptions are actually necessary and test child processes. **Never require disabling SIP.** [Apple JIT guidance](https://developer.apple.com/documentation/apple-silicon/porting-just-in-time-compilers-to-apple-silicon).
 
 ## Windows VM licensing

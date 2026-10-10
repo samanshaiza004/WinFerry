@@ -23,7 +23,7 @@ No developer profile, restricted entitlement, Developer ID signing identity or n
 
 ## Native Wine build investigation: performed, build-only
 
-The upstream Wine source is pinned to commit [`a15ee2ccf20e2fc9f470badd916855801933d31f`](https://github.com/wine-mirror/wine/commit/a15ee2ccf20e2fc9f470badd916855801933d31f), and the Windows cross-toolchain is the official `llvm-mingw 20261006` release (LLVM 23.1.3). The full configured component build completed successfully. It produced ARM64 Mach-O host tools and ARM64X PE `ntdll.dll`/`kernel32.dll` outputs; hashes, configure/build logs, and exact inputs are recorded in [native-wine-build](native-wine-build/README.md). The build does not test Apple authorization, execute Wine, or add the native 4 KB/process-layout work reported by CrossOver. No Windows executable was run, and the build has not yet been repeated from a second clean directory for byte-for-byte reproducibility.
+The upstream Wine source is pinned to commit [`a15ee2ccf20e2fc9f470badd916855801933d31f`](https://github.com/wine-mirror/wine/commit/a15ee2ccf20e2fc9f470badd916855801933d31f), and the Windows cross-toolchain is the official `llvm-mingw 20261006` release (LLVM 23.1.3). Two full clean component builds passed. They produced ARM64 Mach-O host tools and ARM64X PE `ntdll.dll`/`kernel32.dll` outputs. Raw hashes differ, with selected code/ABI equivalence and the output-path and debug-identity differences documented in the [comparison report](native-wine-build/build-comparison.md). The builds do not test Apple authorization, execute Wine, or add the native 4 KB/process-layout work reported by CrossOver. No Windows executable was run.
 
 ## Wine runtime milestones: NOT performed
 

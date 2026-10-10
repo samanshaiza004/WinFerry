@@ -1,5 +1,5 @@
 {
-  "status": "build_pass_runtime_not_run",
+  "status": "two_builds_pass_partial_reproducibility_runtime_not_run",
   "runtime_executed": false,
   "host": {
     "model": "MacBookAir10,1",
@@ -8,7 +8,13 @@
     "xcode": "27.0 (27A266a)",
     "host_arch": "arm64",
     "host_compiler": "Apple clang 21.0.0 (clang-2100.3.34.2)",
-    "sip": "enabled"
+    "sip": "enabled",
+    "selected_developer_directory": "/Applications/Xcode.app/Contents/Developer",
+    "macos_sdk": {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+      "version": "27.0",
+      "build": "26A425"
+    }
   },
   "source": {
     "repository": "https://github.com/wine-mirror/wine",
@@ -23,17 +29,36 @@
     "targets_verified": [
       "aarch64-w64-windows-gnu",
       "arm64ec-w64-windows-gnu"
-    ]
+    ],
+    "xcodebuild": "Xcode 27.0 (27A266a)"
   },
   "build_dependencies": {
     "bison": "3.8.2 source-built in temporary prefix; source archive sha256 9bba0214ccf7f1079c5d59210045227bcf619519840ebfa80cd3849cff5a5bf2",
     "system_bison": "2.3; rejected by Wine configure",
     "pkg_config": "/opt/homebrew/bin/pkg-config 3.0.5",
-    "freetype_pkg_config_version": "26.6.20"
+    "freetype_pkg_config_version": "26.6.20",
+    "homebrew": "7.0.1",
+    "pkg_config_path": "/opt/homebrew/bin/pkg-config",
+    "pkg_config_formula": "pkgconf 3.0.5",
+    "freetype_formula": "freetype 2.14.3",
+    "freetype_pc_version": "26.6.20",
+    "freetype_pc_dir": "/opt/homebrew/Cellar/freetype/2.14.3/lib/pkgconfig",
+    "freetype_pkg_config_flags": "-I/opt/homebrew/opt/freetype/include/freetype2 -I/opt/homebrew/opt/libpng/include/libpng16 -L/opt/homebrew/opt/freetype/lib -lfreetype"
   },
   "configure": {
-    "requested_archs": ["aarch64", "arm64ec"],
-    "disabled": ["x", "cups", "pulse", "alsa", "gstreamer", "vulkan", "tests"],
+    "requested_archs": [
+      "aarch64",
+      "arm64ec"
+    ],
+    "disabled": [
+      "x",
+      "cups",
+      "pulse",
+      "alsa",
+      "gstreamer",
+      "vulkan",
+      "tests"
+    ],
     "host_cc": "/usr/bin/clang",
     "host_cxx": "/usr/bin/clang++",
     "host_arch_flags": "-arch arm64",
@@ -41,7 +66,10 @@
     "build_command": "make -j2",
     "build_result": "pass",
     "make_install": false,
-    "clean_second_build_comparison": "not performed"
+    "clean_second_build_comparison": "performed: raw hashes differ; selected code and ABI sections match or are equivalent under documented path/debug-identity normalization; not byte-for-byte reproducible",
+    "second_build_result": "pass",
+    "second_build_command": "make -j2",
+    "second_build_directory": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second"
   },
   "build_directory": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c",
   "verified_artifacts": [
@@ -78,7 +106,80 @@
     "bison_install_log": "logs/bison-install.log",
     "configure_log": "logs/configure.log",
     "build_log": "logs/build.log",
-    "build_result": "logs/build-result.txt"
+    "build_result": "logs/build-result.txt",
+    "second_configure_log": "logs-second/configure.log",
+    "second_build_log": "logs-second/build.log",
+    "second_build_result": "logs-second/build-result.txt",
+    "section_comparison": "compare-second-build.json",
+    "macho_disassembly_comparison": "compare-macho-disassembly.json",
+    "comparison_notes": "build-comparison.md"
   },
-  "interpretation": "Full configured source/toolchain build succeeded. The native Mach-O and ARM64X PE file formats were inspected. No Wine runtime, Windows process, 4 KB child, or FEX path was executed; the source audit confirms that this upstream revision lacks the new Darwin execution changes."
+  "interpretation": "Two clean pinned component builds completed successfully and produced the expected native Mach-O and ARM64X PE formats. Raw artifact hashes differ; selected executable and ABI sections match, with path-dependent literal addresses and generated debug identities localized in build-comparison.md and machine-readable comparison reports. This is partial reproducibility, not byte-for-byte reproducibility. No Wine runtime, Windows process, 4 KB child, or FEX path was executed; the pinned upstream source lacks the audited Darwin execution changes.",
+  "second_build": {
+    "build_directory": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second",
+    "result": "pass",
+    "build_command": "make -j2",
+    "make_install": false,
+    "runtime_executed": false,
+    "verified_artifacts": [
+      {
+        "path": "loader/wine",
+        "format": "Mach-O-64 cpu=0x100000c",
+        "sha256": "58e4d07b465e8a51a8587e935b04eb752a9065ad662405852d6883ebd0d36460",
+        "raw_identical_to_first": false,
+        "code_sections_identical": true,
+        "abi_metadata_sections_identical": true
+      },
+      {
+        "path": "tools/wine/wine",
+        "format": "Mach-O-64 cpu=0x100000c",
+        "sha256": "a40faa47770bd9c895202bb347b01c382d5e3a6c30a832eae03ac58c64a6ad92",
+        "raw_identical_to_first": false,
+        "code_sections_identical": false,
+        "abi_metadata_sections_identical": true
+      },
+      {
+        "path": "server/wineserver",
+        "format": "Mach-O-64 cpu=0x100000c",
+        "sha256": "b3be5136afd55b5d93d505fa080768bffbc27677ddbda1ceb7302cf4d7d3383b",
+        "raw_identical_to_first": false,
+        "code_sections_identical": false,
+        "abi_metadata_sections_identical": true
+      },
+      {
+        "path": "dlls/ntdll/aarch64-windows/ntdll.dll",
+        "format": "PE machine=0xaa64",
+        "sha256": "1429e451680b00fc599915015b6b2abec877f3ca6fa7602e8860d446ff9e2caf",
+        "raw_identical_to_first": false,
+        "code_sections_identical": true,
+        "abi_metadata_sections_identical": true
+      },
+      {
+        "path": "dlls/kernel32/aarch64-windows/kernel32.dll",
+        "format": "PE machine=0xaa64",
+        "sha256": "87f6df17ebbeabb317f58a4987dd9665e610911e957df97542fdb0c2e8436dca",
+        "raw_identical_to_first": false,
+        "code_sections_identical": true,
+        "abi_metadata_sections_identical": true
+      }
+    ],
+    "logs": {
+      "configure": "logs-second/configure.log",
+      "build": "logs-second/build.log",
+      "result": "logs-second/build-result.txt"
+    }
+  },
+  "comparison": {
+    "status": "partial_pass_not_byte_for_byte_reproducible",
+    "all_artifact_formats_identical": true,
+    "all_raw_hashes_identical": false,
+    "artifact_count": 5,
+    "all_abi_metadata_sections_identical": true,
+    "all_pe_code_sections_identical": true,
+    "all_macho_instruction_sequences_identical_after_literal_offset_normalization": true,
+    "section_report": "compare-second-build.json",
+    "disassembly_report": "compare-macho-disassembly.json",
+    "interpretation": "Output-root strings change Mach-O helper literal offsets; PE CodeView timestamp/PDB GUID and DWARF build-root paths also differ. No code signing was performed. See build-comparison.md.",
+    "raw_hash_matches_count": 0
+  }
 }

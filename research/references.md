@@ -156,6 +156,16 @@ Research accessed 2026-10-10; cutoff is this date. Immutable revisions and relev
 135. [Apple App Sandbox](https://developer.apple.com/documentation/security/app-sandbox) — cited in 06-licensing-security.md.
 136. [DXMT policy](https://raw.githubusercontent.com/3Shain/dxmt/main/CONTRIBUTING.md) — cited in 06-licensing-security.md.
 137. [REA lawful-analysis disclaimer](https://github.com/morluto/rea#disclaimer) — cited in 06-licensing-security.md.
+138. [Apple capability requests](https://developer.apple.com/help/account/capabilities/capability-requests/) — cited in evidence/apple-authorization-process.md.
+139. [Apple provisioning with managed capabilities](https://developer.apple.com/help/account/reference/provisioning-with-managed-capabilities) — cited in evidence/apple-authorization-process.md.
+140. [Apple supported capabilities for macOS](https://developer.apple.com/help/account/reference/supported-capabilities-macos) — cited in evidence/apple-authorization-process.md.
+141. [Apple Developer ID certificate and profile behavior](https://developer.apple.com/help/account/certificates/create-developer-id-certificates/) — cited in evidence/apple-authorization-process.md.
+142. [Apple Developer technical support](https://developer.apple.com/support/technical/) — cited in evidence/apple-authorization-process.md.
+143. [Experimental Wine fork comparison, base to pinned head](https://github.com/gzimbric/wine-arm64-macos/compare/2550c238151a00e43908561f32b6e131603ec6f7...21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6) — cited in evidence/native-wine-minimal-patch-queue.md and 02-native-arm64-wine.md.
+144. [Experimental 4 KB loader re-exec at pinned head](https://github.com/gzimbric/wine-arm64-macos/blob/21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6/loader/main.c#L203) — cited in evidence/native-wine-minimal-patch-queue.md.
+145. [Experimental ARM64 x18 helpers and signal handlers](https://github.com/gzimbric/wine-arm64-macos/blob/21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6/dlls/ntdll/unix/signal_arm64.c#L64) — cited in evidence/native-wine-minimal-patch-queue.md.
+146. [Experimental ARM64EC MAP_JIT path](https://github.com/gzimbric/wine-arm64-macos/blob/21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6/dlls/ntdll/unix/virtual.c#L2258) — cited in evidence/native-wine-minimal-patch-queue.md.
+147. [Experimental fork's manual loader link flags](https://github.com/gzimbric/wine-arm64-macos/blob/21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6/docs/macos-arm64/BUILD.md#L32) — cited in evidence/native-wine-minimal-patch-queue.md.
 
 ## Access limitations
 

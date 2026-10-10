@@ -1,0 +1,47 @@
+{
+  "method": "otool -tvV; normalize only immediates on instructions explicitly annotated 'literal pool for:'; retain all other disassembly lines; literal strings are separately compared by section hashes",
+  "reference_build": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c",
+  "candidate_build": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second",
+  "all_normalized_disassemblies_identical": true,
+  "artifacts": [
+    {
+      "path": "loader/wine",
+      "normalized_disassembly_identical": true,
+      "normalized_line_counts": [
+        156,
+        156
+      ],
+      "literal_pool_reference_lines": [
+        6,
+        6
+      ],
+      "differences": []
+    },
+    {
+      "path": "tools/wine/wine",
+      "normalized_disassembly_identical": true,
+      "normalized_line_counts": [
+        438,
+        438
+      ],
+      "literal_pool_reference_lines": [
+        21,
+        21
+      ],
+      "differences": []
+    },
+    {
+      "path": "server/wineserver",
+      "normalized_disassembly_identical": true,
+      "normalized_line_counts": [
+        113432,
+        113432
+      ],
+      "literal_pool_reference_lines": [
+        3998,
+        3998
+      ],
+      "differences": []
+    }
+  ]
+}

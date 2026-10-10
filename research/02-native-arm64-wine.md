@@ -49,6 +49,8 @@ Pinned upstream mirror: **a15ee2ccf20e2fc9f470badd916855801933d31f**, committed 
 
 **REPORTED:** Its author exercised Windows ARM64 and x64/i386 through external FEX/DXMT on one development machine. **VERIFIED:** The same notes explicitly omit external integration patches, production JIT handling and clean-machine reproduction. Do not adopt all sixteen changes wholesale: several are application workarounds or experimental synchronization rather than prerequisites. Prefer upstream loader/ABI work, then a narrow reviewed patch queue.
 
+The proposed split between a minimum native Wine builtin and deferred FEX/JIT/graphics work is documented in [the Darwin patch queue](evidence/native-wine-minimal-patch-queue.md). A GitHub compare of fork base `2550c238151a00e43908561f32b6e131603ec6f7` to `21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6` reports 21 commits ahead and 44 changed files. This includes a substantial in-process synchronization backend and app-specific fixes. The low-address linker flags are documented as a manual link command rather than wired into the fork's build configuration, so they still need a reproducible build-system change.
+
 MR11638 is a different Apple Silicon proposal using relocated shared data and old-SDK x18 behavior; MR11668 concerns CPU identification. Mailing-list mirrors show discussion/approval events, but approval is not synonymous with complete native support. Wine GitLab's anti-bot access denied direct MR inspection, so merged state of the complete platform series remains **UNKNOWN**. [MR11638](https://gitlab.winehq.org/wine/wine/-/merge_requests/11638), [August mirror](https://list.winehq.org/hyperkitty/list/wine-gitlab@list.winehq.org/latest?count=25&page=35).
 
 ## Answer to the stock-Mac installation question
