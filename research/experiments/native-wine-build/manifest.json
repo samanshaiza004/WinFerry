@@ -112,9 +112,20 @@
     "second_build_result": "logs-second/build-result.txt",
     "section_comparison": "compare-second-build.json",
     "macho_disassembly_comparison": "compare-macho-disassembly.json",
-    "comparison_notes": "build-comparison.md"
+    "comparison_notes": "build-comparison.md",
+    "macho_signature_audit": "signature-audit.json",
+    "macho_signature_audit_script": "audit-macho-signatures.py",
+    "darwin_loader_build_report": "darwin-loader-build.md",
+    "darwin_loader_build_result": "darwin-loader-build.json",
+    "darwin_loader_build_script": "build-darwin-loader-only.sh",
+    "darwin_loader_contract_test": "test-darwin-loader-contract.py",
+    "darwin_loader_patch": "patches/darwin-build-only/0001-loader-request-4k-process-pages.patch",
+    "darwin_loader_build_logs": "logs-darwin-loader/final-success/",
+    "darwin_loader_artifact_verifier": "verify-darwin-loader-artifact.py",
+    "darwin_loader_artifact_verification": "logs-darwin-loader/final-success/artifact-verification.json",
+    "darwin_loader_build_result_log": "logs-darwin-loader/final-success/build-result.txt"
   },
-  "interpretation": "Two clean pinned component builds completed successfully and produced the expected native Mach-O and ARM64X PE formats. Raw artifact hashes differ; selected executable and ABI sections match, with path-dependent literal addresses and generated debug identities localized in build-comparison.md and machine-readable comparison reports. This is partial reproducibility, not byte-for-byte reproducibility. No Wine runtime, Windows process, 4 KB child, or FEX path was executed; the pinned upstream source lacks the audited Darwin execution changes.",
+  "interpretation": "Two clean pinned component builds completed successfully and produced the expected native Mach-O and ARM64X PE formats. Raw artifact hashes differ; selected executable and ABI sections match, with path-dependent literal addresses and generated debug identities localized in build-comparison.md and machine-readable comparison reports. This is partial reproducibility, not byte-for-byte reproducibility. The Mach-O executables have valid linker-generated ad-hoc signatures with no Team ID; no Developer ID signing or provisioning was performed. No Wine runtime, Windows process, 4 KB child, or FEX path was executed; the pinned upstream source lacks the audited Darwin execution changes.",
   "second_build": {
     "build_directory": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second",
     "result": "pass",
@@ -179,7 +190,24 @@
     "all_macho_instruction_sequences_identical_after_literal_offset_normalization": true,
     "section_report": "compare-second-build.json",
     "disassembly_report": "compare-macho-disassembly.json",
-    "interpretation": "Output-root strings change Mach-O helper literal offsets; PE CodeView timestamp/PDB GUID and DWARF build-root paths also differ. No code signing was performed. See build-comparison.md.",
-    "raw_hash_matches_count": 0
+    "interpretation": "Output-root strings change Mach-O helper literal offsets; PE CodeView timestamp/PDB GUID and DWARF build-root paths also differ. All six Mach-O executables contain valid linker-generated ad-hoc signatures with no Team ID; no Developer ID signing or provisioning was performed. See build-comparison.md and signature-audit.json.",
+    "raw_hash_matches_count": 0,
+    "all_literal_pool_targets_match_after_exact_install_prefix_normalization": true,
+    "all_macho_files_have_valid_linker_generated_adhoc_signatures": true,
+    "developer_id_identity_or_provisioning_present": false
+  },
+  "darwin_loader_build_only": {
+    "status": "pass_build_only_runtime_not_run",
+    "source_patch_static_test": "pass",
+    "native_arm64_loader_build": "pass",
+    "pagezero_vmsize": "0x0000000170000000",
+    "text_vmaddr": "0x0000000170000000",
+    "adhoc_signature_verified": true,
+    "runtime_executed": false,
+    "4k_process_launch_attempted": false,
+    "gate_0a_authorization": "unknown_not_tested",
+    "gate_0b_distribution": "unknown_not_tested",
+    "report": "darwin-loader-build.md",
+    "machine_readable_result": "darwin-loader-build.json"
   }
 }

@@ -1,0 +1,134 @@
+{
+  "method": "otool -l LC_CODE_SIGNATURE inspection; codesign -dv --verbose=4 metadata; codesign --verify --strict --verbose=2 validation",
+  "all_have_lc_code_signature": true,
+  "all_signatures_are_adhoc": true,
+  "all_signatures_verify": true,
+  "builds": [
+    {
+      "build": "reference",
+      "root": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c",
+      "artifacts": [
+        {
+          "path": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c/loader/wine",
+          "otool_exit_code": 0,
+          "lc_code_signature_present": true,
+          "lc_code_signature": {
+            "cmdsize": 16,
+            "dataoff": 9744,
+            "datasize": 216
+          },
+          "codesign_display_exit_code": 0,
+          "identifier": "wine",
+          "signature_kind": "adhoc",
+          "team_identifier": "not set",
+          "code_directory_flags": "0x20002(adhoc,linker-signed)",
+          "cdhash": "bbaa3f26d56a6fa7ff92dbde3199e1ab89255a49",
+          "page_size": "4096",
+          "codesign_verify_exit_code": 0,
+          "codesign_verify_output": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c/loader/wine: valid on disk\n/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c/loader/wine: satisfies its Designated Requirement"
+        },
+        {
+          "path": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c/tools/wine/wine",
+          "otool_exit_code": 0,
+          "lc_code_signature_present": true,
+          "lc_code_signature": {
+            "cmdsize": 16,
+            "dataoff": 35024,
+            "datasize": 408
+          },
+          "codesign_display_exit_code": 0,
+          "identifier": "wine",
+          "signature_kind": "adhoc",
+          "team_identifier": "not set",
+          "code_directory_flags": "0x20002(adhoc,linker-signed)",
+          "cdhash": "f00fd81704b787755b14cea97bb6f8c3ccc7d4c4",
+          "page_size": "4096",
+          "codesign_verify_exit_code": 0,
+          "codesign_verify_output": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c/tools/wine/wine: valid on disk\n/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c/tools/wine/wine: satisfies its Designated Requirement"
+        },
+        {
+          "path": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c/server/wineserver",
+          "otool_exit_code": 0,
+          "lc_code_signature_present": true,
+          "lc_code_signature": {
+            "cmdsize": 16,
+            "dataoff": 842048,
+            "datasize": 6712
+          },
+          "codesign_display_exit_code": 0,
+          "identifier": "wineserver",
+          "signature_kind": "adhoc",
+          "team_identifier": "not set",
+          "code_directory_flags": "0x20002(adhoc,linker-signed)",
+          "cdhash": "99a4c1bbf12c9c2e6abce81f08dd847dd02afc75",
+          "page_size": "4096",
+          "codesign_verify_exit_code": 0,
+          "codesign_verify_output": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c/server/wineserver: valid on disk\n/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c/server/wineserver: satisfies its Designated Requirement"
+        }
+      ]
+    },
+    {
+      "build": "candidate",
+      "root": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second",
+      "artifacts": [
+        {
+          "path": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second/loader/wine",
+          "otool_exit_code": 0,
+          "lc_code_signature_present": true,
+          "lc_code_signature": {
+            "cmdsize": 16,
+            "dataoff": 9744,
+            "datasize": 216
+          },
+          "codesign_display_exit_code": 0,
+          "identifier": "wine",
+          "signature_kind": "adhoc",
+          "team_identifier": "not set",
+          "code_directory_flags": "0x20002(adhoc,linker-signed)",
+          "cdhash": "e4abd47253d8d657d3844f46dfaed5eafa1abf4b",
+          "page_size": "4096",
+          "codesign_verify_exit_code": 0,
+          "codesign_verify_output": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second/loader/wine: valid on disk\n/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second/loader/wine: satisfies its Designated Requirement"
+        },
+        {
+          "path": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second/tools/wine/wine",
+          "otool_exit_code": 0,
+          "lc_code_signature_present": true,
+          "lc_code_signature": {
+            "cmdsize": 16,
+            "dataoff": 35024,
+            "datasize": 408
+          },
+          "codesign_display_exit_code": 0,
+          "identifier": "wine",
+          "signature_kind": "adhoc",
+          "team_identifier": "not set",
+          "code_directory_flags": "0x20002(adhoc,linker-signed)",
+          "cdhash": "61da3bdb1074df88742a8ede3420cc90cdd253c0",
+          "page_size": "4096",
+          "codesign_verify_exit_code": 0,
+          "codesign_verify_output": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second/tools/wine/wine: valid on disk\n/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second/tools/wine/wine: satisfies its Designated Requirement"
+        },
+        {
+          "path": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second/server/wineserver",
+          "otool_exit_code": 0,
+          "lc_code_signature_present": true,
+          "lc_code_signature": {
+            "cmdsize": 16,
+            "dataoff": 842352,
+            "datasize": 6712
+          },
+          "codesign_display_exit_code": 0,
+          "identifier": "wineserver",
+          "signature_kind": "adhoc",
+          "team_identifier": "not set",
+          "code_directory_flags": "0x20002(adhoc,linker-signed)",
+          "cdhash": "09137f14be7dfd3ee304bae0f365b173ab738b56",
+          "page_size": "4096",
+          "codesign_verify_exit_code": 0,
+          "codesign_verify_output": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second/server/wineserver: valid on disk\n/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second/server/wineserver: satisfies its Designated Requirement"
+        }
+      ]
+    }
+  ]
+}

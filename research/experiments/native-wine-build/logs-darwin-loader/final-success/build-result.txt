@@ -1,0 +1,6 @@
+PATCH=PASS
+CONFIGURE=PASS
+LOADER_LINK=PASS
+ARTIFACT_ARCH=arm64
+RUNTIME=NOT_RUN
+OUTPUT_DIR=/private/tmp/winferry-native-wine-build/darwin-loader-only-finalverify

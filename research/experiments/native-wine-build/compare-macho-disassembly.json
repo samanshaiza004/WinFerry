@@ -1,5 +1,5 @@
 {
-  "method": "otool -tvV; normalize only immediates on instructions explicitly annotated 'literal pool for:'; retain all other disassembly lines; literal strings are separately compared by section hashes",
+  "method": "otool -tvV; normalize only immediates on instructions explicitly annotated 'literal pool for:'; normalize a target only when the resolved string begins with that build's exact quoted /install path at a path boundary; compare every resolved literal target and retain all other disassembly lines",
   "reference_build": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c",
   "candidate_build": "/private/tmp/winferry-native-wine-build/build-upstream-a15ee2c-second",
   "all_normalized_disassemblies_identical": true,
@@ -15,6 +15,8 @@
         6,
         6
       ],
+      "literal_pool_targets_identical_after_install_prefix_normalization": true,
+      "literal_pool_target_mismatches": [],
       "differences": []
     },
     {
@@ -28,6 +30,8 @@
         21,
         21
       ],
+      "literal_pool_targets_identical_after_install_prefix_normalization": true,
+      "literal_pool_target_mismatches": [],
       "differences": []
     },
     {
@@ -41,6 +45,8 @@
         3998,
         3998
       ],
+      "literal_pool_targets_identical_after_install_prefix_normalization": true,
+      "literal_pool_target_mismatches": [],
       "differences": []
     }
   ]

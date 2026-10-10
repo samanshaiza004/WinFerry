@@ -1,0 +1,30 @@
+{
+  "path": "/private/tmp/winferry-native-wine-build/darwin-loader-only-finalverify/build/loader/wine",
+  "format": "/private/tmp/winferry-native-wine-build/darwin-loader-only-finalverify/build/loader/wine: Mach-O 64-bit executable arm64",
+  "sha256": "4fdf9964898a091b13a1788fd55eeeb6bc0f68d483cff1bb3d26773d5e8dde8a",
+  "segments": {
+    "__PAGEZERO": {
+      "vmaddr": 0,
+      "vmsize": 6174015488
+    },
+    "__TEXT": {
+      "vmaddr": 6174015488,
+      "vmsize": 8192
+    },
+    "__DATA_CONST": {
+      "vmaddr": 6174023680,
+      "vmsize": 4096
+    },
+    "__DATA": {
+      "vmaddr": 6174027776,
+      "vmsize": 4096
+    },
+    "__LINKEDIT": {
+      "vmaddr": 6174031872,
+      "vmsize": 4096
+    }
+  },
+  "lc_code_signature_present": true,
+  "codesign_verify_exit_code": 0,
+  "runtime_executed": false
+}
