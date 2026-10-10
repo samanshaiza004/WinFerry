@@ -25,9 +25,9 @@ No developer profile, restricted entitlement, Developer ID signing identity or n
 
 The upstream Wine source is pinned to commit [`a15ee2ccf20e2fc9f470badd916855801933d31f`](https://github.com/wine-mirror/wine/commit/a15ee2ccf20e2fc9f470badd916855801933d31f), and the Windows cross-toolchain is the official `llvm-mingw 20261006` release (LLVM 23.1.3). Two full clean component builds passed. They produced ARM64 Mach-O host tools and ARM64X PE `ntdll.dll`/`kernel32.dll` outputs. Raw hashes differ, with selected code/ABI equivalence and the output-path and debug-identity differences documented in the [comparison report](native-wine-build/build-comparison.md). The builds do not test Apple authorization, execute Wine, or add the native 4 KB/process-layout work reported by CrossOver. No Windows executable was run. A separate, bounded follow-up patch build now compiles the ARM64 loader with the reported 4 KB re-exec code and low-address Mach-O layout; `otool` verifies the segment addresses, but the loader was not run and the 4 KB child was not attempted. See the [loader build-only record](native-wine-build/darwin-loader-build.md) and [patch queue update](../evidence/native-wine-minimal-patch-queue.md).
 
-## Wine runtime milestones: NOT performed
+## Native macOS Wine runtime milestones: NOT performed
 
-Native Wine A (ARM64 built-in), FEX B (x64 console), and GUI C are **UNTESTED**. No FEX runtime or Windows installer was installed. The component build result is not a runtime test and cannot resolve an authorization denial or stand in for a successful launch.
+Native Wine A on macOS and GUI C remain **UNTESTED**. Separately, Hangover's ARM64 Linux reference path passed source-built ARM64 and x64 console PEs, with five later x64 passes across five fresh Wine prefixes. Two attempts in one earlier prefix raised `FEXCore::Assert::ForcedAssertEv`; this remains unexplained. See the [Linux experiment record](linux-arm64-reference/README.md) and its captured [results](linux-arm64-reference/results/manifest.json). This does not resolve macOS authorization or establish broad x64 compatibility.
 
 ## Reproduction
 

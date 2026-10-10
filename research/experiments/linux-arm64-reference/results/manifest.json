@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-10-10",
+  "overall_status": "partial-pass-with-prefix-anomaly",
+  "scope": "ARM64 Linux Hangover reference experiment; not a WinFerry macOS runtime test",
+  "host": {
+    "os": "macOS 27.0",
+    "build": "26A428",
+    "architecture": "arm64",
+    "hardware": "Apple M1 MacBook Air",
+    "kernel_identifies_soc": "T8103",
+    "hardware_model_sysctl": "blocked by sandbox",
+    "sip_or_security_changes": false
+  },
+  "vm": {
+    "manager": "Colima 0.7.6",
+    "backend": "Virtualization.framework vz",
+    "configured_vcpus": 2,
+    "configured_memory_gib": 3,
+    "configured_disk_gib": 24,
+    "docker_context": "colima-winferry-reference",
+    "container_id": "796f029490fbde98b371a371d5c711d120149e6d9ad3639499d0ddcdfcbb9172",
+    "rosetta_linux_feature_selected": false,
+    "guest_architecture_evidence": "Docker reports linux/aarch64; guest uname -m reports aarch64"
+  },
+  "guest": {
+    "distribution": "Ubuntu 24.04.5 LTS (Noble Numbat)",
+    "kernel": "6.8.0-47-generic",
+    "architecture": "aarch64",
+    "page_size_bytes": 4096,
+    "visible_vcpus": 2,
+    "visible_memory_gib_approx": 2.8,
+    "cpu_features_observed": ["fp", "asimd", "crc32"],
+    "container_overlay_gib_approx": 23,
+    "windows_test_process_user": "root in disposable container"
+  },
+  "runtime": {
+    "project": "Hangover",
+    "release": "11.16",
+    "hangover_commit": "56e385b7ff490edd281b288f420677093563560b",
+    "wine_commit": "3ea3a14941b6a122b892c84141ce9662c008081e",
+    "fex_commit": "fa556167d5a64ec7adb5503c2aa15b169c292cac",
+    "wine_version_output": "wine-11.16 (Hangover)",
+    "release_asset": "hangover_11.16_ubuntu2404_noble_arm64.tar",
+    "release_asset_sha256": "94611dad2b23978d35825a018c81b3947caaec174aa04c052849d37bc6a39e72",
+    "packages": [
+      {
+        "name": "hangover-wine",
+        "version": "11.16~noble",
+        "sha256": "f425b2063b069947efcc553215de650fc0217cff19f52274f36f225c048ca5b8"
+      },
+      {
+        "name": "hangover-libarm64ecfex",
+        "version": "11.16",
+        "sha256": "a4a197b04f63fd340bfdfe53049be6abd196e23b4c1c528cc80536b363e19ad0"
+      },
+      {
+        "name": "hangover-wowbox64",
+        "version": "11.16",
+        "sha256": "ceeb3ec77eee073a2c867725d1153bc8c697bcacefb896149c9a7a45c798635a"
+      }
+    ],
+    "fex_module": {
+      "path": "/usr/lib/wine/aarch64-windows/libarm64ecfex.dll",
+      "pe_machine": "IMAGE_FILE_MACHINE_ARM64EC (0xA641)",
+      "sha256": "45522fdea5edaf58066d0f265c0b42a4eac361393718625caf4a3639bf9246bf"
+    },
+    "package_tls_verification": "enabled; HTTPS package metadata and package signatures verified"
+  },
+  "build": {
+    "source": "hello-console.c",
+    "source_sha256": "f23f6dcf0f22d9a23d51cfe5e3a3fb025e0ff7cf1182be450a8329da40070621",
+    "toolchain": "llvm-mingw-20261006-ucrt-macos-universal",
+    "clang_version": "23.1.3",
+    "llvm_project_commit": "0d261d1ca552c95a8f007e061c787ac7132fbcbc",
+    "clang_binary_sha256": "88f9ff254e4b1c8456328155e1f5c761ff4d5499033f704975dc1966b24fd7a5",
+    "x86_64_pe_sha256": "3c240da41dad0ddbb009cbf54c0d9750ebee0af60dfd8e9ee5534c89f0a729d1",
+    "x86_64_pe_machine": "IMAGE_FILE_MACHINE_AMD64 (0x8664)",
+    "arm64_pe_sha256": "0962d15a2aef00f4cf1f7fedcc870a8257fc5a425cac7bf3311c7eb3e0c80810",
+    "arm64_pe_machine": "IMAGE_FILE_MACHINE_ARM64 (0xAA64)",
+    "build_command": "LLVM_MINGW=/path/to/llvm-mingw-20261006-ucrt-macos-universal ./build-tests.sh"
+  },
+  "tests": {
+    "expected_stdout": "WinFerry Windows console smoke\r\n",
+    "expected_windows_exit_code": 37,
+    "arm64_native_pe": {
+      "status": "PASS",
+      "stdout_file": "arm64.stdout",
+      "stderr_file": "arm64.stderr",
+      "exit_code_file": "arm64.exit",
+      "observed_exit_code": 37,
+      "paired_fresh_prefix_runs": 2
+    },
+    "x86_64_pe_via_arm64ec_fex": {
+      "status": "PASS_LIMITED",
+      "stdout_file": "x64.stdout",
+      "stderr_file": "x64.stderr",
+      "exit_code_file": "x64.exit",
+      "observed_wine_exit_code": 37,
+      "module_selected": true,
+      "successful_runs": 5,
+      "fresh_wine_prefixes": 5,
+      "success_evidence_directories": [
+        "paired-pass",
+        "paired-pass-2",
+        "x64-first-pass-1",
+        "x64-first-pass-2",
+        "x64-first-isolated-home-pass"
+      ],
+      "unexplained_prior_failures": {
+        "count": 2,
+        "same_wine_prefix": true,
+        "exception": "0xc000001d (EXCEPTION_ILLEGAL_INSTRUCTION)",
+        "symbol": "FEXCore::Assert::ForcedAssertEv",
+        "disassembled_instruction": "hlt #0x1",
+        "triggering_condition": "unknown",
+        "not_reproduced_in_five_later_fresh_prefixes": true,
+        "evidence_directories": [
+          "initial-prefix-failure",
+          "reused-prefix-failure"
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "No Windows application was run through native macOS Wine; all PE tests used the ARM64 Linux Hangover guest.",
+    "No Apple cross-architecture entitlement, Developer ID distribution, or notarization was tested.",
+    "No GUI, graphics, MSI, installer, or user-provided executable was tested.",
+    "The Windows test programs ran as root in a disposable container; this is not a security sandbox recommendation.",
+    "The FEX assertion cause is unresolved; two failures occurred in one prefix, while five later fresh-prefix x64 runs passed.",
+    "This is one package and one small test program; it is not a compatibility or stability claim."
+  ]
+}

@@ -1,0 +1,17 @@
+Command: llvm-objdump -d --arch-name=aarch64 --start-address=0x180165bb0 --stop-address=0x180165bd8 libarm64ecfex.dll
+Runtime base: 0x6ffffa920000
+Exception PC: 0x6ffffaa85bb8
+Exception RVA: 0x165bb8
+DLL image base: 0x180000000
+
+Disassembly of section .text:
+
+0000000180165a58 <_ZN6LogMan3Msg8MFmtImplENS_11DebugLevelsEPKcRKN3fmt3v1217basic_format_argsINS5_7contextEEE>:
+180165bb0: 17ffffd4    b 0x180165b00
+180165bb4: 0006c8e1    <unknown>
+
+0000000180165bb8 <_ZN7FEXCore6Assert12ForcedAssertEv>:
+180165bb8: d4400020    hlt #0x1
+180165bbc: d4200020    brk #0x1
+
+This symbolization identifies the trap instruction at the recorded PC. It does not identify which FEX condition called ForcedAssert.

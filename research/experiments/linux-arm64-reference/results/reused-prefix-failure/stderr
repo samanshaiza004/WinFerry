@@ -1,0 +1,4 @@
+00e0:trace:loaddll:build_module Loaded L"Z:\\tmp\\winferry-hello-console-x64.exe" at 0000000140000000: native
+00e0:trace:loaddll:build_ntdll_module Loaded L"C:\\windows\\system32\\ntdll.dll" at 00006FFFFF970000: builtin
+00e0:trace:loaddll:build_module Loaded L"C:\\windows\\system32\\libarm64ecfex.dll" at 00006FFFFA920000: builtin
+00e0:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x6ffffaa85bb8

@@ -1,0 +1,25 @@
+Linux reference run sequence — 2026-10-10
+
+All commands ran inside the disposable ARM64 Ubuntu 24.04.5 Hangover container. Test PE files were copied from the host-built artifacts described in manifest.json. Every run used WINEDEBUG=+loaddll and the same Hangover 11.16 packages.
+
+Successful paired runs (run-tests.sh executes ARM64 first, then x64 in the same new prefix):
+1. WINEPREFIX=/tmp/winferry-fresh-prefix; logs in paired-pass/; both printed the expected line and returned 37.
+2. WINEPREFIX=/tmp/winferry-fresh-prefix-2; logs in paired-pass-2/; both printed the expected line and returned 37.
+
+Successful x64-first runs in separate fresh prefixes:
+3. WINEPREFIX=/tmp/winferry-x64-first-prefix; logs in x64-first-pass-1/; expected output, exit 37, FEX module selected.
+4. WINEPREFIX=/tmp/winferry-x64-first-prefix-2; logs in x64-first-pass-2/; expected output, exit 37, FEX module selected.
+5. WINEPREFIX=/tmp/winferry-x64-isolated-prefix; logs in x64-first-isolated-home-pass/; expected output, exit 37, FEX module selected. This trial additionally set:
+   HOME=/tmp/winferry-isolated-home
+   XDG_CONFIG_HOME=/tmp/winferry-isolated-home/config
+   XDG_DATA_HOME=/tmp/winferry-isolated-home/data
+   XDG_CACHE_HOME=/tmp/winferry-isolated-home/cache
+   FEX_APP_DATA_LOCATION=/tmp/winferry-isolated-home/fex-data
+   FEX_APP_CONFIG_LOCATION=/tmp/winferry-isolated-home/fex-config
+   FEX_APP_CACHE_LOCATION=/tmp/winferry-isolated-home/fex-cache
+
+Two failures in one prefix:
+1. WINEPREFIX=/tmp/winferry-hangover-prefix HODLL64=libarm64ecfex.dll WINEDEBUG=+loaddll wine /tmp/winferry-hello-console.exe. This first test used an earlier source string; source SHA-256 a1c7b7547f8deaee3101cf537dfbf600cc4ec1d7471fed9a16ef8642b6736590, AMD64 PE SHA-256 ea92663cf4fb46a8e249e61c1d22a16cbd38ed47265f0668278d84ce8f722b85. It returned 29, printed nothing, and hit ForcedAssert; logs are in initial-prefix-failure/.
+2. The same WINEPREFIX with the final AMD64 PE SHA-256 3c240da41dad0ddbb009cbf54c0d9750ebee0af60dfd8e9ee5534c89f0a729d1 at /tmp/winferry-hello-console-x64.exe. It returned 29 and hit the same assertion; logs are in reused-prefix-failure/.
+
+The failure did not recur in the five later fresh-prefix trials. No causal link to the prefix itself has been established; treat the relation as an observation, not a diagnosis.

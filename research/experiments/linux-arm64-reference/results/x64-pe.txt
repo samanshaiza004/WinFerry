@@ -1,0 +1,105 @@
+
+File: /private/tmp/winferry-linux-reference/final/hello-console-x64.exe
+Format: COFF-x86-64
+Arch: x86_64
+AddressSize: 64bit
+ImageFileHeader {
+  Machine: IMAGE_FILE_MACHINE_AMD64 (0x8664)
+  SectionCount: 13
+  TimeDateStamp: 2026-10-10 21:28:38 (0x6ACAAE06)
+  PointerToSymbolTable: 0xE000
+  SymbolCount: 164
+  StringTableSize: 2205
+  OptionalHeaderSize: 240
+  Characteristics [ (0x22)
+    IMAGE_FILE_EXECUTABLE_IMAGE (0x2)
+    IMAGE_FILE_LARGE_ADDRESS_AWARE (0x20)
+  ]
+}
+ImageOptionalHeader {
+  Magic: 0x20B
+  MajorLinkerVersion: 14
+  MinorLinkerVersion: 0
+  SizeOfCode: 4608
+  SizeOfInitializedData: 51712
+  SizeOfUninitializedData: 0
+  AddressOfEntryPoint: 0x13B0
+  BaseOfCode: 0x1000
+  ImageBase: 0x140000000
+  SectionAlignment: 4096
+  FileAlignment: 512
+  MajorOperatingSystemVersion: 6
+  MinorOperatingSystemVersion: 0
+  MajorImageVersion: 0
+  MinorImageVersion: 0
+  MajorSubsystemVersion: 6
+  MinorSubsystemVersion: 0
+  SizeOfImage: 98304
+  SizeOfHeaders: 1024
+  CheckSum: 0x0
+  Subsystem: IMAGE_SUBSYSTEM_WINDOWS_CUI (0x3)
+  Characteristics [ (0x8160)
+    IMAGE_DLL_CHARACTERISTICS_DYNAMIC_BASE (0x40)
+    IMAGE_DLL_CHARACTERISTICS_HIGH_ENTROPY_VA (0x20)
+    IMAGE_DLL_CHARACTERISTICS_NX_COMPAT (0x100)
+    IMAGE_DLL_CHARACTERISTICS_TERMINAL_SERVER_AWARE (0x8000)
+  ]
+  SizeOfStackReserve: 1048576
+  SizeOfStackCommit: 4096
+  SizeOfHeapReserve: 1048576
+  SizeOfHeapCommit: 4096
+  NumberOfRvaAndSize: 16
+  DataDirectory {
+    ExportTableRVA: 0x0
+    ExportTableSize: 0x0
+    ImportTableRVA: 0x34F8
+    ImportTableSize: 0xC8
+    ResourceTableRVA: 0x0
+    ResourceTableSize: 0x0
+    ExceptionTableRVA: 0x6000
+    ExceptionTableSize: 0xB4
+    CertificateTableRVA: 0x0
+    CertificateTableSize: 0x0
+    BaseRelocationTableRVA: 0x7000
+    BaseRelocationTableSize: 0x48
+    DebugRVA: 0x4000
+    DebugSize: 0x1C
+    ArchitectureRVA: 0x0
+    ArchitectureSize: 0x0
+    GlobalPtrRVA: 0x0
+    GlobalPtrSize: 0x0
+    TLSTableRVA: 0x0
+    TLSTableSize: 0x0
+    LoadConfigTableRVA: 0x3370
+    LoadConfigTableSize: 0x138
+    BoundImportRVA: 0x0
+    BoundImportSize: 0x0
+    IATRVA: 0x3718
+    IATSize: 0x158
+    DelayImportDescriptorRVA: 0x0
+    DelayImportDescriptorSize: 0x0
+    CLRRuntimeHeaderRVA: 0x0
+    CLRRuntimeHeaderSize: 0x0
+    ReservedRVA: 0x0
+    ReservedSize: 0x0
+  }
+}
+DOSHeader {
+  Magic: MZ
+  UsedBytesInTheLastPage: 120
+  FileSizeInPages: 1
+  NumberOfRelocationItems: 0
+  HeaderSizeInParagraphs: 4
+  MinimumExtraParagraphs: 0
+  MaximumExtraParagraphs: 0
+  InitialRelativeSS: 0
+  InitialSP: 0
+  Checksum: 0
+  InitialIP: 0
+  InitialRelativeCS: 0
+  AddressOfRelocationTable: 64
+  OverlayNumber: 0
+  OEMid: 0
+  OEMinfo: 0
+  AddressOfNewExeHeader: 120
+}

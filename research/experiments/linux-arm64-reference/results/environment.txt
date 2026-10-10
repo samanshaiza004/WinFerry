@@ -1,0 +1,36 @@
+WinFerry ARM64 Linux reference environment — 2026-10-10
+
+Host:
+  ProductName: macOS
+  ProductVersion: 27.0
+  BuildVersion: 26A428
+  Darwin kernel: 27.0.0 (RELEASE_ARM64_T8103), host architecture arm64
+  Hardware context: Apple M1 MacBook Air (model MacBookAir10,1 in task environment)
+  `sysctl -n hw.model` and `sysctl -n machdep.cpu.brand_string` were blocked by the command sandbox.
+  Colima: 0.7.6, git commit 3ab92f5
+
+VM/container:
+  Colima profile: winferry-reference
+  VM backend: Virtualization.framework (`vz`)
+  Configured resources: 2 vCPUs, 3 GiB memory, 24 GiB disk
+  Docker reports: linux/aarch64
+  No x86-64 Linux emulation or Rosetta-on-Linux feature was selected.
+
+Guest:
+  Ubuntu 24.04.5 LTS (Noble Numbat)
+  Linux 6.8.0-47-generic aarch64
+  `uname -m`: aarch64
+  `getconf PAGESIZE`: 4096
+  `/proc/cpuinfo` features include: fp, asimd, crc32
+  `nproc`: 2
+  `free -h`: 2.8 GiB total, about 2.5 GiB available at capture
+  `df -h /`: 23 GiB overlay, 6.2 GiB used at capture
+
+Runtime:
+  `wine --version`: wine-11.16 (Hangover)
+  hangover-wine: 11.16~noble
+  hangover-libarm64ecfex: 11.16
+  hangover-wowbox64: 11.16
+  FEX PE: IMAGE_FILE_MACHINE_ARM64EC (0xA641)
+
+The test Windows PE files were source-built by WinFerry and executed in the ARM64 Linux container. The process ran as root in the disposable container. No macOS Wine runtime was started, no Apple entitlement or Developer ID identity was used, and SIP/security settings were not changed.
