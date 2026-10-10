@@ -1,0 +1,1 @@
+./capability-probe-plain-codesign-adhoc: Mach-O 64-bit executable arm64

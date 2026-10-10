@@ -1,2 +1,4 @@
 capability-probe
 capability-probe-layout
+capability-probe-*
+/results/capability-probe-*

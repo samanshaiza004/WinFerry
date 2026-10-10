@@ -1,0 +1,27 @@
+Executable=<repository>/research/experiments/results/capability-probe-layout-codesign-adhoc
+Identifier=capability-probe-layout-codesign-adhoc-555549448cb871e51b013eb19ef5910fb9db3084
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=360 flags=0x2(adhoc) hashes=4+2 location=embedded
+VersionPlatform=1
+VersionMin=1705472
+VersionSDK=1769472
+Hash type=sha256 size=32
+CandidateCDHash sha256=93964076c24c2491e821686a46502c780c62c642
+CandidateCDHashFull sha256=93964076c24c2491e821686a46502c780c62c642e5e209c53cffd8e4843f0cbc
+Hash choices=sha256
+CMSDigest=93964076c24c2491e821686a46502c780c62c642e5e209c53cffd8e4843f0cbc
+CMSDigestType=2
+Executable Segment base=0
+Executable Segment limit=16384
+Executable Segment flags=0x1
+Page size=16384
+CDHash=93964076c24c2491e821686a46502c780c62c642
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements count=0 size=12
+warning: Specifying ':' in the path is deprecated and will not work in a future release
+Total signatures=1
+Chosen signature=1
+display_exit=0

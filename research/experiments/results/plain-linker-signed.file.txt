@@ -1,0 +1,1 @@
+./capability-probe-plain: Mach-O 64-bit executable arm64

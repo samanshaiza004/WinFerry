@@ -1,0 +1,3 @@
+./capability-probe-layout-codesign-adhoc: valid on disk
+./capability-probe-layout-codesign-adhoc: satisfies its Designated Requirement
+verify_exit=0

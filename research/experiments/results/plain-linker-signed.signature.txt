@@ -1,0 +1,25 @@
+Executable=<repository>/research/experiments/results/capability-probe-plain
+Identifier=capability-probe-plain
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=399 flags=0x20002(adhoc,linker-signed) hashes=9+0 location=embedded
+VersionPlatform=1
+VersionMin=1705472
+VersionSDK=1769472
+Hash type=sha256 size=32
+CandidateCDHash sha256=efdc32a4957818a15e029f937fa3afe678096cb5
+CandidateCDHashFull sha256=efdc32a4957818a15e029f937fa3afe678096cb54fa89eb4c18c2d2c22242697
+Hash choices=sha256
+CMSDigest=efdc32a4957818a15e029f937fa3afe678096cb54fa89eb4c18c2d2c22242697
+CMSDigestType=2
+Executable Segment base=0
+Executable Segment limit=1480
+Executable Segment flags=0x1
+Page size=4096
+CDHash=efdc32a4957818a15e029f937fa3afe678096cb5
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements=none
+warning: Specifying ':' in the path is deprecated and will not work in a future release
+display_exit=0

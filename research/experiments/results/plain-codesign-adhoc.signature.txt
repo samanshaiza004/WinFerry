@@ -1,0 +1,27 @@
+Executable=<repository>/research/experiments/results/capability-probe-plain-codesign-adhoc
+Identifier=capability-probe-plain-codesign-adhoc-55554944dab978f2274a3d82b549483da338956e
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=327 flags=0x2(adhoc) hashes=3+2 location=embedded
+VersionPlatform=1
+VersionMin=1705472
+VersionSDK=1769472
+Hash type=sha256 size=32
+CandidateCDHash sha256=d3b5f9cde0f318383e969a1beb6e9c36ff0abd2e
+CandidateCDHashFull sha256=d3b5f9cde0f318383e969a1beb6e9c36ff0abd2e6e4c610a06241daebc751e6d
+Hash choices=sha256
+CMSDigest=d3b5f9cde0f318383e969a1beb6e9c36ff0abd2e6e4c610a06241daebc751e6d
+CMSDigestType=2
+Executable Segment base=0
+Executable Segment limit=16384
+Executable Segment flags=0x1
+Page size=16384
+CDHash=d3b5f9cde0f318383e969a1beb6e9c36ff0abd2e
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements count=0 size=12
+warning: Specifying ':' in the path is deprecated and will not work in a future release
+Total signatures=1
+Chosen signature=1
+display_exit=0

@@ -1,0 +1,25 @@
+Executable=<repository>/research/experiments/results/capability-probe-layout
+Identifier=capability-probe-layout
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=528 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded
+VersionPlatform=1
+VersionMin=1705472
+VersionSDK=1769472
+Hash type=sha256 size=32
+CandidateCDHash sha256=83d39e3e5e52678d9b7e73cbc02eb06750e1d5da
+CandidateCDHashFull sha256=83d39e3e5e52678d9b7e73cbc02eb06750e1d5da45e479ceb8ab752a44aa5b09
+Hash choices=sha256
+CMSDigest=83d39e3e5e52678d9b7e73cbc02eb06750e1d5da45e479ceb8ab752a44aa5b09
+CMSDigestType=2
+Executable Segment base=0
+Executable Segment limit=1480
+Executable Segment flags=0x1
+Page size=4096
+CDHash=83d39e3e5e52678d9b7e73cbc02eb06750e1d5da
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements=none
+warning: Specifying ':' in the path is deprecated and will not work in a future release
+display_exit=0

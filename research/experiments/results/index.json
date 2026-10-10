@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "source_sha256": "545cd3ec947def4c401616110cf490ed64cda3ebbbb4b9b3a5d2d44faef9f373",
+  "minimum_macos_target": "26.6",
+  "provisioning_profile": null,
+  "restricted_entitlements": [],
+  "followup_unified_log_query": "unified-log-followup.json",
+  "variants": [
+    {
+      "id": "plain-linker-signed",
+      "layout": "ordinary",
+      "signing": "linker-generated ad-hoc",
+      "binary": "capability-probe-plain",
+      "binary_sha256": "1acceaceb0ed41de46ecefbd32535194c4279665944119d809a4472d73a1080e",
+      "macho_file": "./capability-probe-plain: Mach-O 64-bit executable arm64",
+      "pagezero": {
+        "vmaddr": "0x0000000000000000",
+        "vmsize": "0x0000000100000000"
+      },
+      "signature_flags": "0x20002(adhoc,linker-signed)",
+      "signature_hash_page_size": 4096,
+      "team_identifier": "not set",
+      "signature_verification_exit": 0,
+      "probe": {
+        "mode": "parent",
+        "pid": 56546,
+        "compiled_arch": "arm64",
+        "page_size": 16384,
+        "translated_query_rc": -1,
+        "translated_value": -1,
+        "cross_arch_x86_64": true,
+        "custom_x18_enabled": false,
+        "spawnattr_4k_rc": 0,
+        "spawn_4k_rc": 88,
+        "child_exit": -1,
+        "child_signal": -1
+      },
+      "additional_probe_results": [],
+      "artifacts": {
+        "signature": "plain-linker-signed.signature.txt",
+        "verification": "plain-linker-signed.verify.txt",
+        "load_commands": "plain-linker-signed.load-commands.txt",
+        "unified_log": "plain-linker-signed.unified-log.json",
+        "stderr": "plain-linker-signed.stderr.txt"
+      }
+    },
+    {
+      "id": "plain-codesign-adhoc",
+      "layout": "ordinary",
+      "signing": "explicit ad-hoc",
+      "binary": "capability-probe-plain-codesign-adhoc",
+      "binary_sha256": "c94d52ebf42d5a788369067472691170a1333adecf622531c72efe0043e4d741",
+      "macho_file": "./capability-probe-plain-codesign-adhoc: Mach-O 64-bit executable arm64",
+      "pagezero": {
+        "vmaddr": "0x0000000000000000",
+        "vmsize": "0x0000000100000000"
+      },
+      "signature_flags": "0x2(adhoc)",
+      "signature_hash_page_size": 16384,
+      "team_identifier": "not set",
+      "signature_verification_exit": 0,
+      "probe": {
+        "mode": "parent",
+        "pid": 56577,
+        "compiled_arch": "arm64",
+        "page_size": 16384,
+        "translated_query_rc": -1,
+        "translated_value": -1,
+        "cross_arch_x86_64": true,
+        "custom_x18_enabled": false,
+        "spawnattr_4k_rc": 0,
+        "spawn_4k_rc": 88,
+        "child_exit": -1,
+        "child_signal": -1
+      },
+      "additional_probe_results": [],
+      "artifacts": {
+        "signature": "plain-codesign-adhoc.signature.txt",
+        "verification": "plain-codesign-adhoc.verify.txt",
+        "load_commands": "plain-codesign-adhoc.load-commands.txt",
+        "unified_log": "plain-codesign-adhoc.unified-log.json",
+        "stderr": "plain-codesign-adhoc.stderr.txt"
+      }
+    },
+    {
+      "id": "layout-linker-signed",
+      "layout": "large PAGEZERO",
+      "signing": "linker-generated ad-hoc",
+      "binary": "capability-probe-layout",
+      "binary_sha256": "ed643c34829eb6fa7a4d4892cf8c1a29bbbaa2deb99fa6b4ad90d0683cf81852",
+      "macho_file": "./capability-probe-layout: Mach-O 64-bit executable arm64",
+      "pagezero": {
+        "vmaddr": "0x0000000000000000",
+        "vmsize": "0x0000000170000000"
+      },
+      "signature_flags": "0x20002(adhoc,linker-signed)",
+      "signature_hash_page_size": 4096,
+      "team_identifier": "not set",
+      "signature_verification_exit": 0,
+      "probe": {
+        "mode": "parent",
+        "pid": 56609,
+        "compiled_arch": "arm64",
+        "page_size": 16384,
+        "translated_query_rc": -1,
+        "translated_value": -1,
+        "cross_arch_x86_64": true,
+        "custom_x18_enabled": false,
+        "spawnattr_4k_rc": 0,
+        "spawn_4k_rc": 88,
+        "child_exit": -1,
+        "child_signal": -1
+      },
+      "additional_probe_results": [],
+      "artifacts": {
+        "signature": "layout-linker-signed.signature.txt",
+        "verification": "layout-linker-signed.verify.txt",
+        "load_commands": "layout-linker-signed.load-commands.txt",
+        "unified_log": "layout-linker-signed.unified-log.json",
+        "stderr": "layout-linker-signed.stderr.txt"
+      }
+    },
+    {
+      "id": "layout-codesign-adhoc",
+      "layout": "large PAGEZERO",
+      "signing": "explicit ad-hoc",
+      "binary": "capability-probe-layout-codesign-adhoc",
+      "binary_sha256": "8f7cc6fe290aca367f1e90e92f02611d6e8187dfa4bf41a01cb6e785ea4a8db9",
+      "macho_file": "./capability-probe-layout-codesign-adhoc: Mach-O 64-bit executable arm64",
+      "pagezero": {
+        "vmaddr": "0x0000000000000000",
+        "vmsize": "0x0000000170000000"
+      },
+      "signature_flags": "0x2(adhoc)",
+      "signature_hash_page_size": 16384,
+      "team_identifier": "not set",
+      "signature_verification_exit": 0,
+      "probe": {
+        "mode": "parent",
+        "pid": 56646,
+        "compiled_arch": "arm64",
+        "page_size": 16384,
+        "translated_query_rc": -1,
+        "translated_value": -1,
+        "cross_arch_x86_64": true,
+        "custom_x18_enabled": false,
+        "spawnattr_4k_rc": 0,
+        "spawn_4k_rc": 88,
+        "child_exit": -1,
+        "child_signal": -1
+      },
+      "additional_probe_results": [],
+      "artifacts": {
+        "signature": "layout-codesign-adhoc.signature.txt",
+        "verification": "layout-codesign-adhoc.verify.txt",
+        "load_commands": "layout-codesign-adhoc.load-commands.txt",
+        "unified_log": "layout-codesign-adhoc.unified-log.json",
+        "stderr": "layout-codesign-adhoc.stderr.txt"
+      }
+    }
+  ],
+  "interpretation": "Unprovisioned probe only; error 88 is not attributed to a specific cause."
+}

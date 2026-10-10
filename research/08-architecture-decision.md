@@ -1,6 +1,6 @@
 # ADR-001: Native compatibility first, conditional on stock-Mac authorization
 
-Date: 2026-10-10. Status: **Proposed / CONDITIONAL GO**. No implementation acceptance gates have passed beyond the local capability probe. Decision classification: **INFERRED**. Evidence: [01 landscape](01-landscape.md), [02 native Wine](02-native-arm64-wine.md), [03 FEX](03-fex-hangover.md), [04 graphics](04-graphics.md), [05 alternatives](05-alternatives.md), [06 licensing](06-licensing-security.md).
+Date: 2026-10-10. Status: **Proposed / CONDITIONAL GO**. No implementation acceptance gates have passed beyond local capability probes. Gate0A development authorization and Gate0B stock-Mac redistribution authorization are separate. Decision classification: **INFERRED**. Evidence: [01 landscape](01-landscape.md), [02 native Wine](02-native-arm64-wine.md), [03 FEX](03-fex-hangover.md), [04 graphics](04-graphics.md), [05 alternatives](05-alternatives.md), [06 licensing](06-licensing-security.md), [latest probe](experiments/README.md).
 
 ## Context and decision
 
@@ -49,4 +49,4 @@ Limit private patches to a reviewed, itemized platform queue. Prefer upstream ac
 
 ## Acceptance of this ADR
 
-This proposed decision becomes accepted only when milestones0–3 in the roadmap pass. Otherwise record the failing gate and replace the decision. A working game screenshot, a universal app bundle, a successful native launcher, or a development profile tied to one Mac is insufficient.
+This proposed decision becomes accepted only when Gates0A and0B plus milestones1–4 in the roadmap pass. Otherwise record the failing gate and replace the decision. A working game screenshot, a universal app bundle, a successful native launcher, or a development profile tied to one Mac is insufficient.

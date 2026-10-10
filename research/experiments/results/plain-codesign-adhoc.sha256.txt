@@ -1,0 +1,1 @@
+c94d52ebf42d5a788369067472691170a1333adecf622531c72efe0043e4d741  ./capability-probe-plain-codesign-adhoc

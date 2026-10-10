@@ -1,6 +1,0 @@
-capability-probe: Mach-O 64-bit executable arm64
-Executable=/Users/keina/dev/WinFerry/research/experiments/capability-probe
-warning: Specifying ':' in the path is deprecated and will not work in a future release
-compiled_arch=arm64 page_size=16384 translated_query=-1 translated=-1 cross_arch_x86_64=1 custom_x18=0
-set_4k_attribute=0 (Undefined error: 0)
-spawn_4k=88 (Malformed Mach-o file)
