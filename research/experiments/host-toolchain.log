@@ -1,0 +1,13 @@
+arm64
+ProductName:		macOS
+ProductVersion:		27.0
+BuildVersion:		26A428
+Xcode 27.0
+Build version 27A266a
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+Apple clang version 21.0.0 (clang-2100.3.34.2)
+Target: arm64-apple-darwin27.0.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+System Integrity Protection status: enabled.
+     0 valid identities found

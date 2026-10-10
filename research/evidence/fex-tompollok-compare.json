@@ -1,0 +1,309 @@
+{
+  "url": "https://api.github.com/repos/tompollok/FEX/compare/9686454...FEX-ARM64EC",
+  "html_url": "https://github.com/tompollok/FEX/compare/9686454...FEX-ARM64EC",
+  "permalink_url": "https://github.com/tompollok/FEX/compare/tompollok:9686454...tompollok:15a16c5",
+  "diff_url": "https://github.com/tompollok/FEX/compare/9686454...FEX-ARM64EC.diff",
+  "patch_url": "https://github.com/tompollok/FEX/compare/9686454...FEX-ARM64EC.patch",
+  "base_commit": {
+    "sha": "968645416106cc42b2178d2e0843e7a3bdebf232",
+    "node_id": "C_kwDOTx9oBNoAKDk2ODY0NTQxNjEwNmNjNDJiMjE3OGQyZTA4NDNlN2EzYmRlYmYyMzI",
+    "commit": {
+      "author": {
+        "name": "Ryan Houdek",
+        "email": "Sonicadvance1@gmail.com",
+        "date": "2026-08-05T06:51:02Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-08-05T06:51:02Z"
+      },
+      "message": "Merge pull request #5804 from sunshineinabox/PR_thunkgen\n\nthunkgen: satisfy the clang 22 ComplierInstance VFS invariant.",
+      "tree": {
+        "sha": "2102d356cc12cf53121a7f5789c6df77c84f970f",
+        "url": "https://api.github.com/repos/tompollok/FEX/git/trees/2102d356cc12cf53121a7f5789c6df77c84f970f"
+      },
+      "url": "https://api.github.com/repos/tompollok/FEX/git/commits/968645416106cc42b2178d2e0843e7a3bdebf232",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqct1WCRC1aQ7uu5UhlAAAgLQQAFRGn1IVUBf+VRKIGVyxD9Fz\nZiTz8Nn06ONpQ0twym3iFYvVI7RPeWhasm/D3aoLHwIJR1CGeSECxL4/wzDqZws7\nT2fjametstlOKpP13H6rHgU2lbyuZBwRyzPTWFtRUSQ33NDgRf8/KSSOylxCUu40\nkKM7s3Ib5gEU7zzEir7a0Bfui72opwtcDukWw/D+WkqdTIRCEgkjcnzE5UfWHOU3\ntzTP6/Xm7jxmGDKh6kLbBihHcEFmDYNFqOzFKE+9Eiaxsr5/a7LqIIK471JEZ+BU\nL/TopKKslN6l4VgyO+mPA4N31Qj+dacO/fLsgi7O2XjSqfgYbMEDLTOHJ/vJ9yf3\nJan+EfhXVYsR2Gt2Rv8DjriotdfwyqCOvHrCW4hcJC3Dxw1p55qXlmD17y/sk+2Y\nVVDKAF0OQVtT2whE1EasaDgGgnwf6j/exJrmnj9YnlVmEKXoPvYrri/kDmY7LOsB\nnkTLQ7tZU1ODW/PL7NAofAZJXnE+LXOvPDM6JfBMmiTbm1cRhOG2ZAlqINhDJO4c\nwhaB7IIUx3DM71RTSPbXn1/Nmj699tb6waiYFD6+idAoOz2S232gBdNBBG0v3Ll1\nrgCHq+9gqcErxS7Us5ddANZs4cpLaXl1l13o9jGQC5f+Eg7KB0rpL4V4Qwiuxgss\nkNL4DFjeRYNUAFMaR6bM\n=KDAn\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 2102d356cc12cf53121a7f5789c6df77c84f970f\nparent e869aa644a16e4332cdc15c1ea0b4d13d482385d\nparent 167d79f0fafc75b2df850f7c0fa89203f8561062\nauthor Ryan Houdek <Sonicadvance1@gmail.com> 1785912662 -0700\ncommitter GitHub <noreply@github.com> 1785912662 -0700\n\nMerge pull request #5804 from sunshineinabox/PR_thunkgen\n\nthunkgen: satisfy the clang 22 ComplierInstance VFS invariant.",
+        "verified_at": "2026-08-05T06:55:19Z"
+      }
+    },
+    "url": "https://api.github.com/repos/tompollok/FEX/commits/968645416106cc42b2178d2e0843e7a3bdebf232",
+    "html_url": "https://github.com/tompollok/FEX/commit/968645416106cc42b2178d2e0843e7a3bdebf232",
+    "comments_url": "https://api.github.com/repos/tompollok/FEX/commits/968645416106cc42b2178d2e0843e7a3bdebf232/comments",
+    "author": {
+      "login": "Sonicadvance1",
+      "id": 1018829,
+      "node_id": "MDQ6VXNlcjEwMTg4Mjk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1018829?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Sonicadvance1",
+      "html_url": "https://github.com/Sonicadvance1",
+      "followers_url": "https://api.github.com/users/Sonicadvance1/followers",
+      "following_url": "https://api.github.com/users/Sonicadvance1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Sonicadvance1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Sonicadvance1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Sonicadvance1/subscriptions",
+      "organizations_url": "https://api.github.com/users/Sonicadvance1/orgs",
+      "repos_url": "https://api.github.com/users/Sonicadvance1/repos",
+      "events_url": "https://api.github.com/users/Sonicadvance1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Sonicadvance1/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e869aa644a16e4332cdc15c1ea0b4d13d482385d",
+        "url": "https://api.github.com/repos/tompollok/FEX/commits/e869aa644a16e4332cdc15c1ea0b4d13d482385d",
+        "html_url": "https://github.com/tompollok/FEX/commit/e869aa644a16e4332cdc15c1ea0b4d13d482385d"
+      },
+      {
+        "sha": "167d79f0fafc75b2df850f7c0fa89203f8561062",
+        "url": "https://api.github.com/repos/tompollok/FEX/commits/167d79f0fafc75b2df850f7c0fa89203f8561062",
+        "html_url": "https://github.com/tompollok/FEX/commit/167d79f0fafc75b2df850f7c0fa89203f8561062"
+      }
+    ]
+  },
+  "merge_base_commit": {
+    "sha": "968645416106cc42b2178d2e0843e7a3bdebf232",
+    "node_id": "C_kwDOTx9oBNoAKDk2ODY0NTQxNjEwNmNjNDJiMjE3OGQyZTA4NDNlN2EzYmRlYmYyMzI",
+    "commit": {
+      "author": {
+        "name": "Ryan Houdek",
+        "email": "Sonicadvance1@gmail.com",
+        "date": "2026-08-05T06:51:02Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-08-05T06:51:02Z"
+      },
+      "message": "Merge pull request #5804 from sunshineinabox/PR_thunkgen\n\nthunkgen: satisfy the clang 22 ComplierInstance VFS invariant.",
+      "tree": {
+        "sha": "2102d356cc12cf53121a7f5789c6df77c84f970f",
+        "url": "https://api.github.com/repos/tompollok/FEX/git/trees/2102d356cc12cf53121a7f5789c6df77c84f970f"
+      },
+      "url": "https://api.github.com/repos/tompollok/FEX/git/commits/968645416106cc42b2178d2e0843e7a3bdebf232",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqct1WCRC1aQ7uu5UhlAAAgLQQAFRGn1IVUBf+VRKIGVyxD9Fz\nZiTz8Nn06ONpQ0twym3iFYvVI7RPeWhasm/D3aoLHwIJR1CGeSECxL4/wzDqZws7\nT2fjametstlOKpP13H6rHgU2lbyuZBwRyzPTWFtRUSQ33NDgRf8/KSSOylxCUu40\nkKM7s3Ib5gEU7zzEir7a0Bfui72opwtcDukWw/D+WkqdTIRCEgkjcnzE5UfWHOU3\ntzTP6/Xm7jxmGDKh6kLbBihHcEFmDYNFqOzFKE+9Eiaxsr5/a7LqIIK471JEZ+BU\nL/TopKKslN6l4VgyO+mPA4N31Qj+dacO/fLsgi7O2XjSqfgYbMEDLTOHJ/vJ9yf3\nJan+EfhXVYsR2Gt2Rv8DjriotdfwyqCOvHrCW4hcJC3Dxw1p55qXlmD17y/sk+2Y\nVVDKAF0OQVtT2whE1EasaDgGgnwf6j/exJrmnj9YnlVmEKXoPvYrri/kDmY7LOsB\nnkTLQ7tZU1ODW/PL7NAofAZJXnE+LXOvPDM6JfBMmiTbm1cRhOG2ZAlqINhDJO4c\nwhaB7IIUx3DM71RTSPbXn1/Nmj699tb6waiYFD6+idAoOz2S232gBdNBBG0v3Ll1\nrgCHq+9gqcErxS7Us5ddANZs4cpLaXl1l13o9jGQC5f+Eg7KB0rpL4V4Qwiuxgss\nkNL4DFjeRYNUAFMaR6bM\n=KDAn\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 2102d356cc12cf53121a7f5789c6df77c84f970f\nparent e869aa644a16e4332cdc15c1ea0b4d13d482385d\nparent 167d79f0fafc75b2df850f7c0fa89203f8561062\nauthor Ryan Houdek <Sonicadvance1@gmail.com> 1785912662 -0700\ncommitter GitHub <noreply@github.com> 1785912662 -0700\n\nMerge pull request #5804 from sunshineinabox/PR_thunkgen\n\nthunkgen: satisfy the clang 22 ComplierInstance VFS invariant.",
+        "verified_at": "2026-08-05T06:55:19Z"
+      }
+    },
+    "url": "https://api.github.com/repos/tompollok/FEX/commits/968645416106cc42b2178d2e0843e7a3bdebf232",
+    "html_url": "https://github.com/tompollok/FEX/commit/968645416106cc42b2178d2e0843e7a3bdebf232",
+    "comments_url": "https://api.github.com/repos/tompollok/FEX/commits/968645416106cc42b2178d2e0843e7a3bdebf232/comments",
+    "author": {
+      "login": "Sonicadvance1",
+      "id": 1018829,
+      "node_id": "MDQ6VXNlcjEwMTg4Mjk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1018829?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Sonicadvance1",
+      "html_url": "https://github.com/Sonicadvance1",
+      "followers_url": "https://api.github.com/users/Sonicadvance1/followers",
+      "following_url": "https://api.github.com/users/Sonicadvance1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Sonicadvance1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Sonicadvance1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Sonicadvance1/subscriptions",
+      "organizations_url": "https://api.github.com/users/Sonicadvance1/orgs",
+      "repos_url": "https://api.github.com/users/Sonicadvance1/repos",
+      "events_url": "https://api.github.com/users/Sonicadvance1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Sonicadvance1/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e869aa644a16e4332cdc15c1ea0b4d13d482385d",
+        "url": "https://api.github.com/repos/tompollok/FEX/commits/e869aa644a16e4332cdc15c1ea0b4d13d482385d",
+        "html_url": "https://github.com/tompollok/FEX/commit/e869aa644a16e4332cdc15c1ea0b4d13d482385d"
+      },
+      {
+        "sha": "167d79f0fafc75b2df850f7c0fa89203f8561062",
+        "url": "https://api.github.com/repos/tompollok/FEX/commits/167d79f0fafc75b2df850f7c0fa89203f8561062",
+        "html_url": "https://github.com/tompollok/FEX/commit/167d79f0fafc75b2df850f7c0fa89203f8561062"
+      }
+    ]
+  },
+  "status": "ahead",
+  "ahead_by": 2,
+  "behind_by": 0,
+  "total_commits": 2,
+  "commits": [
+    {
+      "sha": "2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9",
+      "node_id": "C_kwDOTx9oBNoAKDJjN2Q0N2M2MTU2ZmM3ZjdkMjczZTFkODNhZTBkZGE3OWJlZjcyYjk",
+      "commit": {
+        "author": {
+          "name": "Thomas Pollok",
+          "email": "tom.pollok@googlemail.com",
+          "date": "2026-08-08T05:55:30Z"
+        },
+        "committer": {
+          "name": "Thomas Pollok",
+          "email": "tom.pollok@googlemail.com",
+          "date": "2026-08-08T05:55:30Z"
+        },
+        "message": "macOS: build shims for the ARM64EC unix library\n\nThree changes needed to build and run the ARM64EC FEX on macOS, which is not a\nsupported target upstream.\n\n- Do not link librt. shm_open and friends live in libSystem on macOS; there is no\n  librt to link against.\n\n- Stub prctl. macOS has no prctl at all. The handlers already treat a failure as\n  \"unsupported\" and let FEX fall back, so a shim that fails is sufficient for\n  everything except PR_SET_VMA, which only sets a cosmetic mapping name nothing\n  on macOS reads -- that one reports success.\n\n  Consequence worth knowing: TryEnableHardwareTSO uses\n  prctl(PR_SET_MEM_MODEL, PR_SET_MEM_MODEL_TSO), the interface Asahi Linux added\n  for Apple silicon. With no prctl it always fails, so FEX falls back to software\n  memory barriers. Measured cost against Rosetta on the same binary: 1.75x on\n  integer work, 1.27x on call/return. macOS reserves the hardware memory-model\n  control for Rosetta, so there is no route to it from userspace.\n\n- Size the stats shm object to MaxSize up front. macOS permits ftruncate on a shm\n  object only once, so the later AllocateMoreSlots truncation fails with EINVAL.\n  Sizing once and letting the mapping window move avoids it; untouched pages are\n  not committed, so this reserves rather than spends.",
+        "tree": {
+          "sha": "26b0c83fc5d4080b77baa996cac9055e78f3fc0e",
+          "url": "https://api.github.com/repos/tompollok/FEX/git/trees/26b0c83fc5d4080b77baa996cac9055e78f3fc0e"
+        },
+        "url": "https://api.github.com/repos/tompollok/FEX/git/commits/2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/tompollok/FEX/commits/2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9",
+      "html_url": "https://github.com/tompollok/FEX/commit/2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9",
+      "comments_url": "https://api.github.com/repos/tompollok/FEX/commits/2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9/comments",
+      "author": null,
+      "committer": null,
+      "parents": [
+        {
+          "sha": "968645416106cc42b2178d2e0843e7a3bdebf232",
+          "url": "https://api.github.com/repos/tompollok/FEX/commits/968645416106cc42b2178d2e0843e7a3bdebf232",
+          "html_url": "https://github.com/tompollok/FEX/commit/968645416106cc42b2178d2e0843e7a3bdebf232"
+        }
+      ]
+    },
+    {
+      "sha": "15a16c500319687f7eefac875e28a9d50b3188bb",
+      "node_id": "C_kwDOTx9oBNoAKDE1YTE2YzUwMDMxOTY4N2Y3ZWVmYWM4NzVlMjhhOWQ1MGIzMTg4YmI",
+      "commit": {
+        "author": {
+          "name": "Thomas Pollok",
+          "email": "tom.pollok@googlemail.com",
+          "date": "2026-08-08T05:55:30Z"
+        },
+        "committer": {
+          "name": "Thomas Pollok",
+          "email": "tom.pollok@googlemail.com",
+          "date": "2026-08-08T05:55:30Z"
+        },
+        "message": "FEXOfflineCompiler: load config before Logging::Init, and fix a path underflow\n\nTwo defects that prevent FEXOfflineCompiler from starting on Windows/ARM64EC.\n\n1. main() called FEX::Windows::Logging::Init() before any config was loaded.\n   Logging::Init reads the SILENTLOG option, so the read went through a null\n   MetaLayer and faulted in MetaLayer::GetConv<bool> before main() produced any\n   output -- the tool could not even print its usage block. ARM64EC/Module.cpp\n   and WOW64/Module.cpp both do LoadConfig + ReloadMetaLayer before Logging::Init;\n   this does the same.\n\n2. The sibling binary's path was computed as\n   SelfPath.replace(SelfPath.size() - NewExecName.size(), ...), which underflows\n   whenever the running binary's path is shorter than \"FEXOfflineCompilerNN.exe\"\n   and throws std::out_of_range, aborting after code maps have been aggregated.\n   It also assumed the binary is always invoked under that name. Now the last\n   path separator is located and only the filename component is replaced.\n\nWith both fixed the code cache works end to end: cold-code cost falls 21x on a\nsynthetic (60.79ms -> 2.88ms), and CS2's frame hitches roughly halve in a live\nsession (21 -> 11 on matched frame counts, p99 51.7ms -> 28.9ms).",
+        "tree": {
+          "sha": "4a449eefe0616b785f8b5ee82b233414e5316c43",
+          "url": "https://api.github.com/repos/tompollok/FEX/git/trees/4a449eefe0616b785f8b5ee82b233414e5316c43"
+        },
+        "url": "https://api.github.com/repos/tompollok/FEX/git/commits/15a16c500319687f7eefac875e28a9d50b3188bb",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/tompollok/FEX/commits/15a16c500319687f7eefac875e28a9d50b3188bb",
+      "html_url": "https://github.com/tompollok/FEX/commit/15a16c500319687f7eefac875e28a9d50b3188bb",
+      "comments_url": "https://api.github.com/repos/tompollok/FEX/commits/15a16c500319687f7eefac875e28a9d50b3188bb/comments",
+      "author": null,
+      "committer": null,
+      "parents": [
+        {
+          "sha": "2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9",
+          "url": "https://api.github.com/repos/tompollok/FEX/commits/2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9",
+          "html_url": "https://github.com/tompollok/FEX/commit/2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "sha": "e45f17c74669ccb5dd0844eb65ede539f58d49d7",
+      "filename": "Source/Tools/FEXOfflineCompiler/Main.cpp",
+      "status": "modified",
+      "additions": 27,
+      "deletions": 2,
+      "changes": 29,
+      "blob_url": "https://github.com/tompollok/FEX/blob/15a16c500319687f7eefac875e28a9d50b3188bb/Source%2FTools%2FFEXOfflineCompiler%2FMain.cpp",
+      "raw_url": "https://github.com/tompollok/FEX/raw/15a16c500319687f7eefac875e28a9d50b3188bb/Source%2FTools%2FFEXOfflineCompiler%2FMain.cpp",
+      "contents_url": "https://api.github.com/repos/tompollok/FEX/contents/Source%2FTools%2FFEXOfflineCompiler%2FMain.cpp?ref=15a16c500319687f7eefac875e28a9d50b3188bb",
+      "patch": "@@ -785,8 +785,22 @@ static int ProcessAll() {\n     char SelfPathRaw[PATH_MAX];\n     GetModuleFileNameA(nullptr, SelfPathRaw, sizeof(SelfPathRaw));\n     std::string SelfPath = SelfPathRaw;\n-    auto NewExecName = fmt::format(\"FEXOfflineCompiler{}.exe\", ExecutableIt->second.ExecutableBitness.value());\n-    SelfPath.replace(SelfPath.size() - NewExecName.size(), NewExecName.size(), NewExecName);\n+    // Replace only the filename component. The original computed\n+    // SelfPath.size() - NewExecName.size(), which underflows whenever the\n+    // running binary's path is shorter than \"FEXOfflineCompilerNN.exe\" (24\n+    // chars) and throws std::out_of_range. It also assumed this binary is\n+    // always called by that name.\n+    //\n+    // The sibling is named \"fexofcNN.exe\" rather than \"FEXOfflineCompilerNN.exe\"\n+    // because filenames of 20 characters or more fault under FEX/ARM64EC before\n+    // entry -- see Engine/tools/fexcache/README.md.\n+    auto NewExecName = fmt::format(\"fexofc{}.exe\", ExecutableIt->second.ExecutableBitness.value());\n+    auto SlashPos = SelfPath.find_last_of(\"\\\\/\");\n+    if (SlashPos == std::string::npos) {\n+      SelfPath = NewExecName;\n+    } else {\n+      SelfPath.replace(SlashPos + 1, std::string::npos, NewExecName);\n+    }\n #endif\n \n     fmt::println(\"\\nChecking caches for executable {}\", ExecutableIt->second.Filename);\n@@ -847,6 +861,17 @@ int main(int argc, char** argv) {\n   LogMan::Throw::InstallHandler(AssertHandler);\n   LogMan::Msg::InstallHandler(MsgHandler);\n #else\n+  // Logging::Init() reads the SILENTLOG config option, so the config layers must\n+  // exist first. Every other Windows entry point (ARM64EC/Module.cpp:585,\n+  // WOW64/Module.cpp:519) does LoadConfig + ReloadMetaLayer before Logging::Init;\n+  // this one did not, and read through a null MetaLayer -- faulting in\n+  // MetaLayer::GetConv<bool> before main() produced any output.\n+  {\n+    const auto PortableInfo = FEX::ReadPortabilityInformation();\n+    char* ConfigEnvp[] = {nullptr};\n+    FEX::Config::LoadConfig(\"\", ConfigEnvp, PortableInfo);\n+    FEXCore::Config::ReloadMetaLayer();\n+  }\n   FEX::Windows::Logging::Init();\n #endif\n "
+    },
+    {
+      "sha": "3eb40d5c191db0e1a5f2bebc2d3a53549f483920",
+      "filename": "Source/Windows/UnixLib/CMakeLists.txt",
+      "status": "modified",
+      "additions": 4,
+      "deletions": 1,
+      "changes": 5,
+      "blob_url": "https://github.com/tompollok/FEX/blob/15a16c500319687f7eefac875e28a9d50b3188bb/Source%2FWindows%2FUnixLib%2FCMakeLists.txt",
+      "raw_url": "https://github.com/tompollok/FEX/raw/15a16c500319687f7eefac875e28a9d50b3188bb/Source%2FWindows%2FUnixLib%2FCMakeLists.txt",
+      "contents_url": "https://api.github.com/repos/tompollok/FEX/contents/Source%2FWindows%2FUnixLib%2FCMakeLists.txt?ref=15a16c500319687f7eefac875e28a9d50b3188bb",
+      "patch": "@@ -6,7 +6,10 @@ include(GNUInstallDirs)\n function(CreateLib TargetName LibName)\n   add_library(${TargetName} SHARED FEXUnixLib.cpp)\n   set_target_properties(${TargetName} PROPERTIES OUTPUT_NAME ${LibName} PREFIX \"lib\" SUFFIX \".so\")\n-  target_link_libraries(${TargetName} PRIVATE rt)\n+  if (NOT APPLE)\n+    # shm_open and friends live in libSystem on macOS; there is no librt.\n+    target_link_libraries(${TargetName} PRIVATE rt)\n+  endif()\n   install(TARGETS ${TargetName} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT Runtime)\n endfunction()\n "
+    },
+    {
+      "sha": "cf49b2d1ffe357c3667a00e6488785f8440238b4",
+      "filename": "Source/Windows/UnixLib/FEXUnixLib.cpp",
+      "status": "modified",
+      "additions": 31,
+      "deletions": 0,
+      "changes": 31,
+      "blob_url": "https://github.com/tompollok/FEX/blob/15a16c500319687f7eefac875e28a9d50b3188bb/Source%2FWindows%2FUnixLib%2FFEXUnixLib.cpp",
+      "raw_url": "https://github.com/tompollok/FEX/raw/15a16c500319687f7eefac875e28a9d50b3188bb/Source%2FWindows%2FUnixLib%2FFEXUnixLib.cpp",
+      "contents_url": "https://api.github.com/repos/tompollok/FEX/contents/Source%2FWindows%2FUnixLib%2FFEXUnixLib.cpp?ref=15a16c500319687f7eefac875e28a9d50b3188bb",
+      "patch": "@@ -4,7 +4,24 @@\n #include <fcntl.h>\n #include <string>\n #include <sys/mman.h>\n+#if defined(__APPLE__)\n+/* No prctl on macOS. The handlers below already treat a prctl failure as\n+ * \"unsupported\" and let FEX fall back, so a shim that fails is enough for\n+ * everything except PR_SET_VMA, which is a cosmetic mapping name that nothing\n+ * on macOS would ever read -- report success for that and fail the rest. See\n+ * Engine/fex-macos-fixups.py for why each one cannot be implemented. */\n+#include <errno.h>\n+#ifndef PR_SET_VMA\n+#define PR_SET_VMA 0x53564d41\n+#endif\n+static inline int prctl(int op, ...) {\n+  if (op == PR_SET_VMA) return 0;\n+  errno = ENOSYS;\n+  return -1;\n+}\n+#else\n #include <sys/prctl.h>\n+#endif\n #include <unistd.h>\n \n #include \"FEXUnixLib.h\"\n@@ -86,9 +103,19 @@ static inline void* InitializeSHM(uint32_t MapSize, uint32_t MaxSize) {\n     return nullptr;\n   }\n \n+#if defined(__APPLE__)\n+  // macOS permits ftruncate on a shm object only once, so size it to MaxSize\n+  // now and let AllocateMoreSlots move the mapping window without truncating\n+  // again. Untouched pages are not committed, so this reserves rather than\n+  // spends. See Engine/fex-macos-fixups.py.\n+  if (ftruncate(fd, MaxSize) == -1) {\n+    goto err;\n+  }\n+#else\n   if (ftruncate(fd, MapSize) == -1) {\n     goto err;\n   }\n+#endif\n \n   // Reserve a region of MAX_STATS_SIZE so we can grow the allocation buffer.\n   // Number of thread slots when ThreadStatsHeader == 64bytes and ThreadStats == 40bytes:\n@@ -129,9 +156,13 @@ static inline bool AllocateMoreSlots(void* SHMBase, uint32_t NewSize) {\n     return false;\n   }\n \n+#if !defined(__APPLE__)\n+  // On macOS the object was already sized to MaxSize in InitializeSHM; a second\n+  // ftruncate would fail with EINVAL. Remapping below is all that is needed.\n   if (ftruncate(fd, NewSize) == -1) {\n     goto err;\n   }\n+#endif\n \n   {\n     auto SharedBase = mmap(SHMBase, NewSize, PROT_READ | PROT_WRITE, MAP_SHARED | MAP_FIXED, fd, 0);"
+    }
+  ]
+}

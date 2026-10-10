@@ -1,0 +1,82 @@
+{
+  "sha": "d374b21668f94b7b7b059f152794fdb93e944b84",
+  "node_id": "C_kwDOTNH059oAKGQzNzRiMjE2NjhmOTRiN2I3YjA1OWYxNTI3OTRmZGI5M2U5NDRiODQ",
+  "commit": {
+    "author": {
+      "name": "David Grinberg",
+      "email": "green.grinya@gmail.com",
+      "date": "2026-10-07T04:36:17Z"
+    },
+    "committer": {
+      "name": "osy",
+      "email": "osy@turing.llc",
+      "date": "2026-10-07T06:38:03Z"
+    },
+    "message": "share: set close-on-exec after shm_open instead of passing O_CLOEXEC\n\nshm_open() is only specified for O_RDONLY, O_RDWR, O_CREAT, O_EXCL and\nO_TRUNC; macOS 26 rejects O_CLOEXEC with EINVAL, which fails every\ndmn_anon_file() and so every shared export.  Open without it and set\nFD_CLOEXEC with fcntl, as virglrenderer 058959ed and dxmt's\nanon_shm_file already do.\n\nThis host (macOS 15.6) accepts the flag, so the failure does not\nreproduce here; the shared-export tests (shared-*, d3d11/d3d12-sharedbuf,\n9 of them) pass with the change.\n\nFrom varmint patches/d3dmetal-native/0001.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+    "tree": {
+      "sha": "1b7081e7961f85fcbc0daa2e64056c27595b72dc",
+      "url": "https://api.github.com/repos/utmapp/d3dmetal-native/git/trees/1b7081e7961f85fcbc0daa2e64056c27595b72dc"
+    },
+    "url": "https://api.github.com/repos/utmapp/d3dmetal-native/git/commits/d374b21668f94b7b7b059f152794fdb93e944b84",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/utmapp/d3dmetal-native/commits/d374b21668f94b7b7b059f152794fdb93e944b84",
+  "html_url": "https://github.com/utmapp/d3dmetal-native/commit/d374b21668f94b7b7b059f152794fdb93e944b84",
+  "comments_url": "https://api.github.com/repos/utmapp/d3dmetal-native/commits/d374b21668f94b7b7b059f152794fdb93e944b84/comments",
+  "author": {
+    "login": "kisasexypantera94",
+    "id": 24964334,
+    "node_id": "MDQ6VXNlcjI0OTY0MzM0",
+    "avatar_url": "https://avatars.githubusercontent.com/u/24964334?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/kisasexypantera94",
+    "html_url": "https://github.com/kisasexypantera94",
+    "followers_url": "https://api.github.com/users/kisasexypantera94/followers",
+    "following_url": "https://api.github.com/users/kisasexypantera94/following{/other_user}",
+    "gists_url": "https://api.github.com/users/kisasexypantera94/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/kisasexypantera94/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/kisasexypantera94/subscriptions",
+    "organizations_url": "https://api.github.com/users/kisasexypantera94/orgs",
+    "repos_url": "https://api.github.com/users/kisasexypantera94/repos",
+    "events_url": "https://api.github.com/users/kisasexypantera94/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/kisasexypantera94/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "osy",
+    "id": 50960678,
+    "node_id": "MDQ6VXNlcjUwOTYwNjc4",
+    "avatar_url": "https://avatars.githubusercontent.com/u/50960678?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/osy",
+    "html_url": "https://github.com/osy",
+    "followers_url": "https://api.github.com/users/osy/followers",
+    "following_url": "https://api.github.com/users/osy/following{/other_user}",
+    "gists_url": "https://api.github.com/users/osy/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/osy/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/osy/subscriptions",
+    "organizations_url": "https://api.github.com/users/osy/orgs",
+    "repos_url": "https://api.github.com/users/osy/repos",
+    "events_url": "https://api.github.com/users/osy/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/osy/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "bb932e0d831823f0500faa56389f9fef87183f33",
+      "url": "https://api.github.com/repos/utmapp/d3dmetal-native/commits/bb932e0d831823f0500faa56389f9fef87183f33",
+      "html_url": "https://github.com/utmapp/d3dmetal-native/commit/bb932e0d831823f0500faa56389f9fef87183f33"
+    }
+  ]
+}

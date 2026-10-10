@@ -1,0 +1,158 @@
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/os/arch/arm64.h
+sha256=56666f9d03ffbb905d00e4c6b7a91b44231ba0c9adfe1ebaeb297d5ff962c2ca
+45:  * @function os_set_custom_x18_abi_enabled
+46:  *
+47:  * @abstract
+48:  *
+49:  * Switch thread into or out of custom ABI usage for the x18 register.
+50:  *
+51:  * This API comes with lots of caveats. Users of this API must take a
+52:  * disproportionate amount of care, so it is strongly advised to only
+53:  * use this API if absolutely required.
+54:  *
+55:  * Under normal operation, x18 is reserved for operating system usage,
+56:  * and may therefore not be touched by any application code. The Apple
+57:  * ARM64 Application Binary Interface codifies this by stating: "The
+58:  * platforms reserve register x18. Don’t use this register."
+59:  *
+60:  * However, there are special situations, such as when implementing
+61:  * compatibility layers for other ABIs, where custom usage x18 becomes
+62:  * a necessity, notably when it is part of the ABI contract itself
+63:  * (for example, used as a TSD base).
+64:  *
+65:  * This API enables per-thread use of x18 under such special
+66:  * circumstances. To use it, application code must issue
+67:  * `os_set_custom_x18_abi_enabled(true)` at the boundary between the
+68:  * regular macOS application code and the code using the custom
+69:  * ABI. When in this mode, x18 behaves like any other general purpose
+70:  * register for this thread: It has no other semantics towards the
+71:  * operating system other than holding arbitrary values, and it will
+72:  * get saved and restored across context switches like any other
+73:  * GPR. When switching back from the custom ABI code to macOS
+74:  * application code, `os_set_custom_x18_abi_enabled(false)` must then
+75:  * be issued, in order to restore the proper system-defined operating
+76:  * semantics for x18 again.
+77:  *
+78:  * Note that code running after `os_set_custom_x18_abi_enabled(true)`
+79:  * must not call, directly or in the form of callbacks, into any macOS
+80:  * library/framework code in the current thread, with the exception of
+81:  * `os_set_custom_x18_abi_enabled()` and `os_custom_x18_abi_enabled()`
+82:  * themselves.
+83:  *
+84:  * This function strictly toggles the state: calling it with the same
+85:  * value as the current state will cause the process to abort.
+86:  *
+87:  * Great care must also be taken with signal handlers and other
+88:  * asynchronous code entry points. These should either not call into
+89:  * any macOS library/framework code (note that this includes POSIX
+90:  * interfaces), or bracket such calls between
+91:  * `os_set_custom_x18_abi_enabled(false)` and
+92:  * `os_set_custom_x18_abi_enabled(true)`, iff the custom x18 ABI is
+93:  * enabled according to `os_custom_x18_abi_enabled()`.  Any other
+94:  * regular limitations for signal handler code calling into OS
+95:  * functions apply as well. Unless the use of signals is absolutely
+96:  * required, masking all signals before entering custom x18 ABI mode
+97:  * avoids any complication with signal handlers.
+98:  *
+99:  * Also note that the operating system does not preserve any x18 value
+100:  * from within the custom ABI code across
+101:  * `os_set_custom_x18_abi_enabled()` calls. Effectively, calling
+102:  * `os_set_custom_x18_abi_enabled(false)` destroys x18's value. In the
+103:  * likely case that the application code wishes to preserve x18's
+104:  * content for the custom ABI code, the application code must save and
+105:  * restore the affected thread's x18 value itself.
+106:  *
+107:  * `os_set_custom_x18_abi_enabled()` will, however, properly save and
+108:  * restore x18 for its system-defined operating semantics, meaning
+109:  * that application code must not restore x18 in the other direction,
+110:  * i.e. after switching back from custom ABI code to macOS code, nor
+111:  * does it have to save the value before entering custom ABI code (the
+112:  * application code may actually not have the proper information to do
+113:  * so safely). In summary, application code is in charge of x18's
+114:  * value on the "custom ABI side", while macOS itself is in charge of
+115:  * the value on the "macOS side".
+116:  *
+117:  * @param custom true to switch the thread into custom ABI x18 usage,
+118:  * false to switch back to regular macOS x18 semantics.
+119:  *
+120:  */
+121: 
+122: API_UNAVAILABLE(ios, tvos, watchos) API_AVAILABLE(macos(26.4))
+123: extern
+124: void os_set_custom_x18_abi_enabled(bool custom);
+125: 
+126: /*!
+127:  * @function os_custom_x18_abi_enabled
+128:  *
+129:  * @abstract
+130:  *
+131:  * Returns whether custom x18 ABI mode is enabled.
+132:  *
+133:  * This can be used to determine if the custom x18 ABI needs temporary
+134:  * disablement prior to calling into any macOS code, e.g. in signal
+135:  * handlers.
+136:  *
+137:  * @return `true` iff custom x18 ABI is enabled.
+138:  */
+139: API_UNAVAILABLE(ios, tvos, watchos) API_AVAILABLE(macos(26.4))
+140: extern
+141: bool os_custom_x18_abi_enabled(void);
+142: 
+143: /*!
+144:  * @typedef os_cross_arch_t
+145:  *
+146:  * @abstract
+147:  *
+148:  * Identifies a CPU architecture for cross-architecture support
+149:  * queries via `os_cross_arch_is_supported()`.
+150:  */
+151: OS_ENUM(os_cross_arch, uint32_t,
+152:     OS_CROSS_ARCH_X86_64 = 1,
+153:     );
+154: 
+155: /*!
+156:  * @function os_cross_arch_is_supported
+157:  *
+158:  * @abstract
+159:  *
+160:  * Returns whether cross-architecture compatibility for the specified
+161:  * architecture is supported on this system.
+162:  *
+163:  * On Apple Silicon Macs, this indicates that the kernel provides the
+164:  * set of cross-architecture features required by a user-space
+165:  * compatibility layer to run processes built for the given CPU
+166:  * architecture via translation (e.g. x86_64 binaries).
+167:  *
+168:  * Note that a `true` return value does not imply that any particular
+169:  * compatibility layer is installed, enabled, or functional on the
+170:  * running system; it only reports whether the underlying kernel
+171:  * features that such a layer depends on are present.
+172:  *
+173:  * The return value is constant for the lifetime of the system and
+174:  * may be safely cached by callers.
+175:  *
+176:  * @param arch
+177:  * The architecture to query.
+178:  *
+179:  * @result
+180:  * `true` if cross-architecture compatibility for `arch` is
+181:  * supported, `false` otherwise.
+182:  */
+183: API_UNAVAILABLE(ios, tvos, watchos) API_AVAILABLE(macos(26.6))
+184: extern
+185: bool os_cross_arch_is_supported(os_cross_arch_t arch);
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/spawn.h
+sha256=2d90f16beec60b2080553613234f004b58f384003feaa5eb809fe5e91b42b884
+160: int     posix_spawnattr_setspecialport_np(posix_spawnattr_t * __restrict,
+161:     mach_port_t, int) __API_AVAILABLE(macos(10.5), ios(2.0)) __API_UNAVAILABLE(watchos, tvos);
+162: 
+163: int     posix_spawnattr_setnosmt_np(const posix_spawnattr_t * __restrict) __API_AVAILABLE(macos(11.0));
+164: 
+165: int     posix_spawnattr_set_4k_page_size_np(const posix_spawnattr_t * __restrict) __API_AVAILABLE(macos(26.0));
+166: 
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/mach_traps.h
+sha256=270fe48d24a67253f6917183b52bc159b84f5159dcaa2712c2f72d15f77df31a
+305: extern kern_return_t thread_set_x86_64_compat(
+306: 	uint32_t enable);

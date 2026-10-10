@@ -1,0 +1,822 @@
+[
+  {
+    "sha": "21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6",
+    "node_id": "C_kwDOUZ19ENoAKDIxYzQ1YTJjM2JiMzJlNWIyYTFlZDkyZDcyYmU2ZjJlNmUzZTcyZjY",
+    "commit": {
+      "author": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:25Z"
+      },
+      "committer": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:56Z"
+      },
+      "message": "docs: Describe the synchronization backend and the newer ARM64 changes.\n\nUpdate the change list and runtime switches, add SYNC.md for the\nin-process synchronization backend, note the loader bundle's LSUIElement\nrequirement and the GStreamer/Vulkan build, and refresh the external\ncomponent revisions.",
+      "tree": {
+        "sha": "4430150e16266899277d59c00da8ba0b458a4b91",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/trees/4430150e16266899277d59c00da8ba0b458a4b91"
+      },
+      "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/commits/21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6",
+    "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6",
+    "comments_url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/21c45a2c3bb32e5b2a1ed92d72be6f2e6e3e72f6/comments",
+    "author": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "943ef3e7516ff683bf405c8d113f2f6071c30f59",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/943ef3e7516ff683bf405c8d113f2f6071c30f59",
+        "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/943ef3e7516ff683bf405c8d113f2f6071c30f59"
+      }
+    ]
+  },
+  {
+    "sha": "943ef3e7516ff683bf405c8d113f2f6071c30f59",
+    "node_id": "C_kwDOUZ19ENoAKDk0M2VmM2U3NTE2ZmY2ODNiZjQwNWM4ZDExM2YyZjYwNzFjMzBmNTk",
+    "commit": {
+      "author": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:03:48Z"
+      },
+      "committer": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:47Z"
+      },
+      "message": "tests: Add synchronization and callback fixtures.\n\nwindows-sync-conformance.c checks observable synchronization semantics\n(event exchange, wait-all, pulses, abandoned mutexes, APCs, 32,768 live\nevents); windows-sync-stress.c covers contended and cross-process cases.\nmessage-stress.c drives window-message callbacks with large payloads for\nthe ARM64 callback stack-bounds check. The two synchronization fixtures\ncarry their own MIT headers.",
+      "tree": {
+        "sha": "745b6696253029b36bacef449b2c3d9c8a5e5557",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/trees/745b6696253029b36bacef449b2c3d9c8a5e5557"
+      },
+      "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/commits/943ef3e7516ff683bf405c8d113f2f6071c30f59",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/943ef3e7516ff683bf405c8d113f2f6071c30f59",
+    "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/943ef3e7516ff683bf405c8d113f2f6071c30f59",
+    "comments_url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/943ef3e7516ff683bf405c8d113f2f6071c30f59/comments",
+    "author": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e813983094482ebab0062368dbec1b25901e1426",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/e813983094482ebab0062368dbec1b25901e1426",
+        "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/e813983094482ebab0062368dbec1b25901e1426"
+      }
+    ]
+  },
+  {
+    "sha": "e813983094482ebab0062368dbec1b25901e1426",
+    "node_id": "C_kwDOUZ19ENoAKGU4MTM5ODMwOTQ0ODJlYmFiMDA2MjM2OGRiZWMxYjI1OTAxZTE0MjY",
+    "commit": {
+      "author": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:03:48Z"
+      },
+      "committer": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:47Z"
+      },
+      "message": "winemac: Promote only activatable windows to a Dock application.\n\nPreviously ordering in any Cocoa window made the process a regular\napplication, so explorer.exe /desktop and helper processes each added a\nDock icon next to the game's. Promote only for a window the user can\nactivate: WS_EX_NOACTIVATE windows and tool windows (WS_EX_TOOLWINDOW\nwithout WS_EX_APPWINDOW) no longer do, in both the order-in and the focus\npath. Explorer's stand-alone systray window becomes a tool window, as the\nreal taskbar is.",
+      "tree": {
+        "sha": "777242d6878076ab0ab449f764f4e4e74323f044",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/trees/777242d6878076ab0ab449f764f4e4e74323f044"
+      },
+      "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/commits/e813983094482ebab0062368dbec1b25901e1426",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/e813983094482ebab0062368dbec1b25901e1426",
+    "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/e813983094482ebab0062368dbec1b25901e1426",
+    "comments_url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/e813983094482ebab0062368dbec1b25901e1426/comments",
+    "author": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ae331e43592458a33af30161da23baa01e7611e2",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/ae331e43592458a33af30161da23baa01e7611e2",
+        "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/ae331e43592458a33af30161da23baa01e7611e2"
+      }
+    ]
+  },
+  {
+    "sha": "ae331e43592458a33af30161da23baa01e7611e2",
+    "node_id": "C_kwDOUZ19ENoAKGFlMzMxZTQzNTkyNDU4YTMzYWYzMDE2MWRhMjNiYWEwMWU3NjExZTI",
+    "commit": {
+      "author": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:03:48Z"
+      },
+      "committer": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:47Z"
+      },
+      "message": "server: Add an in-process synchronization backend for macOS.\n\nImplement upstream's in-process sync interface, which so far only has a\nLinux ntsync implementation, on top of a shared-memory region and\nos_sync_wait_on_address. The server owns one region holding every event,\nsemaphore and mutex and one wait block per thread, and hands clients its\ndescriptor in place of a device descriptor; objects are addressed by\nindex with a per-slot generation, so a stale index fails with\nSTATUS_INVALID_HANDLE instead of touching another object.\n\nOne wait-on-address lock in the region header guards the state. It\nrecords its holder's pid so a waiter can recover it if the holder died,\nand is handed to one waiter at a time on unlock. A blocking thread\nregisters its wait block on each object and sleeps on the block's state\nword; whoever makes an object available claims it for the oldest\neligible waiter under the lock, so wait-all is atomic, pulses reach only\nthreads already waiting and a timeout cannot race a signal. Mutexes a\nthread holds are chained under its wait block and released by the server\nwhen the thread dies; kill_thread retires the block before SIGQUIT.\n\nWhen no wait block is available the wait falls through to the server,\nwhose inproc_sync object reads and claims the shared state under the\nsame lock; a client that signals an object with server-side waiters\nsends one wake_inproc_sync request. The region is mapped through\nvirtual_map_host_region as a system view so it never collides with an\napplication allocation.\n\nEnabled by starting the server with STRATUM_SYNC=1; otherwise server\nsynchronization is used. os_sync_wait_on_address is weakly imported, so\non macOS older than 14.4 the server prints one line and keeps server\nsynchronization. This changes the server protocol, so the server and all\nnative modules must be built from the same tree.",
+      "tree": {
+        "sha": "69d8a4c77dc5d43de89c7bda078e67df69ec453d",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/trees/69d8a4c77dc5d43de89c7bda078e67df69ec453d"
+      },
+      "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/commits/ae331e43592458a33af30161da23baa01e7611e2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/ae331e43592458a33af30161da23baa01e7611e2",
+    "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/ae331e43592458a33af30161da23baa01e7611e2",
+    "comments_url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/ae331e43592458a33af30161da23baa01e7611e2/comments",
+    "author": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9f87dc56c9c7925a96cb6578a47ba7fceb7028ec",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/9f87dc56c9c7925a96cb6578a47ba7fceb7028ec",
+        "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/9f87dc56c9c7925a96cb6578a47ba7fceb7028ec"
+      }
+    ]
+  },
+  {
+    "sha": "9f87dc56c9c7925a96cb6578a47ba7fceb7028ec",
+    "node_id": "C_kwDOUZ19ENoAKDlmODdkYzU2YzljNzkyNWE5NmNiNjU3OGE0N2JhN2ZjZWI3MDI4ZWM",
+    "commit": {
+      "author": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:03:48Z"
+      },
+      "committer": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:47Z"
+      },
+      "message": "loader: Bound the 4 KB page-size re-exec to one attempt.\n\nIf the re-executed loader still sees a 16 KB page size, because the\nsignature or provisioning profile lacks the entitlement, exit with a\nmessage instead of re-executing forever. The attempt is recorded in\nSTRATUM_PAGE_SIZE_REEXEC_PID for the child.",
+      "tree": {
+        "sha": "c63d06afcbd40a789a4d0d00c8e699227f051461",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/trees/c63d06afcbd40a789a4d0d00c8e699227f051461"
+      },
+      "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/commits/9f87dc56c9c7925a96cb6578a47ba7fceb7028ec",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/9f87dc56c9c7925a96cb6578a47ba7fceb7028ec",
+    "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/9f87dc56c9c7925a96cb6578a47ba7fceb7028ec",
+    "comments_url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/9f87dc56c9c7925a96cb6578a47ba7fceb7028ec/comments",
+    "author": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0dad72df204142a2f276495af5baaf4d932ea91f",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/0dad72df204142a2f276495af5baaf4d932ea91f",
+        "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/0dad72df204142a2f276495af5baaf4d932ea91f"
+      }
+    ]
+  },
+  {
+    "sha": "0dad72df204142a2f276495af5baaf4d932ea91f",
+    "node_id": "C_kwDOUZ19ENoAKDBkYWQ3MmRmMjA0MTQyYTJmMjc2NDk1YWY1YmFhZjRkOTMyZWE5MWY",
+    "commit": {
+      "author": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:03:48Z"
+      },
+      "committer": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:47Z"
+      },
+      "message": "winemac: Keep a window's Metal view until its last swap chain releases it.\n\nCount the swap-chain clients of a window's Metal view and detach the\nCAMetalLayer delegate when the last one goes away, instead of removing\nthe view at once. Removal and release are deferred to the main queue so\nthat blocks already queued by the Metal HUD, which retain the layer's\ndelegate view and need its window, run before the view is gone.\nDisposing a content view that still holds a Metal view takes the same\ndeferred path.",
+      "tree": {
+        "sha": "c418442e1546bfb1ddbe4d9a7a7ada917adb4c9a",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/trees/c418442e1546bfb1ddbe4d9a7a7ada917adb4c9a"
+      },
+      "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/commits/0dad72df204142a2f276495af5baaf4d932ea91f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/0dad72df204142a2f276495af5baaf4d932ea91f",
+    "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/0dad72df204142a2f276495af5baaf4d932ea91f",
+    "comments_url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/0dad72df204142a2f276495af5baaf4d932ea91f/comments",
+    "author": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "8df085af744d252b81be8a7d96cf1f01086c156b",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/8df085af744d252b81be8a7d96cf1f01086c156b",
+        "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/8df085af744d252b81be8a7d96cf1f01086c156b"
+      }
+    ]
+  },
+  {
+    "sha": "8df085af744d252b81be8a7d96cf1f01086c156b",
+    "node_id": "C_kwDOUZ19ENoAKDhkZjA4NWFmNzQ0ZDI1MmI4MWJlOGE3ZDk2Y2YxZjAxMDg2YzE1NmI",
+    "commit": {
+      "author": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:03:48Z"
+      },
+      "committer": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:47Z"
+      },
+      "message": "winemac: Apply the executable's icon after the process became a foreground app.\n\nWhen the main executable loads after the process was already promoted\nto a regular application, the Dock kept a blank or bundle icon. Apply\nthe executable's icon in that case as well.",
+      "tree": {
+        "sha": "5de5c372efdfc7975d404bcb6df7f66ea5857868",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/trees/5de5c372efdfc7975d404bcb6df7f66ea5857868"
+      },
+      "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/commits/8df085af744d252b81be8a7d96cf1f01086c156b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/8df085af744d252b81be8a7d96cf1f01086c156b",
+    "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/8df085af744d252b81be8a7d96cf1f01086c156b",
+    "comments_url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/8df085af744d252b81be8a7d96cf1f01086c156b/comments",
+    "author": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4eeb817fe2fcd8ba828afc49cd9cca7c82bca42f",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/4eeb817fe2fcd8ba828afc49cd9cca7c82bca42f",
+        "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/4eeb817fe2fcd8ba828afc49cd9cca7c82bca42f"
+      }
+    ]
+  },
+  {
+    "sha": "4eeb817fe2fcd8ba828afc49cd9cca7c82bca42f",
+    "node_id": "C_kwDOUZ19ENoAKDRlZWI4MTdmZTJmY2Q4YmE4MjhhZmM0OWNkOWNjYTdjODJiY2E0MmY",
+    "commit": {
+      "author": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:03:48Z"
+      },
+      "committer": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:47Z"
+      },
+      "message": "ntdll: Reject ARM64 user callbacks whose arguments would overflow the stack.\n\nA user-mode callback whose argument block does not fit below the current\nstack pointer corrupted the thread stack; seen with a 72 MB drag-and-drop\npayload. The bounds check applies while the thread runs on the stack its\nTEB describes. On a stack of its own, as with fibers and job systems, the\npayload is capped at 1 MB instead of being rejected.",
+      "tree": {
+        "sha": "8136f1127aee8d0e523701622521d89202cd8020",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/trees/8136f1127aee8d0e523701622521d89202cd8020"
+      },
+      "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/commits/4eeb817fe2fcd8ba828afc49cd9cca7c82bca42f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/4eeb817fe2fcd8ba828afc49cd9cca7c82bca42f",
+    "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/4eeb817fe2fcd8ba828afc49cd9cca7c82bca42f",
+    "comments_url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/4eeb817fe2fcd8ba828afc49cd9cca7c82bca42f/comments",
+    "author": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "27afd49d5684d672afaf09e814b0217b151beb75",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/27afd49d5684d672afaf09e814b0217b151beb75",
+        "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/27afd49d5684d672afaf09e814b0217b151beb75"
+      }
+    ]
+  },
+  {
+    "sha": "27afd49d5684d672afaf09e814b0217b151beb75",
+    "node_id": "C_kwDOUZ19ENoAKDI3YWZkNDlkNTY4NGQ2NzJhZmFmMDllODE0YjAyMTdiMTUxYmViNzU",
+    "commit": {
+      "author": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:03:48Z"
+      },
+      "committer": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:47Z"
+      },
+      "message": "faudio: Keep the sample timeline current when resampling is bypassed.\n\nAt a 1:1 rate the resampler is skipped and the voice's sample offset was\nleft behind; a later playback-rate change then resumed from a stale\noffset and the voice hung. Write the offset as totalSamples * FIXED_ONE\nso it cannot drift from the decoded count on a short decode.",
+      "tree": {
+        "sha": "9e0fd40cb3b98a1df46e07a032b1067af3f754a5",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/trees/9e0fd40cb3b98a1df46e07a032b1067af3f754a5"
+      },
+      "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/commits/27afd49d5684d672afaf09e814b0217b151beb75",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/27afd49d5684d672afaf09e814b0217b151beb75",
+    "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/27afd49d5684d672afaf09e814b0217b151beb75",
+    "comments_url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/27afd49d5684d672afaf09e814b0217b151beb75/comments",
+    "author": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "574cedb98b6e99834c5699309c830f37a93ce096",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/574cedb98b6e99834c5699309c830f37a93ce096",
+        "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/574cedb98b6e99834c5699309c830f37a93ce096"
+      }
+    ]
+  },
+  {
+    "sha": "574cedb98b6e99834c5699309c830f37a93ce096",
+    "node_id": "C_kwDOUZ19ENoAKDU3NGNlZGI5OGI2ZTk5ODM0YzU2OTkzMDljODMwZjM3YTkzY2UwOTY",
+    "commit": {
+      "author": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:03:48Z"
+      },
+      "committer": {
+        "name": "Gabe Zimbric",
+        "email": "10481275+gzimbric@users.noreply.github.com",
+        "date": "2026-10-09T06:05:47Z"
+      },
+      "message": "ntdll: Optionally resolve the Steam client DLL to a builtin lsteamclient.\n\nWith STRATUM_NATIVE_STEAM=1, loading steamclient.dll or steamclient64.dll,\nby plain name or absolute path, resolves to lsteamclient.dll through the\nnormal builtin loader. Nothing in third-party code is modified and no\nbinary-specific offsets are involved. Off by default.",
+      "tree": {
+        "sha": "83721a25200c6d647604180c0c84b143e78500d8",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/trees/83721a25200c6d647604180c0c84b143e78500d8"
+      },
+      "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/git/commits/574cedb98b6e99834c5699309c830f37a93ce096",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/574cedb98b6e99834c5699309c830f37a93ce096",
+    "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/574cedb98b6e99834c5699309c830f37a93ce096",
+    "comments_url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/574cedb98b6e99834c5699309c830f37a93ce096/comments",
+    "author": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gzimbric",
+      "id": 10481275,
+      "node_id": "MDQ6VXNlcjEwNDgxMjc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10481275?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gzimbric",
+      "html_url": "https://github.com/gzimbric",
+      "followers_url": "https://api.github.com/users/gzimbric/followers",
+      "following_url": "https://api.github.com/users/gzimbric/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gzimbric/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gzimbric/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gzimbric/subscriptions",
+      "organizations_url": "https://api.github.com/users/gzimbric/orgs",
+      "repos_url": "https://api.github.com/users/gzimbric/repos",
+      "events_url": "https://api.github.com/users/gzimbric/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gzimbric/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "afa2f42d899b85e0f99f164f85cff5121d3f0a4d",
+        "url": "https://api.github.com/repos/gzimbric/wine-arm64-macos/commits/afa2f42d899b85e0f99f164f85cff5121d3f0a4d",
+        "html_url": "https://github.com/gzimbric/wine-arm64-macos/commit/afa2f42d899b85e0f99f164f85cff5121d3f0a4d"
+      }
+    ]
+  }
+]

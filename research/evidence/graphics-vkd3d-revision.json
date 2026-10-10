@@ -1,0 +1,82 @@
+{
+  "sha": "2230755878b01993b4b82d0ac0c0624f3ab4d333",
+  "node_id": "C_kwDODH0hx9oAKDIyMzA3NTU4NzhiMDE5OTNiNGI4MmQwYWMwYzA2MjRmM2FiNGQzMzM",
+  "commit": {
+    "author": {
+      "name": "Hans-Kristian Arntzen",
+      "email": "post@arntzen-software.no",
+      "date": "2026-10-02T14:36:06Z"
+    },
+    "committer": {
+      "name": "Hans-Kristian Arntzen",
+      "email": "post@arntzen-software.no",
+      "date": "2026-10-06T10:40:08Z"
+    },
+    "message": "tests: Add test for conservative SSBO vectorization.\n\nWith constant indices, we used to fail the test here on NV when raw\naccess chain was not exposed.\n\nSigned-off-by: Hans-Kristian Arntzen <post@arntzen-software.no>",
+    "tree": {
+      "sha": "70bb0a75d01aa1d35e213a7669381596a125153d",
+      "url": "https://api.github.com/repos/HansKristian-Work/vkd3d-proton/git/trees/70bb0a75d01aa1d35e213a7669381596a125153d"
+    },
+    "url": "https://api.github.com/repos/HansKristian-Work/vkd3d-proton/git/commits/2230755878b01993b4b82d0ac0c0624f3ab4d333",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/HansKristian-Work/vkd3d-proton/commits/2230755878b01993b4b82d0ac0c0624f3ab4d333",
+  "html_url": "https://github.com/HansKristian-Work/vkd3d-proton/commit/2230755878b01993b4b82d0ac0c0624f3ab4d333",
+  "comments_url": "https://api.github.com/repos/HansKristian-Work/vkd3d-proton/commits/2230755878b01993b4b82d0ac0c0624f3ab4d333/comments",
+  "author": {
+    "login": "HansKristian-Work",
+    "id": 17786731,
+    "node_id": "MDQ6VXNlcjE3Nzg2NzMx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/17786731?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/HansKristian-Work",
+    "html_url": "https://github.com/HansKristian-Work",
+    "followers_url": "https://api.github.com/users/HansKristian-Work/followers",
+    "following_url": "https://api.github.com/users/HansKristian-Work/following{/other_user}",
+    "gists_url": "https://api.github.com/users/HansKristian-Work/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/HansKristian-Work/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/HansKristian-Work/subscriptions",
+    "organizations_url": "https://api.github.com/users/HansKristian-Work/orgs",
+    "repos_url": "https://api.github.com/users/HansKristian-Work/repos",
+    "events_url": "https://api.github.com/users/HansKristian-Work/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/HansKristian-Work/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "HansKristian-Work",
+    "id": 17786731,
+    "node_id": "MDQ6VXNlcjE3Nzg2NzMx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/17786731?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/HansKristian-Work",
+    "html_url": "https://github.com/HansKristian-Work",
+    "followers_url": "https://api.github.com/users/HansKristian-Work/followers",
+    "following_url": "https://api.github.com/users/HansKristian-Work/following{/other_user}",
+    "gists_url": "https://api.github.com/users/HansKristian-Work/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/HansKristian-Work/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/HansKristian-Work/subscriptions",
+    "organizations_url": "https://api.github.com/users/HansKristian-Work/orgs",
+    "repos_url": "https://api.github.com/users/HansKristian-Work/repos",
+    "events_url": "https://api.github.com/users/HansKristian-Work/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/HansKristian-Work/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "27dcb8701066ec8422355f68826204acecb90393",
+      "url": "https://api.github.com/repos/HansKristian-Work/vkd3d-proton/commits/27dcb8701066ec8422355f68826204acecb90393",
+      "html_url": "https://github.com/HansKristian-Work/vkd3d-proton/commit/27dcb8701066ec8422355f68826204acecb90393"
+    }
+  ]
+}

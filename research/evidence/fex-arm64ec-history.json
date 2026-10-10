@@ -1,0 +1,827 @@
+[
+  {
+    "sha": "47be6ad72039d65e5a942e0beb0365b8c29f65eb",
+    "node_id": "C_kwDODp_HwtoAKDQ3YmU2YWQ3MjAzOWQ2NWU1YTk0MmUwYmViMDM2NWI4YzI5ZjY1ZWI",
+    "commit": {
+      "author": {
+        "name": "Ryan Houdek",
+        "email": "Sonicadvance1@gmail.com",
+        "date": "2026-10-05T18:23:39Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-05T18:23:39Z"
+      },
+      "message": "Merge pull request #5997 from javelina-pkwy/fix/windows-arm64ec-syscall-stubs\n\nWindows: Don't hardcode NT syscall numbers for ARM64EC",
+      "tree": {
+        "sha": "42b2db3e986b26bdf3b55a64b57dd12fe68f8b4f",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/git/trees/42b2db3e986b26bdf3b55a64b57dd12fe68f8b4f"
+      },
+      "url": "https://api.github.com/repos/FEX-Emu/FEX/git/commits/47be6ad72039d65e5a942e0beb0365b8c29f65eb",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqw+srCRC1aQ7uu5UhlAAAvHAQAJ+RU+35wigAl/CLcCoaBUhD\n1KiTlFbraTwl+T6a6irGnlJj+0zqpLJRUwixurnNNJF4QMFxoT9prIlonbkpZWIE\nkBkJ8FVFBlXUfQjveO6kEX6A9zqTuuyBxRoKKPVDqCV8r9yvNC8w502P6sNKieBB\noqrsepk62bq/L0fYhYf92qPznK2fFkn4GyKxYxt05F+Zcy/am9ui2/NTB9b5Z3sm\nmP81NivGwn0by0u4+cwNvQPOQSZR/dyWNqFBOGEkaiyD9nsfQ73f3kmTiZ3j6fGL\ngqC9KKFuWyoMkGC0RkAuK5SAKK+CtIB7kDis/soyU/irwLEXqb8BsVE07H0HLSx/\njoNaObSSa8/T/IvhMpDfCtUqWD0IYzaGiqaZCJe7yqSVg2pyKuPtesuzSxNENzHN\nkAZZW3JRZx2lo5lGiLoc05k2yMdSUAHwfTYiE8K05wRm+BJiNKmgJBIRLoNUgU1a\niXIDO8UObdxJuCp24U1unh24JR+go12+xQNLu3Wr9TXWDxUxWIZ/woWcoXz+wihU\nwIMV3G2NqFvOQywtWk5NBmsWSc+V2MRu/h0ZbAfkil0PO8vuHH1dke9/Elg+ZsT0\nsCowrO1ADx2BoclgXH0GIJDkFqYGidwZGz/XmuSF6AabhhmvQJNmbZtdDHu1HSkh\n4LUJoWKA0ZhbwnwZjMzt\n=Mpay\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 42b2db3e986b26bdf3b55a64b57dd12fe68f8b4f\nparent 12326d7e71db16617cef17befc1cd744807f096c\nparent 67a7d4b35277f2bd6a5b5a1ea5d6d1aeed1558d4\nauthor Ryan Houdek <Sonicadvance1@gmail.com> 1791224619 -0700\ncommitter GitHub <noreply@github.com> 1791224619 -0700\n\nMerge pull request #5997 from javelina-pkwy/fix/windows-arm64ec-syscall-stubs\n\nWindows: Don't hardcode NT syscall numbers for ARM64EC",
+        "verified_at": "2026-10-05T18:23:40Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/47be6ad72039d65e5a942e0beb0365b8c29f65eb",
+    "html_url": "https://github.com/FEX-Emu/FEX/commit/47be6ad72039d65e5a942e0beb0365b8c29f65eb",
+    "comments_url": "https://api.github.com/repos/FEX-Emu/FEX/commits/47be6ad72039d65e5a942e0beb0365b8c29f65eb/comments",
+    "author": {
+      "login": "Sonicadvance1",
+      "id": 1018829,
+      "node_id": "MDQ6VXNlcjEwMTg4Mjk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1018829?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Sonicadvance1",
+      "html_url": "https://github.com/Sonicadvance1",
+      "followers_url": "https://api.github.com/users/Sonicadvance1/followers",
+      "following_url": "https://api.github.com/users/Sonicadvance1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Sonicadvance1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Sonicadvance1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Sonicadvance1/subscriptions",
+      "organizations_url": "https://api.github.com/users/Sonicadvance1/orgs",
+      "repos_url": "https://api.github.com/users/Sonicadvance1/repos",
+      "events_url": "https://api.github.com/users/Sonicadvance1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Sonicadvance1/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "12326d7e71db16617cef17befc1cd744807f096c",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/12326d7e71db16617cef17befc1cd744807f096c",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/12326d7e71db16617cef17befc1cd744807f096c"
+      },
+      {
+        "sha": "67a7d4b35277f2bd6a5b5a1ea5d6d1aeed1558d4",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/67a7d4b35277f2bd6a5b5a1ea5d6d1aeed1558d4",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/67a7d4b35277f2bd6a5b5a1ea5d6d1aeed1558d4"
+      }
+    ]
+  },
+  {
+    "sha": "67a7d4b35277f2bd6a5b5a1ea5d6d1aeed1558d4",
+    "node_id": "C_kwDODp_HwtoAKDY3YTdkNGIzNTI3N2YyYmQ2YTViNWExZWE1ZDZkMWFlZWQxNTU4ZDQ",
+    "commit": {
+      "author": {
+        "name": "Justin Becker",
+        "email": "jubecker@nvidia.com",
+        "date": "2026-09-29T18:53:30Z"
+      },
+      "committer": {
+        "name": "Justin Becker",
+        "email": "jubecker@nvidia.com",
+        "date": "2026-09-29T19:02:38Z"
+      },
+      "message": "NIT: Unneeded ifdef",
+      "tree": {
+        "sha": "838cb83adb7bc87c7e5d3b4abc8e4bdefc926147",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/git/trees/838cb83adb7bc87c7e5d3b4abc8e4bdefc926147"
+      },
+      "url": "https://api.github.com/repos/FEX-Emu/FEX/git/commits/67a7d4b35277f2bd6a5b5a1ea5d6d1aeed1558d4",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/67a7d4b35277f2bd6a5b5a1ea5d6d1aeed1558d4",
+    "html_url": "https://github.com/FEX-Emu/FEX/commit/67a7d4b35277f2bd6a5b5a1ea5d6d1aeed1558d4",
+    "comments_url": "https://api.github.com/repos/FEX-Emu/FEX/commits/67a7d4b35277f2bd6a5b5a1ea5d6d1aeed1558d4/comments",
+    "author": {
+      "login": "javelina-pkwy",
+      "id": 301057006,
+      "node_id": "U_kgDOEfHD7g",
+      "avatar_url": "https://avatars.githubusercontent.com/u/301057006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/javelina-pkwy",
+      "html_url": "https://github.com/javelina-pkwy",
+      "followers_url": "https://api.github.com/users/javelina-pkwy/followers",
+      "following_url": "https://api.github.com/users/javelina-pkwy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/javelina-pkwy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/javelina-pkwy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/javelina-pkwy/subscriptions",
+      "organizations_url": "https://api.github.com/users/javelina-pkwy/orgs",
+      "repos_url": "https://api.github.com/users/javelina-pkwy/repos",
+      "events_url": "https://api.github.com/users/javelina-pkwy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/javelina-pkwy/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "javelina-pkwy",
+      "id": 301057006,
+      "node_id": "U_kgDOEfHD7g",
+      "avatar_url": "https://avatars.githubusercontent.com/u/301057006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/javelina-pkwy",
+      "html_url": "https://github.com/javelina-pkwy",
+      "followers_url": "https://api.github.com/users/javelina-pkwy/followers",
+      "following_url": "https://api.github.com/users/javelina-pkwy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/javelina-pkwy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/javelina-pkwy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/javelina-pkwy/subscriptions",
+      "organizations_url": "https://api.github.com/users/javelina-pkwy/orgs",
+      "repos_url": "https://api.github.com/users/javelina-pkwy/repos",
+      "events_url": "https://api.github.com/users/javelina-pkwy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/javelina-pkwy/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "aad2c969b7e909e34b559ea8f1cb8654ecdc6190",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/aad2c969b7e909e34b559ea8f1cb8654ecdc6190",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/aad2c969b7e909e34b559ea8f1cb8654ecdc6190"
+      }
+    ]
+  },
+  {
+    "sha": "aad2c969b7e909e34b559ea8f1cb8654ecdc6190",
+    "node_id": "C_kwDODp_HwtoAKGFhZDJjOTY5YjdlOTA5ZTM0YjU1OWVhOGYxY2I4NjU0ZWNkYzYxOTA",
+    "commit": {
+      "author": {
+        "name": "Justin Becker",
+        "email": "jubecker@nvidia.com",
+        "date": "2026-09-28T21:14:44Z"
+      },
+      "committer": {
+        "name": "Justin Becker",
+        "email": "jubecker@nvidia.com",
+        "date": "2026-09-29T18:24:36Z"
+      },
+      "message": "Windows: Don't hardcode NT syscall numbers for ARM64EC",
+      "tree": {
+        "sha": "36ba471870579d9ae49454178844775cc702643a",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/git/trees/36ba471870579d9ae49454178844775cc702643a"
+      },
+      "url": "https://api.github.com/repos/FEX-Emu/FEX/git/commits/aad2c969b7e909e34b559ea8f1cb8654ecdc6190",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/aad2c969b7e909e34b559ea8f1cb8654ecdc6190",
+    "html_url": "https://github.com/FEX-Emu/FEX/commit/aad2c969b7e909e34b559ea8f1cb8654ecdc6190",
+    "comments_url": "https://api.github.com/repos/FEX-Emu/FEX/commits/aad2c969b7e909e34b559ea8f1cb8654ecdc6190/comments",
+    "author": {
+      "login": "javelina-pkwy",
+      "id": 301057006,
+      "node_id": "U_kgDOEfHD7g",
+      "avatar_url": "https://avatars.githubusercontent.com/u/301057006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/javelina-pkwy",
+      "html_url": "https://github.com/javelina-pkwy",
+      "followers_url": "https://api.github.com/users/javelina-pkwy/followers",
+      "following_url": "https://api.github.com/users/javelina-pkwy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/javelina-pkwy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/javelina-pkwy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/javelina-pkwy/subscriptions",
+      "organizations_url": "https://api.github.com/users/javelina-pkwy/orgs",
+      "repos_url": "https://api.github.com/users/javelina-pkwy/repos",
+      "events_url": "https://api.github.com/users/javelina-pkwy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/javelina-pkwy/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "javelina-pkwy",
+      "id": 301057006,
+      "node_id": "U_kgDOEfHD7g",
+      "avatar_url": "https://avatars.githubusercontent.com/u/301057006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/javelina-pkwy",
+      "html_url": "https://github.com/javelina-pkwy",
+      "followers_url": "https://api.github.com/users/javelina-pkwy/followers",
+      "following_url": "https://api.github.com/users/javelina-pkwy/following{/other_user}",
+      "gists_url": "https://api.github.com/users/javelina-pkwy/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/javelina-pkwy/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/javelina-pkwy/subscriptions",
+      "organizations_url": "https://api.github.com/users/javelina-pkwy/orgs",
+      "repos_url": "https://api.github.com/users/javelina-pkwy/repos",
+      "events_url": "https://api.github.com/users/javelina-pkwy/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/javelina-pkwy/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "08f451d3bce62a68aa6307dced5a8eaeb85c39bc",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/08f451d3bce62a68aa6307dced5a8eaeb85c39bc",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/08f451d3bce62a68aa6307dced5a8eaeb85c39bc"
+      }
+    ]
+  },
+  {
+    "sha": "517a1836ee7e71de504e9cc61aaf5791ac28f1a5",
+    "node_id": "C_kwDODp_HwtoAKDUxN2ExODM2ZWU3ZTcxZGU1MDRlOWNjNjFhYWY1NzkxYWMyOGYxYTU",
+    "commit": {
+      "author": {
+        "name": "Jacek Caban",
+        "email": "jacek@codeweavers.com",
+        "date": "2026-09-28T08:39:21Z"
+      },
+      "committer": {
+        "name": "Jacek Caban",
+        "email": "jacek@codeweavers.com",
+        "date": "2026-09-28T08:39:21Z"
+      },
+      "message": "ARM64EC: Use correct context flags in ThreadTerm",
+      "tree": {
+        "sha": "7802eff05e6f8000b59948ae31a4582f1d3f438c",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/git/trees/7802eff05e6f8000b59948ae31a4582f1d3f438c"
+      },
+      "url": "https://api.github.com/repos/FEX-Emu/FEX/git/commits/517a1836ee7e71de504e9cc61aaf5791ac28f1a5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/517a1836ee7e71de504e9cc61aaf5791ac28f1a5",
+    "html_url": "https://github.com/FEX-Emu/FEX/commit/517a1836ee7e71de504e9cc61aaf5791ac28f1a5",
+    "comments_url": "https://api.github.com/repos/FEX-Emu/FEX/commits/517a1836ee7e71de504e9cc61aaf5791ac28f1a5/comments",
+    "author": {
+      "login": "cjacek",
+      "id": 3763736,
+      "node_id": "MDQ6VXNlcjM3NjM3MzY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3763736?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cjacek",
+      "html_url": "https://github.com/cjacek",
+      "followers_url": "https://api.github.com/users/cjacek/followers",
+      "following_url": "https://api.github.com/users/cjacek/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cjacek/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cjacek/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cjacek/subscriptions",
+      "organizations_url": "https://api.github.com/users/cjacek/orgs",
+      "repos_url": "https://api.github.com/users/cjacek/repos",
+      "events_url": "https://api.github.com/users/cjacek/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cjacek/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "cjacek",
+      "id": 3763736,
+      "node_id": "MDQ6VXNlcjM3NjM3MzY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3763736?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cjacek",
+      "html_url": "https://github.com/cjacek",
+      "followers_url": "https://api.github.com/users/cjacek/followers",
+      "following_url": "https://api.github.com/users/cjacek/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cjacek/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cjacek/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cjacek/subscriptions",
+      "organizations_url": "https://api.github.com/users/cjacek/orgs",
+      "repos_url": "https://api.github.com/users/cjacek/repos",
+      "events_url": "https://api.github.com/users/cjacek/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cjacek/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b1e54d803ba1473d2c3b6b8a92b377ef431b2394",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/b1e54d803ba1473d2c3b6b8a92b377ef431b2394",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/b1e54d803ba1473d2c3b6b8a92b377ef431b2394"
+      }
+    ]
+  },
+  {
+    "sha": "ec502b99d8492614dbf48007c31c8fc6a5a44a5b",
+    "node_id": "C_kwDODp_HwtoAKGVjNTAyYjk5ZDg0OTI2MTRkYmY0ODAwN2MzMWM4ZmM2YTVhNDRhNWI",
+    "commit": {
+      "author": {
+        "name": "Ryan Houdek",
+        "email": "Sonicadvance1@gmail.com",
+        "date": "2026-09-18T23:59:35Z"
+      },
+      "committer": {
+        "name": "Ryan Houdek",
+        "email": "Sonicadvance1@gmail.com",
+        "date": "2026-09-18T23:59:35Z"
+      },
+      "message": "FEXCore: Support passing process pid to the backend",
+      "tree": {
+        "sha": "52080da254a09f168dbe417c4f6dd8186219a61e",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/git/trees/52080da254a09f168dbe417c4f6dd8186219a61e"
+      },
+      "url": "https://api.github.com/repos/FEX-Emu/FEX/git/commits/ec502b99d8492614dbf48007c31c8fc6a5a44a5b",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAARcAAAAHc3NoLXJzYQAAAAMBAAEAAAEBAKRVBEsHKfX4JA8aX7A6D0\ndx5Fx5cuItDKoR03jPEkLJZAgiqXj3+Sc9WhG60xGlXMSXbp3q2uMfxvr/+t0sw7QqmUMf\nnEU893GtLjAx4wXxx743p1vu/qaJ4H2Xbh9XwvVqyXd/2Sb4CNOQ33km83rxfvikqKNIBX\nrSGLb9Kyz99uJ2aREykzP+yGN+AQpINKhJH5iiBh7tviPUVtGjSHv3dv0C9Nd9InkwHxAp\nXoTHbY3qlD8V0e0Z1IKUBHCz/mTK52Duo6awCM9zWKwAYQuQXAXJsFIqXhBassGeT7CP+4\nHf9mPdTyIioVmOIVvGMQGiSYW13ZNLLCsInh0fEVkAAAADZ2l0AAAAAAAAAAZzaGE1MTIA\nAAEUAAAADHJzYS1zaGEyLTUxMgAAAQArc68lHKEw1KTMzZvWWhh7g01xPnWCN6vGzyYS/Z\nw0AR97btdDt/4tI7i0H3GY9hLSI5vne9mwR7WcEhgpeZd8puOSrZaBgN+fvJBl8Rd6+XIU\nPlCptF6mw/oITRehshdkGmnpO7OM3mQYsztQIgEJJKSFxxJxRjLWhgyHpzGSmcBr/Gl1XO\nGK89yzPpke7QV+pCfVKjYYFHnSPZXYU9lqltWz9DHRB5VhXgLfc7CIXHvycoDlVslLvMER\nAnrQ2LE0NyHZDa+h7prhG4XNldKFI+Oqn6tO1aiF9r4YCIQsyr+Np4v5WI/pXd3Q7OQELz\nL9anZ0C9B8jAhZHMEXUpUG\n-----END SSH SIGNATURE-----",
+        "payload": "tree 52080da254a09f168dbe417c4f6dd8186219a61e\nparent c55fb3b5b8bc5a73789fb44e3d9a778ae1322a80\nauthor Ryan Houdek <Sonicadvance1@gmail.com> 1789775975 -0700\ncommitter Ryan Houdek <Sonicadvance1@gmail.com> 1789775975 -0700\n\nFEXCore: Support passing process pid to the backend\n",
+        "verified_at": "2026-09-19T00:03:08Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/ec502b99d8492614dbf48007c31c8fc6a5a44a5b",
+    "html_url": "https://github.com/FEX-Emu/FEX/commit/ec502b99d8492614dbf48007c31c8fc6a5a44a5b",
+    "comments_url": "https://api.github.com/repos/FEX-Emu/FEX/commits/ec502b99d8492614dbf48007c31c8fc6a5a44a5b/comments",
+    "author": {
+      "login": "Sonicadvance1",
+      "id": 1018829,
+      "node_id": "MDQ6VXNlcjEwMTg4Mjk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1018829?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Sonicadvance1",
+      "html_url": "https://github.com/Sonicadvance1",
+      "followers_url": "https://api.github.com/users/Sonicadvance1/followers",
+      "following_url": "https://api.github.com/users/Sonicadvance1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Sonicadvance1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Sonicadvance1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Sonicadvance1/subscriptions",
+      "organizations_url": "https://api.github.com/users/Sonicadvance1/orgs",
+      "repos_url": "https://api.github.com/users/Sonicadvance1/repos",
+      "events_url": "https://api.github.com/users/Sonicadvance1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Sonicadvance1/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "Sonicadvance1",
+      "id": 1018829,
+      "node_id": "MDQ6VXNlcjEwMTg4Mjk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1018829?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Sonicadvance1",
+      "html_url": "https://github.com/Sonicadvance1",
+      "followers_url": "https://api.github.com/users/Sonicadvance1/followers",
+      "following_url": "https://api.github.com/users/Sonicadvance1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Sonicadvance1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Sonicadvance1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Sonicadvance1/subscriptions",
+      "organizations_url": "https://api.github.com/users/Sonicadvance1/orgs",
+      "repos_url": "https://api.github.com/users/Sonicadvance1/repos",
+      "events_url": "https://api.github.com/users/Sonicadvance1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Sonicadvance1/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "c55fb3b5b8bc5a73789fb44e3d9a778ae1322a80",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/c55fb3b5b8bc5a73789fb44e3d9a778ae1322a80",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/c55fb3b5b8bc5a73789fb44e3d9a778ae1322a80"
+      }
+    ]
+  },
+  {
+    "sha": "064a6e96c78713c7985aaaee61ffd9ed25cda3d4",
+    "node_id": "C_kwDODp_HwtoAKDA2NGE2ZTk2Yzc4NzEzYzc5ODVhYWFlZTYxZmZkOWVkMjVjZGEzZDQ",
+    "commit": {
+      "author": {
+        "name": "Jacek Caban",
+        "email": "jacek@codeweavers.com",
+        "date": "2026-09-06T13:09:18Z"
+      },
+      "committer": {
+        "name": "Jacek Caban",
+        "email": "jacek@codeweavers.com",
+        "date": "2026-09-06T13:20:30Z"
+      },
+      "message": "ARM64EC: Use NtRaiseException to raise guest exception\n\nInstead of returning to KiUserExceptionDispatcher, which doesn't send a debug event.",
+      "tree": {
+        "sha": "a5e2f0c2534331ed2444b3fb2cdb99f0788c8e7b",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/git/trees/a5e2f0c2534331ed2444b3fb2cdb99f0788c8e7b"
+      },
+      "url": "https://api.github.com/repos/FEX-Emu/FEX/git/commits/064a6e96c78713c7985aaaee61ffd9ed25cda3d4",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/064a6e96c78713c7985aaaee61ffd9ed25cda3d4",
+    "html_url": "https://github.com/FEX-Emu/FEX/commit/064a6e96c78713c7985aaaee61ffd9ed25cda3d4",
+    "comments_url": "https://api.github.com/repos/FEX-Emu/FEX/commits/064a6e96c78713c7985aaaee61ffd9ed25cda3d4/comments",
+    "author": {
+      "login": "cjacek",
+      "id": 3763736,
+      "node_id": "MDQ6VXNlcjM3NjM3MzY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3763736?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cjacek",
+      "html_url": "https://github.com/cjacek",
+      "followers_url": "https://api.github.com/users/cjacek/followers",
+      "following_url": "https://api.github.com/users/cjacek/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cjacek/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cjacek/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cjacek/subscriptions",
+      "organizations_url": "https://api.github.com/users/cjacek/orgs",
+      "repos_url": "https://api.github.com/users/cjacek/repos",
+      "events_url": "https://api.github.com/users/cjacek/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cjacek/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "cjacek",
+      "id": 3763736,
+      "node_id": "MDQ6VXNlcjM3NjM3MzY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3763736?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cjacek",
+      "html_url": "https://github.com/cjacek",
+      "followers_url": "https://api.github.com/users/cjacek/followers",
+      "following_url": "https://api.github.com/users/cjacek/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cjacek/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cjacek/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cjacek/subscriptions",
+      "organizations_url": "https://api.github.com/users/cjacek/orgs",
+      "repos_url": "https://api.github.com/users/cjacek/repos",
+      "events_url": "https://api.github.com/users/cjacek/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cjacek/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d704bd3cefea39fd8f0cbd1e43a2985722f15f12",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/d704bd3cefea39fd8f0cbd1e43a2985722f15f12",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/d704bd3cefea39fd8f0cbd1e43a2985722f15f12"
+      }
+    ]
+  },
+  {
+    "sha": "d704bd3cefea39fd8f0cbd1e43a2985722f15f12",
+    "node_id": "C_kwDODp_HwtoAKGQ3MDRiZDNjZWZlYTM5ZmQ4ZjBjYmQxZTQzYTI5ODU3MjJmMTVmMTI",
+    "commit": {
+      "author": {
+        "name": "Jacek Caban",
+        "email": "jacek@codeweavers.com",
+        "date": "2026-09-06T11:25:28Z"
+      },
+      "committer": {
+        "name": "Jacek Caban",
+        "email": "jacek@codeweavers.com",
+        "date": "2026-09-06T13:20:30Z"
+      },
+      "message": "Windows: Rise a non-continuable excetpion for STATUS_STACK_BUFFER_OVERRUN",
+      "tree": {
+        "sha": "ad86814bccb2893a6952ae7097f79bc041177543",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/git/trees/ad86814bccb2893a6952ae7097f79bc041177543"
+      },
+      "url": "https://api.github.com/repos/FEX-Emu/FEX/git/commits/d704bd3cefea39fd8f0cbd1e43a2985722f15f12",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/d704bd3cefea39fd8f0cbd1e43a2985722f15f12",
+    "html_url": "https://github.com/FEX-Emu/FEX/commit/d704bd3cefea39fd8f0cbd1e43a2985722f15f12",
+    "comments_url": "https://api.github.com/repos/FEX-Emu/FEX/commits/d704bd3cefea39fd8f0cbd1e43a2985722f15f12/comments",
+    "author": {
+      "login": "cjacek",
+      "id": 3763736,
+      "node_id": "MDQ6VXNlcjM3NjM3MzY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3763736?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cjacek",
+      "html_url": "https://github.com/cjacek",
+      "followers_url": "https://api.github.com/users/cjacek/followers",
+      "following_url": "https://api.github.com/users/cjacek/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cjacek/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cjacek/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cjacek/subscriptions",
+      "organizations_url": "https://api.github.com/users/cjacek/orgs",
+      "repos_url": "https://api.github.com/users/cjacek/repos",
+      "events_url": "https://api.github.com/users/cjacek/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cjacek/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "cjacek",
+      "id": 3763736,
+      "node_id": "MDQ6VXNlcjM3NjM3MzY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3763736?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cjacek",
+      "html_url": "https://github.com/cjacek",
+      "followers_url": "https://api.github.com/users/cjacek/followers",
+      "following_url": "https://api.github.com/users/cjacek/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cjacek/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cjacek/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cjacek/subscriptions",
+      "organizations_url": "https://api.github.com/users/cjacek/orgs",
+      "repos_url": "https://api.github.com/users/cjacek/repos",
+      "events_url": "https://api.github.com/users/cjacek/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cjacek/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9f511d5d788e7cad2ce5c389319eb943f8e6a3a6",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/9f511d5d788e7cad2ce5c389319eb943f8e6a3a6",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/9f511d5d788e7cad2ce5c389319eb943f8e6a3a6"
+      }
+    ]
+  },
+  {
+    "sha": "179b4423a7fd5a2d13041fd4c36b5eca2e39d2aa",
+    "node_id": "C_kwDODp_HwtoAKDE3OWI0NDIzYTdmZDVhMmQxMzA0MWZkNGMzNmI1ZWNhMmUzOWQyYWE",
+    "commit": {
+      "author": {
+        "name": "Ryan Houdek",
+        "email": "Sonicadvance1@gmail.com",
+        "date": "2026-09-05T03:01:34Z"
+      },
+      "committer": {
+        "name": "Ryan Houdek",
+        "email": "Sonicadvance1@gmail.com",
+        "date": "2026-09-05T03:08:18Z"
+      },
+      "message": "Wine: Change behaviour around SMC and NtReadFile\n\nJIT invalidation around syscalls and kernel calls is mighty fickle.\nThis is why the previous code path was born. In order to properly handle\nthis case we need strong coordination between Wine and FEX around\ninvalidating code and memory protections. This doesn't quite exist today\nso we're kind of stuck with a kludge solution. Instead of forcing the\nPersona 5 code invalidation on to every process, only do it on P5R.\n\nThis fixes a hang in msiexec with PhysX trying to do a blocking read and\njitting code or creating threads, while also maintaining the P5R\napproach. The full comment is in the file about the reasoning.",
+      "tree": {
+        "sha": "46eb9f0db087e271214fbe831bc9e34671e3b33e",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/git/trees/46eb9f0db087e271214fbe831bc9e34671e3b33e"
+      },
+      "url": "https://api.github.com/repos/FEX-Emu/FEX/git/commits/179b4423a7fd5a2d13041fd4c36b5eca2e39d2aa",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAARcAAAAHc3NoLXJzYQAAAAMBAAEAAAEBAKRVBEsHKfX4JA8aX7A6D0\ndx5Fx5cuItDKoR03jPEkLJZAgiqXj3+Sc9WhG60xGlXMSXbp3q2uMfxvr/+t0sw7QqmUMf\nnEU893GtLjAx4wXxx743p1vu/qaJ4H2Xbh9XwvVqyXd/2Sb4CNOQ33km83rxfvikqKNIBX\nrSGLb9Kyz99uJ2aREykzP+yGN+AQpINKhJH5iiBh7tviPUVtGjSHv3dv0C9Nd9InkwHxAp\nXoTHbY3qlD8V0e0Z1IKUBHCz/mTK52Duo6awCM9zWKwAYQuQXAXJsFIqXhBassGeT7CP+4\nHf9mPdTyIioVmOIVvGMQGiSYW13ZNLLCsInh0fEVkAAAADZ2l0AAAAAAAAAAZzaGE1MTIA\nAAEUAAAADHJzYS1zaGEyLTUxMgAAAQBlUoVmVDn9BaS7WLe2MDONTgk0WwShZI6RdhSZ43\ntrEdjHeqJIMW4zEDORyqjg7+vJcCBwYnQGo+7yzXb+8EMWTPLRfcLXzhoc/kA52kgQCPEm\n6HqUrDOJDa+bvoBc8eUZq8lkQ+qX+W/l9CUCh6989w/knrLhL8ebZPFqe7dKG228U9oiHJ\nyO3YyncbgRcTwP67/9uF25mQOWeRlvbn6loSL/asML8dw5q8gkmGb+eH1CBgumZm5Og0QB\nTKo81r+U8RY9BY/igNSOVtd76P4yuSRH+BH+dRWJBzHLwiKBvcS+dMul9Id9pO0irT8e4F\nYTyWIg6w4JxPxHolv0TSXq\n-----END SSH SIGNATURE-----",
+        "payload": "tree 46eb9f0db087e271214fbe831bc9e34671e3b33e\nparent e3c6b37f706be93ffaa5f69ed1dba1964a131cc6\nauthor Ryan Houdek <Sonicadvance1@gmail.com> 1788577294 -0700\ncommitter Ryan Houdek <Sonicadvance1@gmail.com> 1788577698 -0700\n\nWine: Change behaviour around SMC and NtReadFile\n\nJIT invalidation around syscalls and kernel calls is mighty fickle.\nThis is why the previous code path was born. In order to properly handle\nthis case we need strong coordination between Wine and FEX around\ninvalidating code and memory protections. This doesn't quite exist today\nso we're kind of stuck with a kludge solution. Instead of forcing the\nPersona 5 code invalidation on to every process, only do it on P5R.\n\nThis fixes a hang in msiexec with PhysX trying to do a blocking read and\njitting code or creating threads, while also maintaining the P5R\napproach. The full comment is in the file about the reasoning.\n",
+        "verified_at": "2026-09-05T03:08:27Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/179b4423a7fd5a2d13041fd4c36b5eca2e39d2aa",
+    "html_url": "https://github.com/FEX-Emu/FEX/commit/179b4423a7fd5a2d13041fd4c36b5eca2e39d2aa",
+    "comments_url": "https://api.github.com/repos/FEX-Emu/FEX/commits/179b4423a7fd5a2d13041fd4c36b5eca2e39d2aa/comments",
+    "author": {
+      "login": "Sonicadvance1",
+      "id": 1018829,
+      "node_id": "MDQ6VXNlcjEwMTg4Mjk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1018829?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Sonicadvance1",
+      "html_url": "https://github.com/Sonicadvance1",
+      "followers_url": "https://api.github.com/users/Sonicadvance1/followers",
+      "following_url": "https://api.github.com/users/Sonicadvance1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Sonicadvance1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Sonicadvance1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Sonicadvance1/subscriptions",
+      "organizations_url": "https://api.github.com/users/Sonicadvance1/orgs",
+      "repos_url": "https://api.github.com/users/Sonicadvance1/repos",
+      "events_url": "https://api.github.com/users/Sonicadvance1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Sonicadvance1/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "Sonicadvance1",
+      "id": 1018829,
+      "node_id": "MDQ6VXNlcjEwMTg4Mjk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1018829?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Sonicadvance1",
+      "html_url": "https://github.com/Sonicadvance1",
+      "followers_url": "https://api.github.com/users/Sonicadvance1/followers",
+      "following_url": "https://api.github.com/users/Sonicadvance1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Sonicadvance1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Sonicadvance1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Sonicadvance1/subscriptions",
+      "organizations_url": "https://api.github.com/users/Sonicadvance1/orgs",
+      "repos_url": "https://api.github.com/users/Sonicadvance1/repos",
+      "events_url": "https://api.github.com/users/Sonicadvance1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Sonicadvance1/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e3c6b37f706be93ffaa5f69ed1dba1964a131cc6",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/e3c6b37f706be93ffaa5f69ed1dba1964a131cc6",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/e3c6b37f706be93ffaa5f69ed1dba1964a131cc6"
+      }
+    ]
+  },
+  {
+    "sha": "66cad978c39ef68bc39b9e2daf2c2df1cfaff3f2",
+    "node_id": "C_kwDODp_HwtoAKDY2Y2FkOTc4YzM5ZWY2OGJjMzliOWUyZGFmMmMyZGYxY2ZhZmYzZjI",
+    "commit": {
+      "author": {
+        "name": "Ryan Houdek",
+        "email": "Sonicadvance1@gmail.com",
+        "date": "2026-09-01T01:59:32Z"
+      },
+      "committer": {
+        "name": "Ryan Houdek",
+        "email": "Sonicadvance1@gmail.com",
+        "date": "2026-09-01T02:23:18Z"
+      },
+      "message": "FEXCore: Removes syscall optimization\n\nThe JIT was doing a bunch of additional work where it was saving and\nrestoring registers and then juggling the arguments back in to a stack\nframe. All of this is nonsensical without the optimization where we\ncould call syscalls inline without a stack frame.\n\nInstead remove this optimization entirely and behave like a \"generic\"\nsyscall path always. The Linux syscall handler now pulls the arguments\nout of the CPU context directly and stores the result back in to RAX\ndirectly as well.\n\nThis has knock-on effects where technically syscalls are\ngoing to be slightly faster because no stack frame setup for the\narguments, but additionally we are going to be able to have syscalls be\nproper serialization points where we can interrupt the syscall and\nlong-jump out without problems.\n\nBumps the DiskCache version again because it causes codegen to change.",
+      "tree": {
+        "sha": "bf5a7b81684c876ebd11ae0739ccca82d16fd643",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/git/trees/bf5a7b81684c876ebd11ae0739ccca82d16fd643"
+      },
+      "url": "https://api.github.com/repos/FEX-Emu/FEX/git/commits/66cad978c39ef68bc39b9e2daf2c2df1cfaff3f2",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAARcAAAAHc3NoLXJzYQAAAAMBAAEAAAEBAKRVBEsHKfX4JA8aX7A6D0\ndx5Fx5cuItDKoR03jPEkLJZAgiqXj3+Sc9WhG60xGlXMSXbp3q2uMfxvr/+t0sw7QqmUMf\nnEU893GtLjAx4wXxx743p1vu/qaJ4H2Xbh9XwvVqyXd/2Sb4CNOQ33km83rxfvikqKNIBX\nrSGLb9Kyz99uJ2aREykzP+yGN+AQpINKhJH5iiBh7tviPUVtGjSHv3dv0C9Nd9InkwHxAp\nXoTHbY3qlD8V0e0Z1IKUBHCz/mTK52Duo6awCM9zWKwAYQuQXAXJsFIqXhBassGeT7CP+4\nHf9mPdTyIioVmOIVvGMQGiSYW13ZNLLCsInh0fEVkAAAADZ2l0AAAAAAAAAAZzaGE1MTIA\nAAEUAAAADHJzYS1zaGEyLTUxMgAAAQAX1jl8GChxTMBqimBKZ28/TZnSC+kl3MOSjJIR9o\njtKrnUtHomxsaU+29iHo/rUeVFji3jwmQo2Fz6hbHAQWAcJeFodd/XPP1HvKLbL/ALOdEC\nguD7cz19sMfZfX3Q9tOFd+DWjdGI4RyWiozJ+iw9DSbvfHDx5OejYG4slxrsNtxfXp+wsh\n7MM+aKrZ5Gvg7WtEBACPQJ1+NnsV5gyqv5Rt7ZAzh6ehjB63V1xCCkNbFakTrRIuSyNL1B\nl5EFB/3wMZ0qQjCPBZYjB0NtqA7hi5ikCY1lDgKqshed2lxWGakfWB73PfaLNeRt+Sgon3\n8oCIEcoYsKlf+c5EjT9iwn\n-----END SSH SIGNATURE-----",
+        "payload": "tree bf5a7b81684c876ebd11ae0739ccca82d16fd643\nparent 8cf2bf7ad8a7fcb3d4329388f1ddd26e11c63015\nauthor Ryan Houdek <Sonicadvance1@gmail.com> 1788227972 -0700\ncommitter Ryan Houdek <Sonicadvance1@gmail.com> 1788229398 -0700\n\nFEXCore: Removes syscall optimization\n\nThe JIT was doing a bunch of additional work where it was saving and\nrestoring registers and then juggling the arguments back in to a stack\nframe. All of this is nonsensical without the optimization where we\ncould call syscalls inline without a stack frame.\n\nInstead remove this optimization entirely and behave like a \"generic\"\nsyscall path always. The Linux syscall handler now pulls the arguments\nout of the CPU context directly and stores the result back in to RAX\ndirectly as well.\n\nThis has knock-on effects where technically syscalls are\ngoing to be slightly faster because no stack frame setup for the\narguments, but additionally we are going to be able to have syscalls be\nproper serialization points where we can interrupt the syscall and\nlong-jump out without problems.\n\nBumps the DiskCache version again because it causes codegen to change.\n",
+        "verified_at": "2026-09-01T02:23:27Z"
+      }
+    },
+    "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/66cad978c39ef68bc39b9e2daf2c2df1cfaff3f2",
+    "html_url": "https://github.com/FEX-Emu/FEX/commit/66cad978c39ef68bc39b9e2daf2c2df1cfaff3f2",
+    "comments_url": "https://api.github.com/repos/FEX-Emu/FEX/commits/66cad978c39ef68bc39b9e2daf2c2df1cfaff3f2/comments",
+    "author": {
+      "login": "Sonicadvance1",
+      "id": 1018829,
+      "node_id": "MDQ6VXNlcjEwMTg4Mjk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1018829?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Sonicadvance1",
+      "html_url": "https://github.com/Sonicadvance1",
+      "followers_url": "https://api.github.com/users/Sonicadvance1/followers",
+      "following_url": "https://api.github.com/users/Sonicadvance1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Sonicadvance1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Sonicadvance1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Sonicadvance1/subscriptions",
+      "organizations_url": "https://api.github.com/users/Sonicadvance1/orgs",
+      "repos_url": "https://api.github.com/users/Sonicadvance1/repos",
+      "events_url": "https://api.github.com/users/Sonicadvance1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Sonicadvance1/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "Sonicadvance1",
+      "id": 1018829,
+      "node_id": "MDQ6VXNlcjEwMTg4Mjk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1018829?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Sonicadvance1",
+      "html_url": "https://github.com/Sonicadvance1",
+      "followers_url": "https://api.github.com/users/Sonicadvance1/followers",
+      "following_url": "https://api.github.com/users/Sonicadvance1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Sonicadvance1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Sonicadvance1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Sonicadvance1/subscriptions",
+      "organizations_url": "https://api.github.com/users/Sonicadvance1/orgs",
+      "repos_url": "https://api.github.com/users/Sonicadvance1/repos",
+      "events_url": "https://api.github.com/users/Sonicadvance1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Sonicadvance1/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "8cf2bf7ad8a7fcb3d4329388f1ddd26e11c63015",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/8cf2bf7ad8a7fcb3d4329388f1ddd26e11c63015",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/8cf2bf7ad8a7fcb3d4329388f1ddd26e11c63015"
+      }
+    ]
+  },
+  {
+    "sha": "2a82f581950b6cbc09c657e83b06899559c53a26",
+    "node_id": "C_kwDODp_HwtoAKDJhODJmNTgxOTUwYjZjYmMwOWM2NTdlODNiMDY4OTk1NTljNTNhMjY",
+    "commit": {
+      "author": {
+        "name": "Pierre-Loup A. Griffais",
+        "email": "git@plagman.net",
+        "date": "2026-08-27T04:00:25Z"
+      },
+      "committer": {
+        "name": "Pierre-Loup A. Griffais",
+        "email": "git@plagman.net",
+        "date": "2026-08-28T04:15:22Z"
+      },
+      "message": "DiskCache: use memory-mapped IO for reads when possible\n\nOn Wine, use a unixlib call to get a quality mapping that can track a growing\nfile.",
+      "tree": {
+        "sha": "860405c24bbb1be083c4ac2b18eba637ff78e983",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/git/trees/860405c24bbb1be083c4ac2b18eba637ff78e983"
+      },
+      "url": "https://api.github.com/repos/FEX-Emu/FEX/git/commits/2a82f581950b6cbc09c657e83b06899559c53a26",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/2a82f581950b6cbc09c657e83b06899559c53a26",
+    "html_url": "https://github.com/FEX-Emu/FEX/commit/2a82f581950b6cbc09c657e83b06899559c53a26",
+    "comments_url": "https://api.github.com/repos/FEX-Emu/FEX/commits/2a82f581950b6cbc09c657e83b06899559c53a26/comments",
+    "author": {
+      "login": "Plagman",
+      "id": 529930,
+      "node_id": "MDQ6VXNlcjUyOTkzMA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/529930?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Plagman",
+      "html_url": "https://github.com/Plagman",
+      "followers_url": "https://api.github.com/users/Plagman/followers",
+      "following_url": "https://api.github.com/users/Plagman/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Plagman/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Plagman/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Plagman/subscriptions",
+      "organizations_url": "https://api.github.com/users/Plagman/orgs",
+      "repos_url": "https://api.github.com/users/Plagman/repos",
+      "events_url": "https://api.github.com/users/Plagman/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Plagman/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "Plagman",
+      "id": 529930,
+      "node_id": "MDQ6VXNlcjUyOTkzMA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/529930?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Plagman",
+      "html_url": "https://github.com/Plagman",
+      "followers_url": "https://api.github.com/users/Plagman/followers",
+      "following_url": "https://api.github.com/users/Plagman/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Plagman/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Plagman/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Plagman/subscriptions",
+      "organizations_url": "https://api.github.com/users/Plagman/orgs",
+      "repos_url": "https://api.github.com/users/Plagman/repos",
+      "events_url": "https://api.github.com/users/Plagman/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Plagman/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0814780c2f957a4d98cbe9c8c57f770b3f38f640",
+        "url": "https://api.github.com/repos/FEX-Emu/FEX/commits/0814780c2f957a4d98cbe9c8c57f770b3f38f640",
+        "html_url": "https://github.com/FEX-Emu/FEX/commit/0814780c2f957a4d98cbe9c8c57f770b3f38f640"
+      }
+    ]
+  }
+]

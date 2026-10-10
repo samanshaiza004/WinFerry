@@ -1,0 +1,87 @@
+{
+  "sha": "67b2682699d7903606b97a0392061d85d27d49e6",
+  "node_id": "C_kwDOBoyS_9oAKDY3YjI2ODI2OTlkNzkwMzYwNmI5N2EwMzkyMDYxZDg1ZDI3ZDQ5ZTY",
+  "commit": {
+    "author": {
+      "name": "squidbus",
+      "email": "175574877+squidbus@users.noreply.github.com",
+      "date": "2026-10-08T08:37:16Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-10-08T08:37:16Z"
+    },
+    "message": "Merge pull request #2861 from crichalchemist/fix-shader-cache-dynamic-offsets\n\nFix pipeline cache matching to fully match dynamicBufferDescriptors and discreteDescriptorSets",
+    "tree": {
+      "sha": "73a4bb1a6eca0233db2406458117b121ca5508e0",
+      "url": "https://api.github.com/repos/KhronosGroup/MoltenVK/git/trees/73a4bb1a6eca0233db2406458117b121ca5508e0"
+    },
+    "url": "https://api.github.com/repos/KhronosGroup/MoltenVK/git/commits/67b2682699d7903606b97a0392061d85d27d49e6",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqx1Y9CRC1aQ7uu5UhlAAAfi8QAJfEoZacMWCjQ7hqOZEBQMA5\nyYp/E3RvDHLrM0V7rmy2K8wmfvvtPnBBha46cnI5CMbKEDbUZqhMf3tLN4E724kR\nX31CbxsBath1dFnqHG16kSTfwt0hzu1pQ9TJwjHrb5S+zcQSRJtCIwzK7eVBsS5J\n8D9EaeM8JW9owiV3RRfrcS1NvrwtWJHmnrRfkYdC++1QoxN6xRmQzsGWNlqmPniv\nXWJ6KqnSD18jfRm9UFeDYNHLL5i963OgdyQ4h199B7qjxaV88q+wwwYFFulpq8xU\nblfNdUCsqWYoVB9pOb/sldPZjnu8fmiKcCHcI6iLfxu8/C7tXsDk7QC4MKmJXn/u\nvQvE2aVDWTPBKQgCOUnHbaIgNiBj4pMHcFO1rTcn+Qr97s3EEqCexj3S1tyNgbkR\nYekNoDFUXoYB0V97RHMG0x+187sPiQTvJDOI4FV/3+nNx+fmJLh+uKDJNlxPqheY\nbwtvHGJ1z2lePwePqW8bWjk+jvuHjVkK+Fw+mf+hCYaxUq5PWjEV/c+/QKa9YOx2\nJXXqzIRpCLEBYFJEvUUAbzbe/crkaWGuXdTKAeyLlcBeQRkG9/mErJAowOC9ake4\nGfBajxnvatBmbPAIkj8eQd55gzKfVfpd09PZ2qxuxSCahrPZgxKQxJHqUfp8qkid\nJijSp7lSn5a4trIR9xlt\n=mbZ5\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 73a4bb1a6eca0233db2406458117b121ca5508e0\nparent fae55a18779ee59da2cc5373a367a0282779c171\nparent cbe497918d1d24772de4753eaa199be74fa62d07\nauthor squidbus <175574877+squidbus@users.noreply.github.com> 1791448636 -0700\ncommitter GitHub <noreply@github.com> 1791448636 -0700\n\nMerge pull request #2861 from crichalchemist/fix-shader-cache-dynamic-offsets\n\nFix pipeline cache matching to fully match dynamicBufferDescriptors and discreteDescriptorSets",
+      "verified_at": "2026-10-08T08:37:17Z"
+    }
+  },
+  "url": "https://api.github.com/repos/KhronosGroup/MoltenVK/commits/67b2682699d7903606b97a0392061d85d27d49e6",
+  "html_url": "https://github.com/KhronosGroup/MoltenVK/commit/67b2682699d7903606b97a0392061d85d27d49e6",
+  "comments_url": "https://api.github.com/repos/KhronosGroup/MoltenVK/commits/67b2682699d7903606b97a0392061d85d27d49e6/comments",
+  "author": {
+    "login": "squidbus",
+    "id": 175574877,
+    "node_id": "U_kgDOCncPXQ",
+    "avatar_url": "https://avatars.githubusercontent.com/u/175574877?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/squidbus",
+    "html_url": "https://github.com/squidbus",
+    "followers_url": "https://api.github.com/users/squidbus/followers",
+    "following_url": "https://api.github.com/users/squidbus/following{/other_user}",
+    "gists_url": "https://api.github.com/users/squidbus/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/squidbus/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/squidbus/subscriptions",
+    "organizations_url": "https://api.github.com/users/squidbus/orgs",
+    "repos_url": "https://api.github.com/users/squidbus/repos",
+    "events_url": "https://api.github.com/users/squidbus/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/squidbus/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "fae55a18779ee59da2cc5373a367a0282779c171",
+      "url": "https://api.github.com/repos/KhronosGroup/MoltenVK/commits/fae55a18779ee59da2cc5373a367a0282779c171",
+      "html_url": "https://github.com/KhronosGroup/MoltenVK/commit/fae55a18779ee59da2cc5373a367a0282779c171"
+    },
+    {
+      "sha": "cbe497918d1d24772de4753eaa199be74fa62d07",
+      "url": "https://api.github.com/repos/KhronosGroup/MoltenVK/commits/cbe497918d1d24772de4753eaa199be74fa62d07",
+      "html_url": "https://github.com/KhronosGroup/MoltenVK/commit/cbe497918d1d24772de4753eaa199be74fa62d07"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+upstream-signal_arm64: sha256 e74c2b38000f2e2058c810be96d052d329ab493b277a43d1287fe5f663f71d31
+upstream-loader: sha256 2e662d1e51069cced057a077f3cc3ec5e53d8ee5b58b09a2da4ae4dee85a53c1
+fork-signal_arm64: sha256 43b311bfb35bc7f73f4255158366feced9006f2a9c863c86925edec86fb9a7c6
+fork-loader: sha256 d659a610b208a43c1204ee615339b2b1c61378e1397c76f89ca875c85f9c5544
+fork-virtual: sha256 a1fdb163ee9e59c32f39d07bd0b856a8c73d56296600a6fd2daa294ff2c04f2b
+Search inspected files for os_set_custom/os_custom/4k_page/thread_set_x86_64_compat/MAP_JIT. No matching new APIs in upstream signal_arm64.c and loader/main.c; matching fork locations recorded in native report. This is a bounded inspection, not an exhaustive upstream merge audit.

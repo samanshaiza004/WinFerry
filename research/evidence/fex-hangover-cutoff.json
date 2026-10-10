@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "56e385b7ff490edd281b288f420677093563560b",
+    "node_id": "C_kwDOBn0TCdoAKDU2ZTM4NWI3ZmY0OTBlZGQyODFiMjg4ZjQyMDY3NzA5MzU2MzU2MGI",
+    "commit": {
+      "author": {
+        "name": "André Zwing",
+        "email": "nerv@dawncrow.de",
+        "date": "2026-08-28T15:57:26Z"
+      },
+      "committer": {
+        "name": "André Zwing",
+        "email": "nerv@dawncrow.de",
+        "date": "2026-08-28T18:13:32Z"
+      },
+      "message": ".github: Replace upload-release-asset@v1 with gh release upload",
+      "tree": {
+        "sha": "856e560378c732a2cd30fb11c6f50da4bad19414",
+        "url": "https://api.github.com/repos/AndreRH/hangover/git/trees/856e560378c732a2cd30fb11c6f50da4bad19414"
+      },
+      "url": "https://api.github.com/repos/AndreRH/hangover/git/commits/56e385b7ff490edd281b288f420677093563560b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AndreRH/hangover/commits/56e385b7ff490edd281b288f420677093563560b",
+    "html_url": "https://github.com/AndreRH/hangover/commit/56e385b7ff490edd281b288f420677093563560b",
+    "comments_url": "https://api.github.com/repos/AndreRH/hangover/commits/56e385b7ff490edd281b288f420677093563560b/comments",
+    "author": {
+      "login": "AndreRH",
+      "id": 882484,
+      "node_id": "MDQ6VXNlcjg4MjQ4NA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/882484?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AndreRH",
+      "html_url": "https://github.com/AndreRH",
+      "followers_url": "https://api.github.com/users/AndreRH/followers",
+      "following_url": "https://api.github.com/users/AndreRH/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AndreRH/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AndreRH/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AndreRH/subscriptions",
+      "organizations_url": "https://api.github.com/users/AndreRH/orgs",
+      "repos_url": "https://api.github.com/users/AndreRH/repos",
+      "events_url": "https://api.github.com/users/AndreRH/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AndreRH/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "AndreRH",
+      "id": 882484,
+      "node_id": "MDQ6VXNlcjg4MjQ4NA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/882484?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AndreRH",
+      "html_url": "https://github.com/AndreRH",
+      "followers_url": "https://api.github.com/users/AndreRH/followers",
+      "following_url": "https://api.github.com/users/AndreRH/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AndreRH/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AndreRH/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AndreRH/subscriptions",
+      "organizations_url": "https://api.github.com/users/AndreRH/orgs",
+      "repos_url": "https://api.github.com/users/AndreRH/repos",
+      "events_url": "https://api.github.com/users/AndreRH/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AndreRH/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d2a664ae19b22b54c9a54758ed5dcd88b439c806",
+        "url": "https://api.github.com/repos/AndreRH/hangover/commits/d2a664ae19b22b54c9a54758ed5dcd88b439c806",
+        "html_url": "https://github.com/AndreRH/hangover/commit/d2a664ae19b22b54c9a54758ed5dcd88b439c806"
+      }
+    ]
+  }
+]

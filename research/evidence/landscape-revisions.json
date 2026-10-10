@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "utmapp/UTM",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "repo": "ValveSoftware/Proton",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "repo": "ptitSeb/box64",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "repo": "Whisky-App/Whisky",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "repo": "AndreRH/hangover",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "repo": "FEX-Emu/FEX",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "repo": "3Shain/dxmt",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "repo": "morluto/rea",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "repo": "NationalSecurityAgency/ghidra",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  }
+]

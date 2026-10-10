@@ -1,0 +1,102 @@
+# FEX, Hangover, and the narrow Darwin integration seam
+
+Research cutoff: **2026-10-10**. Source was downloaded and inspected; no FEX/Wine execution was performed for this chapter. VERIFIED means the implementation or policy is visible in source, not that this Mac reproduced it. REPORTED means a public developer report; INFERRED means an engineering conclusion; UNKNOWN means missing evidence.
+
+## Decision
+
+**INFERRED: Prefer FEX's existing Windows PE ARM64EC frontend inside native Wine over porting the complete Linux FEX application runtime.** This keeps Wine responsible for Windows loading, OS services, host threads, and GUI integration, while FEX translates x86 application code. The design exists in Hangover and in upstream FEX; Darwin integration remains a prototype task. The necessary initial port is much smaller than a Linux syscall/ELF/rootfs port, but correct JIT memory protection and native/emulated exception transitions are still release gates. [Hangover source README](https://github.com/AndreRH/hangover/tree/56e385b7ff490edd281b288f420677093563560b), [FEX ARM64EC module](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/ARM64EC/Module.cpp).
+
+## Pinned implementations and activity
+
+- **VERIFIED:** FEX cutoff revision is `14c92681f4d62cf84d901460e0358de09c8847a7`, committed 2026-10-07. It explicitly accepts Linux and Windows hosts and rejects other host systems in `CMakeLists.txt:56–66`. This disproves the claim that stock upstream currently supports standalone native Darwin FEX. Its Windows ARM64EC DLL target exists separately. [Commit](https://github.com/FEX-Emu/FEX/commit/14c92681f4d62cf84d901460e0358de09c8847a7), [build gate](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/CMakeLists.txt#L56), [DLL build](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/ARM64EC/CMakeLists.txt).
+- **VERIFIED:** Hangover cutoff commit is `56e385b7ff490edd281b288f420677093563560b` (2026-08-28); release 11.16 was published August 30, includes FEX 2608, Box64 0.4.4, and updated llvm-mingw vararg exit thunks. Its published packages target ARM Linux/Termux, not macOS. January's 11.0 notes say QEMU was dropped and the Wine patch set had fallen to ten patches. These counts are release statements, not an independently audited October patch inventory. [Release history](https://github.com/AndreRH/hangover/releases), [pinned tree](https://github.com/AndreRH/hangover/tree/56e385b7ff490edd281b288f420677093563560b).
+
+## Execution model
+
+**VERIFIED:** Hangover chooses emulator DLLs for application code; native Wine handles Win32 syscalls and Unix calls. For x64 it uses Wine ARM64EC plus FEX, with `libarm64ecfex.dll` as default. For x86 it offers Wine WoW64 with `wowbox64.dll` default or `libwow64fex.dll`. Native ARM64 PE applications can run without application emulation. This is fundamentally different from running an entire x86 Wine/Unix installation through FEX's Linux frontend. It does not require 32-bit Unix libraries. [Pinned Hangover README](https://github.com/AndreRH/hangover/blob/56e385b7ff490edd281b288f420677093563560b/README.md).
+
+**VERIFIED:** FEX builds `arm64ecfex` from `Module.cpp`, `Module.S`, DLL exports, and FEXCore objects, links native Windows support and ntdll imports, and marks the library for Wine. The documented build uses an ARM64EC llvm-mingw toolchain; the separate Unix helper is a host shared library, not another emulator. [ARM64EC build](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/ARM64EC/CMakeLists.txt), [Hangover build procedure](https://github.com/AndreRH/hangover/blob/56e385b7ff490edd281b288f420677093563560b/docs/COMPILE.md).
+
+### Translation, caches, and interpreter terminology
+
+**VERIFIED:** Instruction tables and x86 frontend feed an SSA IR designed around ARM64; opcode dispatchers implement scalar/vector/x87/flags translation, optimization passes and register allocation operate on IR, and ARM64 JIT operations emit host instructions. Core glue owns compilation/dispatch and lookup caches. This structure makes the decoder, IR, optimizer, emitter, and CPU tests candidates for direct reuse. [Pinned source outline](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/docs/SourceOutline.md), [core compilation glue](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/FEXCore/Source/Interface/Core/Core.cpp).
+
+**VERIFIED:** `FEXInterpreter` names the Linux ELF execution frontend; the source tree also has interpreter *fallback* helpers used for instructions unsuitable for direct JIT emission. Do not infer that selecting FEXInterpreter disables JIT or proves a portable no-JIT fallback. The shared code-buffer manager allocates executable buffers and explicitly discusses RWX mappings. Current disk-cache work also crosses into Windows UnixLib. Cache persistence is an optimization, not a prerequisite for the first prototype. [Frontend tree](https://github.com/FEX-Emu/FEX/tree/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Tools/FEXInterpreter), [fallback tree](https://github.com/FEX-Emu/FEX/tree/14c92681f4d62cf84d901460e0358de09c8847a7/FEXCore/Source/Interface/Core/Interpreter), [code buffers](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/FEXCore/Source/Interface/Core/SharedCodeBufferManager.cpp#L64), [UnixLib](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/UnixLib/FEXUnixLib.cpp).
+
+### Memory ordering, memory, and exceptions
+
+**VERIFIED:** FEX includes TSO load/store operations and barriers in its ARM64 emitter (`MemoryOps.cpp:767 onward`, `1791 onward`). The Windows TSO configuration asks UnixLib whether hardware TSO is available; unsupported host controls retain software handling. The Unix helper currently attempts Linux `prctl` hardware memory-model and unaligned-atomic controls. A Darwin adapter cannot safely report success without actually configuring the host thread. [Memory operations](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/FEXCore/Source/Interface/Core/JIT/MemoryOps.cpp#L767), [TSO configuration](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/Common/TSOHandlerConfig.h), [Linux controls](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/UnixLib/FEXUnixLib.cpp#L48).
+
+**VERIFIED:** Windows-side synchronization delegates waits/locks/conditions to ntdll `Rtl*` operations; the ARM64EC module initializes per-thread CPU state, handles exception contexts, unaligned accesses, suspended execution and invalidation callbacks. Thus the PE path substitutes Wine's native Windows mechanisms for much of the Linux signal/syscall frontend. **INFERRED:** This reduces port scope, while leaving Wine's Darwin signal-to-NT exception bridge and mixed stack unwinding as coupled integration responsibilities. [Synchronization](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/Common/WinAPI/Sync.cpp), [ARM64EC module](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/ARM64EC/Module.cpp).
+
+## What the macOS reports actually establish
+
+### Issue 5817: a concrete report and a public shim
+
+**REPORTED:** On August 8, Thomas Pollok reported FEX ARM64EC Windows PE execution through Wine 11.14 on macOS 26.6/M3 Max, based on FEX `968645416106cc42b2178d2e0843e7a3bdebf232` plus local changes. The report concerns an offline compiler initialization fault and a filename-length failure, not a compatibility benchmark. [Issue 5817](https://github.com/FEX-Emu/FEX/issues/5817).
+
+**VERIFIED:** Its linked `7fb37b18b5d009dc2d6c031903e9464df24d1177` changes only the offline compiler; it is not a Darwin port. Further fork inspection found branch `FEX-ARM64EC` and public shim commit `2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9` (August 8): avoid `librt` on Apple, stub Linux `prctl` unsupported except mapping labels, and alter shared-memory resizing. The branch tip is `15a16c500319687f7eefac875e28a9d50b3188bb`. Comments reference external `Engine/fex-macos-fixups.py`, which is not supplied by this diff. **UNKNOWN:** Complete Wine patch/toolchain/signing instructions and proof of stock-Mac distributability. [Offline fix](https://github.com/tompollok/FEX/commit/7fb37b18b5d009dc2d6c031903e9464df24d1177), [actual shim](https://github.com/tompollok/FEX/commit/2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9), [fork branch](https://github.com/tompollok/FEX/tree/15a16c500319687f7eefac875e28a9d50b3188bb).
+
+### Issue 5907: installer correctness and a subsequent mitigation
+
+**REPORTED:** September 3's issue pins FEX `a6e74cdb` and ARM64 macOS/Wine 11.16, with both WoW64 and ARM64EC frontends. It reports a blocking read holding process-wide compilation locks after DEP-disabled memory enters self-modifying-code tracking, including MSI custom-action hangs. This demonstrates a real integration report, not an independently reproduced supported port. [Issue 5907](https://github.com/FEX-Emu/FEX/issues/5907).
+
+**VERIFIED:** September 5 commit `179b4423a7fd5a2d13041fd4c36b5eca2e39d2aa` changes read/SMC behavior. At October cutoff `Module.cpp:955–1006` invalidates after successful synchronous reads for general apps and retains old locking only for `P5R.exe`. Comments still identify a race requiring Wine/FEX coordination and untracked async reads. Therefore do not describe the original unconditional deadlock as completely unchanged in October; do not describe all SMC correctness as solved either. [Mitigation commit](https://github.com/FEX-Emu/FEX/commit/179b4423a7fd5a2d13041fd4c36b5eca2e39d2aa), [current implementation](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/ARM64EC/Module.cpp#L955).
+
+### Other leads and false equivalences
+
+- **REPORTED:** Ferrum advertises native Apple Silicon FEX integration, Wine loaded at runtime, and macOS NT syscall work. Its repository explicitly says proprietary and no source; there is no inspectable port to adopt. Treat claims as comparison leads only. [Ferrum](https://github.com/PyroSoftPro/Ferrum).
+- **VERIFIED architecture / REPORTED outcomes:** `tnk4on/podman-fex` executes FEX within a Fedora aarch64 **Linux VM** hosted by libkrun on macOS. It is a useful Linux-in-VM alternative, not evidence of FEX Darwin support, Windows execution, or native macOS GUI integration. Its performance claims do not transfer to this project. [Project architecture](https://github.com/tnk4on/podman-fex).
+- **UNKNOWN:** No exhaustive inventory of private patches or every public fork can be established. Searches located the explicit sources above; absence from this list is not proof of nonexistence. A reproducibility request should seek the complete patches and signed launcher from the reporters.
+
+## Subsystem porting assessment
+
+The effort descriptions are relative scope judgments, not calendar estimates.
+
+| Subsystem | Reuse / Darwin work | Risk and validation | Evidence |
+|---|---|---|---|
+| Decoder, x86 IR, ARM64 emitter | Reuse FEXCore and CPU tests; do not redesign translator | Instruction corner cases, x87/SIMD/flags; differential test vs x86 reference | [Outline](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/docs/SourceOutline.md) |
+| PE loader and x64/native transitions | Reuse Wine ARM64EC and FEX PE module | ABI callbacks, varargs, SEH and unwind need end-to-end tests | [Module](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/ARM64EC/Module.cpp), [Hangover 11.16](https://github.com/AndreRH/hangover/releases/tag/hangover-11.16) |
+| Windows threading and synchronization | Reuse ntdll/Rtl-backed implementation | Per-thread Apple architecture controls must be applied/verified by Wine/adapter; concurrent callback safety | [Sync](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/Common/WinAPI/Sync.cpp) |
+| Unix helper build and telemetry | Native arm64 Darwin shared library; adapt compiler flags/linking/shm; optional telemetry can be absent | Small public shim exists, but October UnixLib also has disk-cache additions; re-audit rather than blindly cherry-pick | [UnixLib](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/UnixLib/FEXUnixLib.cpp), [shim](https://github.com/tompollok/FEX/commit/2c7d47c6156fc7f7d273e1d83ae0dda79bef72b9) |
+| Hardware TSO / unaligned atomics | Replace Linux controls with actual Darwin thread APIs, or report unsupported and retain software path | Correctness first; process/thread inheritance and atomic faults need litmus/stress tests; no claimed speedup | [TSO helper](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/Common/TSOHandlerConfig.h) |
+| JIT allocation and host protection | Reuse allocation hooks, integrate lawful executable-memory policy with Wine | Critical: RWX assumptions, W^X/thread write protection and cross-thread compilation; signing must be resolved independently | [Buffers](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/FEXCore/Source/Interface/Core/SharedCodeBufferManager.cpp) |
+| Self-modifying code / I/O invalidation | Reuse tracker and notifications; test latest mitigation | Highest runtime correctness risk: async I/O, packed apps, DEP changes, page protection races | [Read handling](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Windows/ARM64EC/Module.cpp#L955) |
+| Standalone Linux frontend | Do not port for initial native product | ELF/rootfs, Linux syscalls, signals, futex/clone, /proc, Linux graphics thunks greatly expand scope | [FEX interpreter tree](https://github.com/FEX-Emu/FEX/tree/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Tools/FEXInterpreter), [Linux emulator tree](https://github.com/FEX-Emu/FEX/tree/14c92681f4d62cf84d901460e0358de09c8847a7/Source/Tools/LinuxEmulation) |
+
+## Alternatives
+
+**VERIFIED / INFERRED assessment:** Box64 is an MIT Linux user-space emulator with native library wrapping, interpreter/dynarec and persistent-cache machinery. Its upstream WoW64 PE component is already used by Hangover for x86. Hangover's maintainer said in March 2025 that ARM64EC Box64 work interested him but he lacked time; this is not proof of a supported x64 ARM64EC replacement today. Prefer FEX for initial x64; retain Box64 WoW64 as a later independent comparison. [Box64](https://github.com/ptitSeb/box64), [maintainer discussion](https://github.com/AndreRH/hangover/discussions/177), [Hangover](https://github.com/AndreRH/hangover).
+
+**VERIFIED / INFERRED assessment:** QEMU user mode documents Linux/BSD syscall and signal environments, not a stock Darwin Windows PE execution frontend. Its system-mode engine is useful for VM/emulation fallback; transplanting TCG into Wine is not a turnkey alternative, and Hangover has removed its QEMU integration. [QEMU user documentation](https://www.qemu.org/docs/master/user/main.html), [Hangover 11.0 release](https://github.com/AndreRH/hangover/releases/tag/hangover-11.0).
+
+**VERIFIED / INFERRED assessment:** Blink can run x86-64 Linux binaries on macOS and has JIT portability work; Hangover calls its integration started and absent from the repository. This is a useful portability reference, not demonstrated equivalent PE/ARM64EC compatibility. An ARM Linux VM with upstream FEX + Wine/Hangover offers another Rosetta-free path without Windows installation, but pays for a guest OS, display transport, and separate graphics stack. Evaluate it as a distinct fallback hypothesis rather than equating it with native architecture. [Blink](https://github.com/jart/blink), [Hangover](https://github.com/AndreRH/hangover), [Linux VM precedent](https://github.com/tnk4on/podman-fex).
+
+## Smallest valid prototype (proposed; untested)
+
+1. Establish a signed, native arm64 Wine host, run an ARM64 built-in app, and verify architecture, x18/page-mode/entitlements independently before adding FEX.
+2. Build upstream FEX's ARM64EC Windows PE target with matching llvm-mingw; build only its UnixLib directory with a reviewed Darwin adapter. Use the documented Hangover flags below as a **Linux reference**, not an already validated macOS build recipe.
+3. Install DLL/helper into a private Wine build tree/prefix. Make Wine select this emulator explicitly using the mechanism available in the chosen Wine revision; `HODLL64` is Hangover-specific and must not be assumed for stock Wine.
+4. Build a tiny x64 PE test from owned source: `GetCurrentProcessId`, heap allocation, file round-trip, a created thread and event, interlocked increment, native callback, and handled exception. Verify results and exit codes; repeat with ASLR and cold cache.
+5. Capture loaded modules, arm64 Mach-O host architecture, emulator initialization and JIT PCs. An app window alone does not prove Rosetta independence; all host executables/Unix libraries must be arm64, and guest x64 must execute in FEX's generated ARM64 code.
+6. Add a blocking pipe + concurrent compilation test, virtual-protection changes, two writable/executable-code generations, then x86 MSI custom-action tests. Keep graphics and persistent JIT caches out of this first acceptance gate.
+
+Reference-only commands from [Hangover COMPILE.md](https://github.com/AndreRH/hangover/blob/56e385b7ff490edd281b288f420677093563560b/docs/COMPILE.md):
+
+```sh
+../configure --disable-tests --with-mingw=clang --enable-archs=arm64ec,aarch64,i386
+cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCMAKE_TOOLCHAIN_FILE=../Data/CMake/toolchain_mingw.cmake \
+  -DENABLE_LTO=False -DMINGW_TRIPLE=arm64ec-w64-mingw32 -DBUILD_TESTS=False ..
+cmake --build . --target arm64ecfex
+```
+
+**UNKNOWN / explicit stop condition:** A complete macOS launcher/entitlement configuration and FEX writable-code strategy are not provided by this chapter. These must be resolved before calling this a reproducible stock-Mac procedure. Do not disable SIP, substitute another project's restricted signing assets, or claim this proposal was executed.
+
+## Licensing and contribution boundary
+
+**VERIFIED:** FEX is MIT; inspected Windows/FEXCore files use MIT SPDX headers. Bundled external code must be audited separately. Its pinned `CONTRIBUTING.md:1` says **“No AI/ML/LLM/etc code contributions.”** This research submits no patch. Human maintainers should independently implement any FEX upstream changes; do not submit generated patches disguised as human work. Permission to redistribute MIT code is separate from a maintainer's willingness to accept contributions. [License](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/LICENSE), [contribution policy](https://github.com/FEX-Emu/FEX/blob/14c92681f4d62cf84d901460e0358de09c8847a7/CONTRIBUTING.md).
+
+**VERIFIED / INFERRED relevance:** REA is MIT analysis tooling connecting agents to binary/runtime inspection engines including Ghidra; Ghidra is an Apache-2.0 reverse-engineering framework. Neither supplies Wine compatibility nor CPU emulation. Use them to inspect owned test executables, ABI transitions and authorized binaries when ordinary source/debugger evidence is insufficient. Preserve observations separately from proprietary decompiled material and independently written implementation. This mission has not run REA or copied proprietary source. [REA repository](https://github.com/morluto/rea), [Ghidra repository and licensing](https://github.com/NationalSecurityAgency/ghidra).
+
+Local revision metadata, source-file hashes and public-fork comparisons are preserved in [`evidence/fex-source-inspection.md`](evidence/fex-source-inspection.md) and neighboring `fex-*.json` files. These are source-inspection evidence, not runtime logs.
